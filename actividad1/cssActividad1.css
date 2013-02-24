@@ -1,0 +1,5 @@
+@charset "utf-8";
+/* CSS Document */
+div{position:relative;}
+#contenedor{ background: #bedfe4 no-repeat left -30px; border: 5px solid #402309;}
+#b{ background:url(carredor.png) no-repeat left -100px;}
