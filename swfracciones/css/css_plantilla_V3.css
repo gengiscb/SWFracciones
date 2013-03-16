@@ -1,0 +1,106 @@
+@charset "utf-8";
+/* CSS Document */
+/*Etiquetas generales*/
+body{
+    background:#4D9221;    
+}
+
+label{
+    color:#418eb6;
+}	
+input,textarea,select{
+    border:#B8E186 1px solid;/*#94D7F4*/
+    color:#003300;
+}
+input:focus,textarea:focus,select:focus{
+    border: #3AAA02 1px solid;
+}	
+/*Encabezado de la pagina*/
+div.banner{
+    width: 900px;
+    margin: auto;
+}
+div.encabezado{
+    background: url(../img/banner/banner.png);
+    background-repeat: no-repeat;
+    /*background:#003300;*/                
+    height:180px;
+    margin-bottom: 10px;
+    color:#FFF;
+    -webkit-box-shadow:0px 0 50px #235A16;
+    -moz-box-shadow:0px 0 50px #235A16; 
+    box-shadow:0px 0 50px #235A16;
+    /*margin: auto;*/
+}
+/*Perfil del usuario*/
+div.mini_perfil ul li a{
+    color:#FFF;
+    background:#005500;	
+    border:#119E00 1px solid;		
+}
+div.mini_perfil ul li a:hover{
+    background: url(../img/utileria/bg-selected.gif); 
+}
+div.mini_perfil ul li:hover ul{
+    background:#030;
+}
+/*Eslogan de la pagina*/
+div.slogan a{
+    color:#FFF;		
+}
+/*Menu del sitio web*/
+div.menu{
+    -webkit-box-shadow:0px 0 30px #235A16;
+    -moz-box-shadow:0px 0 30px #235A16; 
+    box-shadow:0px 0 30px #235A16;	
+}
+div.menu ul li{
+    background:#3AAA02;		
+}
+div.menu ul li:hover{
+    background:#276419;
+}
+
+div.mini_perfil ul li ul li a:hover{
+    background:#276419;
+}                
+div.menu ul li a{
+    color:#FFF;
+    background:#3AAA02; 
+    border:1px #119E00 solid;
+}
+
+
+div.menu ul li a:hover{                    
+    height:28px;
+    background:#276419;
+}
+/*Marco*/
+
+div.marco{
+    background:#E6F5D0;
+}
+/*Marco interno*/
+div.marco_interno{
+    background:#B8E186;
+}
+.boton{
+    background: #228900;
+}
+.boton:hover {
+    border-top-color: #28597a;
+    background: #005500;
+    color:#d0e8f7
+}
+
+/*Pie de pagina*/
+div.pie{
+    background:#013D7B;
+}
+#menu_adm {  
+
+    -webkit-box-shadow:0px 0 50px #F768A1;
+    -moz-box-shadow:0px 0 50px #F768A1; 
+    box-shadow:0px 0 50px #F768A1;
+    box-shadow: 0px 0px 33px 32px #005500;
+}

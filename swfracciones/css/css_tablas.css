@@ -1,0 +1,31 @@
+@charset "utf-8";
+/* CSS Document */
+div.tabla{
+	margin:auto;
+	width:700px;
+}
+div.tabla table{    
+    width:699px;
+}
+table td.email div{      
+    margin: 0px;
+    padding: 0px;
+    width: 150px;
+    overflow:auto;
+    word-wrap: break-word;
+}
+div.tabla th{
+	background:#167CB5;
+}
+div.tabla table  tr.par{
+	background:#7AB5E2;
+}
+div.tabla table tr td.borrar,div.tabla table tr td.editar{
+	text-align:center;
+}
+
+div.tabla table tr td img{
+	width:25px;
+	height:25px;	
+	
+}

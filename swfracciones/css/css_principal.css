@@ -1,0 +1,24 @@
+/* 
+    Document   : css_principal
+    Created on : 20/01/2013, 01:42:06 AM
+    Author     : Angel
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+#actividad{
+    background: #0099FF;
+    margin: auto;
+    margin-top: 20px;
+    border-radius: 15px;
+    width: 815px;
+    height: 600px;
+}
+
+.clean-gray{
+border:solid 1px #DEDEDE;
+background:#EFEFEF;
+color:#222222;
+padding:4px;
+text-align:center;
+}

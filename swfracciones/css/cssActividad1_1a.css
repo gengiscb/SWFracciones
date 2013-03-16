@@ -1,0 +1,74 @@
+body{
+    
+}
+/*div{
+    border:#999 1px dotted;
+    margin: auto;
+    margin-top: 100px;
+}*/
+#contenedorAct{    
+    position: relative;
+    width:800px;
+    height:456px;
+    background:url('../img/act1_1a/fondo.png');
+    margin-left: 3px;
+    left: 2px;
+}
+#imagen{
+    position: relative;    
+    top: 200px;
+    float: left;
+    left: 10px;
+}
+#contenedor #nube{
+    position: relative;
+    width: 800px;   
+    right: 10px;
+    top: 10px;
+
+}
+#contenedor #nube2{
+    position: relative;    
+    width: 600px;
+}
+#segmento{
+    position: relative;
+    float: left;
+    width: 600px;
+    height: 25px;
+    margin-left: 100px;
+    top: 220px;
+}
+
+.fadebox {
+    display: none;
+    position: absolute;
+    top: 0px;
+    width:800px;
+    height:456px;
+/*    width: 100%;
+    height: 100%;*/
+    background-color: black;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=80);
+}
+/*.overbox {
+    display: none;
+    position: relative;
+    
+    top: 25%;
+    left: 25%;
+background: darkgreen;
+    width: 50%;
+    height: 50%;
+    z-index:1002;
+    overflow: auto;
+}*/
+.fadebox #iniciar{
+    position: relative;
+    margin: auto;
+    margin-top: 150px;
+    /*margin-left: 45%;*/
+}
