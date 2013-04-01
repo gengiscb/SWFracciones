@@ -1,5 +1,3 @@
-
-
 <?php
 
 /*
@@ -8,12 +6,14 @@
  */
 
 class Actividad {
+
     private $fechaInicio;
     private $fechaFinal;
-    private $idActividad;
-    private $urlEscenario;
-    private $urlRespuestas;
-    
+    private $nombre;
+    private $estado;
+    private $idAlumno;
+    private $numeroActividad;
+
     public function __construct($fechaInicio, $fechaFinal, $numeroActividad) {
         $this->fechaInicio = $fechaInicio;
         $this->fechaFinal = $fechaFinal;
@@ -33,6 +33,6 @@ class Actividad {
         return $this->numeroActividad;
     }
 
-    
 }
+
 ?>

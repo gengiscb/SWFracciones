@@ -2,12 +2,34 @@
 /* CSS Document */
 /*Etiquetas generales*/
 body{
-    background:#4D9221;    
+    background-image:url(../img/utileria/fondo.png), linear-gradient(right , #08CDCD 10%, #FFFFFF 49%, #08CDCD 90%);
+    background-image:url(../img/utileria/fondo.png), -o-linear-gradient(right , #08CDCD 10%, #FFFFFF 49%, #08CDCD 90%);
+    background-image:url(../img/utileria/fondo.png), -moz-linear-gradient(right , #08CDCD 10%, #FFFFFF 49%, #08CDCD 90%);
+    background-image:url(../img/utileria/fondo.png), -webkit-linear-gradient(right , #08CDCD 10%, #FFFFFF 49%, #08CDCD 90%);
+    background-image:url(../img/utileria/fondo.png), -ms-linear-gradient(right , #08CDCD 10%, #FFFFFF 49%, #08CDCD 90%);
+
+    background-image:url(../img/utileria/fondo.png), -webkit-gradient(
+        linear,
+        right top,
+        left top,
+        color-stop(0.1, #08CDCD),
+        color-stop(0.49, #FFFFFF),
+        color-stop(0.9, #08CDCD)
+        );
 }
 
-label{
-    color:#418eb6;
-}	
+h2{
+    text-shadow: 0 1px 0 rgba(255,255,255, 1);
+    font-family:"Comic Sans MS", cursive;
+    color:#060;
+    font-size-adjust:120%;
+    text-align:center;
+}
+#h2{
+	/*font-family:Arial, Helvetica, sans-serif;*/
+        font-family:"Comic Sans MS", cursive;
+}
+
 input,textarea,select{
     border:#B8E186 1px solid;/*#94D7F4*/
     color:#003300;
@@ -21,9 +43,10 @@ div.banner{
     margin: auto;
 }
 div.encabezado{
-    background: url(../img/banner/banner.png);
+    background:#003300;  
+    background: url(../img/banner/banner2.png);
     background-repeat: no-repeat;
-    /*background:#003300;*/                
+
     height:180px;
     margin-bottom: 10px;
     color:#FFF;
@@ -45,55 +68,162 @@ div.mini_perfil ul li:hover ul{
     background:#030;
 }
 /*Eslogan de la pagina*/
-div.slogan a{
-    color:#FFF;		
+div.slogan{
+
+    height:60px;
+    font-size:46px;
+    float:left;	
+}
+div.slogan a, div.slogan a:hover {
+    color:#F00;
+    text-decoration: none;
+    width:190px;		
+    height:58px;
+    padding:10px 0px 0px 15px;
+    display:block;
 }
 /*Menu del sitio web*/
 div.menu{
+    z-index:10;
+    font-size:18px;
+    margin:auto;
+    margin-top: 55px;
+    width:600px;
     -webkit-box-shadow:0px 0 30px #235A16;
     -moz-box-shadow:0px 0 30px #235A16; 
-    box-shadow:0px 0 30px #235A16;	
+    box-shadow:0px 0 30px #235A16;
+
 }
+div.menu ul{
+    width: 100%;
+    text-align:center;
+    /*background:none;	*/                        
+    font-weight:bold;
+    float:left;
+    /*width: 120px;*/
+    margin: 0; 
+    padding: 7px 6px 0; 
+    background:#3AAA02 url(../img/utileria/overlay.png) repeat-x 0 -110px; 
+    line-height: 100%; 
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0, .4); -moz-box-shadow: 0 1px 3px rgba(0,0,0, .4);
+}
+
+div.menu ul li ul{
+    width: 90%;
+    text-align:center;
+    /*background:none;	*/                        
+    font-weight:bold;
+    float:left;
+    /*width: 120px;*/
+    margin: 0; 
+    padding: 7px 6px 0; 
+    background:#3AAA02 url(../img/utileria/overlay.png) repeat-x 0 -110px; 
+    line-height: 100%; 
+    border-radius: 1em; 
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px; 
+    border-radius: 5px; 
+    -webkit-box-shadow: 0 1px 3px rgba(0,0,0, .4); -moz-box-shadow: 0 1px 3px rgba(0,0,0, .4);
+}
+
 div.menu ul li{
-    background:#3AAA02;		
+    font-weight:bold;
+    float:left;
+    width: 120px;
+
+    /*padding: 0;*/
+    margin: 0;
+    padding: 0 0 8px;
+    position: relative; 
+    list-style: none; 
 }
 div.menu ul li:hover{
-    background:#276419;
 }
 
-div.mini_perfil ul li ul li a:hover{
-    background:#276419;
-}                
-div.menu ul li a{
+div.menu a, div.menu a:link{
+    /*background:#3AAA02; */
+    border-collapse: collapse;
+    /*border:1px #4285B5 solid;*/
     color:#FFF;
-    background:#3AAA02; 
-    border:1px #119E00 solid;
-}
-
-
-div.menu ul li a:hover{                    
+    font-weight:100;
+    padding:10px 0px 2px 0px;
+    width: 100%;
     height:28px;
-    background:#276419;
+    display:block;
+    overflow:hidden;
+
+    background-color: transparent;
+    /* text-transform: uppercase;*/
+    cursor: pointer;
+
+    /*font-weight: bold; */
+    text-decoration: none; 
+    /*padding:  8px 20px;*/ 
+    margin: 0; 
+    border-radius: 5px; 
+    -webkit-border-radius: 5px; 
+    -moz-border-radius: 5px;	 
+    text-shadow: 0 1px 1px rgba(0,0,0, .3); 
 }
+
+div.menu ul li ul{
+    position:absolute;
+    left:0;
+    width: 100%;
+    display:none;
+    padding:0;
+}
+div.menu ul li ul li{
+    width: 95%;
+}
+
+/*div.menu ul li ul li a{
+        background:#3AAA02;
+}*/
+
+div.menu ul li:hover ul{
+    display:block;
+    width: 100%;
+
+}
+
+div.menu .categoria a, div.menu li:hover > a {
+
+}
+
+div.menu a:hover{ 
+    background: #3AAA02 url(../img/utileria/overlay.png) repeat-x 0 -40px;
+    color: #444; 
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0, .2); 
+    -moz-box-shadow: 0 1px 1px rgba(0,0,0, .2); 
+    box-shadow: 0 1px 1px rgba(0,0,0, .2); 
+    text-shadow: 0 1px 0 rgba(255,255,255, 1);
+
+}
+
+
+div.menu ul ul li {float: none; margin: 0; padding: 3px; }
+
+div.menu ul ul a {font-weight: normal; text-shadow: 0 1px 0 #fff; }
+
+div.menu li:hover > ul {
+    display: block;
+}
+
+div.menu ul:after {content: '.'; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
 /*Marco*/
 
 div.marco{
-    background:#E6F5D0;
+    background:#5CB7C8;
+    background-image:url(../img/utileria/section_bg.png);
 }
 /*Marco interno*/
 div.marco_interno{
     background:#B8E186;
 }
-.boton{
-    background: #228900;
-}
-.boton:hover {
-    border-top-color: #28597a;
-    background: #005500;
-    color:#d0e8f7
-}
-
-/*Pie de pagina*/
 div.pie{
     background:#013D7B;
 }
@@ -103,4 +233,13 @@ div.pie{
     -moz-box-shadow:0px 0 50px #F768A1; 
     box-shadow:0px 0 50px #F768A1;
     box-shadow: 0px 0px 33px 32px #005500;
+}
+
+.texto_act{
+
+    text-align:center;
+    font-family:"Comic Sans MS", cursive;
+    font-weight:bold;
+    color:#552B00;
+    font-size:100%;
 }

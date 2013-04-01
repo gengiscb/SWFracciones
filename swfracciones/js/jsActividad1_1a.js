@@ -1,23 +1,20 @@
-// JavaScript Document
-//var distancia=300;
-
-//$(function (){    
-    $('#iniciar').click(function(){        
-        hideLightbox();
-        $('#iniciar').attr('disabled', 'disabled');
-        $('#imagen').attr("src", "img/act1_1a/atleta10.gif");
-        $('#imagen').animate({ 
-            left: "+="+distancia+"px"
-        },6000,function (){
-            $('#imagen').attr("src", "img/act1_1a/atleta10.png");	
-            alert("Seleccione una respuesta");
-        });
+  
+$('#iniciar').click(function(){        
+    hideLightbox();
+    $('#iniciar').attr('disabled', 'disabled');
+    $('#imagen').attr("src", "img/act1_1a/atleta10.gif");
+    $('#imagen').animate({ 
+        left: "+="+distancia+"px"
+    },6000,function (){
+        $('#imagen').attr("src", "img/act1_1a/atleta10.png");	
+        alert("Seleccione una respuesta");
     });
-    $("#detener").click(function(){
-        $("#imagen").stop();
-        $('#imagen').attr("src", "img/act1_1a/atleta10.png");
-    });
-    moverNuves();
+});
+$("#detener").click(function(){
+    $("#imagen").stop();
+    $('#imagen').attr("src", "img/act1_1a/atleta10.png");
+});
+moverNuves();
 //});
 
 function moverNuves(){
@@ -25,12 +22,12 @@ function moverNuves(){
         left: "-="+180+"px"
     },15000,function (){
         
-    $('#nube2').animate({ 
-        left: "+="+180+"px"
-    },15000,function (){
-        moverNuves();
+        $('#nube2').animate({ 
+            left: "+="+180+"px"
+        },15000,function (){
+            moverNuves();
         });        
-        });
+    });
 }
 function showLightbox() {
     document.getElementById('iniciar').style.display='block';
@@ -47,9 +44,8 @@ function esCorrecta(valor,idAct,idAlum){
         window.location='principal_alumno.php';
     }    
     else{
-        alert("La respuesta es incorrecta... vuelva a intentarlo");
-        actualizarFallos(idAct, idAlum);
-        window.location.reload();
-//        actualizarIntentos(idAct, idAlum);
+        alert("La respuesta es incorrecta... vuelva a intentarlo, (reiniciando actividad)");
+        actualizarFallos(idAct, idAlum);        
+        window.location = window.location.href+'&int=y'; 
     }       
 }

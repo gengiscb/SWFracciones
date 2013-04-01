@@ -1,7 +1,7 @@
 // JavaScript Document
 window.onload = function(){   
     document.getElementById("registrar").onclick=validarCamposRegsitro;
-}
+}     
 function validarCamposRegsitro(){
     if(!validarNombre()){
         alert("Nombre inválido.");
@@ -22,19 +22,13 @@ function validarCamposRegsitro(){
             }
             else{
                 if(!validarContrasena()){
-//                    alert("Escriba correctamente la contraseña");
+                    //                    alert("Escriba correctamente la contraseña");
                     document.getElementById("password_nuevo").focus();
                     return false;
                 }
                 else{ 
                     return true;
                 }
-//    if(window.confirm("Esta seguro que desea realizar esta acción")){
-//        return true;
-//    }
-//    else{
-//        return false;
-//    }
             }
         }
     }
@@ -84,60 +78,60 @@ function validarNombre(){
 }
 
 function validarContrasena(){
-	var passwordN=document.getElementById("password_nuevo").value;
-	var passwordC=document.getElementById("password_nuevo_v").value;
+    var passwordN=document.getElementById("password_nuevo").value;
+    var passwordC=document.getElementById("password_nuevo_v").value;
 	
-	if(!esContrasenaCorrecta(passwordN)){
-		document.getElementById("password_nuevo").focus();
-		return false;
-	}
-	if(!esContrasenaCorrecta(passwordC)){
-		document.getElementById("password_nuevo_v").focus();
-		return false;
-	}
-	if(!esTamanoAceptable(passwordN)){				
-		document.getElementById("password_nuevo").focus();
-		return false;
-	}
-	if(!esTamanoAceptable(passwordC)){				
-		document.getElementById("password_nuevo_v").focus();
-		return false;
-	}
-	if(!sonContrasenasIguales()){
-		alert("Las contraseñas no coinciden.");				
-		document.getElementById("password_nuevo_v").focus();
-		return false;
-	}
-	return true;
+    if(!esContrasenaCorrecta(passwordN)){
+        document.getElementById("password_nuevo").focus();
+        return false;
+    }
+    if(!esContrasenaCorrecta(passwordC)){
+        document.getElementById("password_nuevo_v").focus();
+        return false;
+    }
+    if(!esTamanoAceptable(passwordN)){				
+        document.getElementById("password_nuevo").focus();
+        return false;
+    }
+    if(!esTamanoAceptable(passwordC)){				
+        document.getElementById("password_nuevo_v").focus();
+        return false;
+    }
+    if(!sonContrasenasIguales()){
+        alert("Las contraseñas no coinciden.");				
+        document.getElementById("password_nuevo_v").focus();
+        return false;
+    }
+    return true;
 }
 
 
 function esContrasenaCorrecta(password){
-	if(password==""){
-		alert("Debe llenar los campos de contraseña antes de actualizar.");
-		return false;
-	}
-	else{
-		return esTamanoAceptable(password);
-	}
+    if(password==""){
+        alert("Debe llenar los campos de contraseña antes de actualizar.");
+        return false;
+    }
+    else{
+        return esTamanoAceptable(password);
+    }
 }
 
 function esTamanoAceptable(password){
-	var tamano=password.length;
-	if(tamano<6){
-		alert("La nueva contraseña debe tener un mínimo de 6 caracteres.");
-		return false;
-	}else{
-		return true;
-	}
+    var tamano=password.length;
+    if(tamano<6){
+        alert("La nueva contraseña debe tener un mínimo de 6 caracteres.");
+        return false;
+    }else{
+        return true;
+    }
 }
 
 function sonContrasenasIguales(){
-	var password=document.getElementById("password_nuevo").value;
-	var confirmarPassword=document.getElementById("password_nuevo_v").value;
-	if(password==confirmarPassword){
-		return true;
-	}else{
-		return false;
-	}
+    var password=document.getElementById("password_nuevo").value;
+    var confirmarPassword=document.getElementById("password_nuevo_v").value;
+    if(password==confirmarPassword){
+        return true;
+    }else{
+        return false;
+    }
 }

@@ -4,10 +4,9 @@ include_once 'sw/GestionPlantilla.php';
 include_once 'sw/DB/ConexionGeneral.php';
 include_once 'ControladorAlumno.php';
 include_once 'sw/Sesion.php';
-filtro_login();
+$sesion = new Sesion();
+$sesion->filtro_login();
 $gestionPlantilla = new GestionPlantilla();
-$agregarAlumno = new ControladorAlumno();
-$agregarAlumno->agregarAlumnoC();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,23 +17,27 @@ $agregarAlumno->agregarAlumnoC();
         <link href="css/css_plantilla_v3.css" rel="stylesheet" type="text/css" />
         <link href="css/css_login.css" type="text/css" rel="stylesheet"  />
         <link href="css/css_registro.css" type="text/css" rel="stylesheet"  />
+        <script type="text/javascript" language="javascript" src="js/jquery-1.6.4.js" ></script>
+        <script type="text/javascript" language="javascript" src="js/jquery.form.js" ></script>
         <script type="text/javascript" language="javascript" src="js/js_validarRegistro.js" ></script>
+        <!--<script type="text/javascript" src="js/jquery.min.js"></script>-->  
     </head>
     <body>    
         <div class="banner">
-        <div class="encabezado" id="encabezado">
-            <?php
-            echo $gestionPlantilla->generarEncabezadoHTML();
-            echo  $gestionPlantilla->generarMenu();
-            ?>
-        </div>
+            <div class="encabezado" id="encabezado">
+                <?php
+                echo $gestionPlantilla->generarEncabezadoHTML();
+                echo $gestionPlantilla->generarMenu();
+                ?>
             </div>
+        </div>
         <div class="contenido">
             <div class="marco_registro">            
                 <div class="form_registro">
                     <h1>Registro</h1>
                     <!--                    include_php/_gestion_login.php-->
-                    <form  method="get" action="<?php echo $_SERVER["PHP_SELF"]; ?>" >
+                    <form  method="get" id="form_reg_alum" action="ControladorAlumno.php" >
+                        <input type="hidden" name="grupo" value="<?php echo $_SESSION['grupo'] ?>"></input>
                         <table class="registro" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td> Nombre(s):</td>                          	  
@@ -45,7 +48,7 @@ $agregarAlumno->agregarAlumnoC();
                                 <td> <input type="text" name="apellidoP" id="apellidoP" value="" /></td>
                             </tr>
                             <tr>
-                               <td> Apellido Materno:</td>    
+                                <td> Apellido Materno:</td>    
                                 <td> <input type="text" name="apellidoM" id="apellidoM" size="20" maxlength="46"  value="" /></td>
                             </tr>
                             <tr>
@@ -55,7 +58,7 @@ $agregarAlumno->agregarAlumnoC();
 
                             <tr>
                                 <td> Grupo:</td>   
-                                <td> <input type="text" disabled="disabled" name="grupo" id="grupo" size="20" maxlength="46"   value="<?php echo $_SESSION['grupo']?>" /></td>
+                                <td> <input type="text" disabled="disabled" name="grupo" id="grupo" size="20" maxlength="46"   value="<?php echo $_SESSION['grupo'] ?>" /></td>
                             </tr>
                             <tr>
                                 <td>Contrase&ntilde;a:</td>    
@@ -63,14 +66,15 @@ $agregarAlumno->agregarAlumnoC();
                             </tr>
                             <tr>
                                 <td>Confirma tu contrase&ntilde;a:</td>
-                                <td><input type="password"  name="cpassword" value="" /></td>
+                                <td><input type="password"  name="cpassword" id="cpassword" value="" /></td>
                             </tr>
                             <tr>
                                 <td></td>                            
                             </tr>
                             <tr>
                                 <input type="hidden" name="login" value="login"/>
-                                <td ><input type="submit"  name="btn_registrar" class="boton"  id="registrar" value="Registrar"/></td>
+                                <td  colspan="2"><input type="submit"  name="btn_registrar" class="boton"  id="verde" value="Registrar"/><input type="button" onclick="javascript:window.history.go(-1);"  name="btn_regresar" class="boton"  id="naranja" value="Regresar"/>
+                                </td>
                             </tr>                    
                         </table>
                     </form>

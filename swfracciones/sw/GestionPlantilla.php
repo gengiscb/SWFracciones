@@ -9,10 +9,10 @@ class GestionPlantilla {
 
     function generarEncabezadoHTML() {
         return '
-            <div class="mini_perfil">                
-                <ul>
-                <li><img src="img/usuarios/usuario.png" alt="Imagen usuario"/></li>
-                </ul>
+            <div class="mini_perfil">
+                <ul>'.
+                //<li><img src="img/usuarios/usuario.png" alt="Imagen usuario"/></li>
+                '</ul>
             </div>
             <div class="clearboth"></div>
             ';
@@ -33,10 +33,8 @@ class GestionPlantilla {
         return '<div class="menu">
                 <ul>
                     <li><a  href="principal_profesor.php">Principal</a></li>
-                    <li class="categoria"><a href="">Actividades</a> <ul>
-                            <li><a href="ListarActividades.php">Habilitar</a></li>
-                            </ul></li>                   
-                    <li><a href="">Reportes</a></li>
+                    <li class="categoria"><a href="ListarActividades.php">Actividades</a></li>                   
+                    <li><a href="vistaReportes.php?idProfesor=' . $_SESSION['grupo'] . '">Reportes</a></li>
                     <li><a href="vistaAlumnos.php?obtener_Alumnos=obtener">Alumnos</a></li>
                     <li class="categoria"><a href="">Mi cuenta</a>
                         <ul>
@@ -48,15 +46,15 @@ class GestionPlantilla {
                 </ul>  
                 <div class="clearboth"></div>                     
             </div>
-';
+' . $this->efectosMenu();
     }
 
     function generarMenuAlumno() {
-                    return '<div class="menu" style="width:360px;">
+        return '<div class="menu" style="width:240px;">
                 <ul>
-                    <li><a  href="principal_alumno.php">Principal</a></li>
-                    <li><a href="principal_alumno.php">Actividades</a></li>                    
-                    <li class="categoria"><a href="">Mi cuenta</a>
+                    <li><a  href="principal_alumno.php">Actividades</a></li>'.
+                    //<li><a href="principal_alumno.php">Actividades</a></li>                    
+                    '<li class="categoria"><a href="">Mi cuenta</a>
                         <ul>
                             <li><a href="sw/logout.php">Cerrar Sesi&oacute;n</a></li>
                         </ul>
@@ -66,15 +64,14 @@ class GestionPlantilla {
                 <div class="clearboth"></div>                     
             </div>
             
-';        
+' . $this->efectosMenu();
     }
 
     function generarMenuAdmin() {
-  
-        return '<div class="menu">
+
+        return '<div class="menu" style="width:480px;">
                 <ul>
                     <li><a  href="principal.php">Principal</a></li>
-                    <li class="categoria"><a href="">N/A</a></li>                   
                     <li><a href="RegistroProfesor.php">Registrar</a></li>
                     <li><a href="vistaProfesores.php?obtener_profesores=obtener">Profesores</a></li>
                     <li class="categoria"><a href="">Mi cuenta</a>
@@ -86,8 +83,11 @@ class GestionPlantilla {
                 </ul>  
                 <div class="clearboth"></div>                     
             </div>
-';
-        
+' . $this->efectosMenu();
+    }
+
+    function efectosMenu() {
+        return '';
     }
 
     function filtro_login() {
@@ -125,11 +125,7 @@ class GestionPlantilla {
     }
 
     function agregarCSSkMenuAdmin() {
-//        if ($_SESSION['tipo'] == 1) {
-            return '<link href="css/css_menu_adm.css" rel="stylesheet" type="text/css" />';
-//        } else {
-//            return '';
-//        }
+        return '<link href="css/css_menu_adm.css" rel="stylesheet" type="text/css" />';
     }
 
     function estilo() {

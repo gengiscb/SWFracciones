@@ -1,0 +1,158 @@
+@charset "utf-8";
+/* CSS Document */
+
+#contenedorAct{    
+    position: relative;
+    width:800px;
+    height:456px;
+    background: url(../img/act1_3a/playa.jpg);
+    margin-left: 3px;
+    left: 2px;
+}
+
+
+.fadebox {
+    display: none;
+    position: absolute;
+    top: 0px;
+    width:800px;
+    height:456px;
+    background-color: black;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=80);
+}	
+
+*{
+    margin:0;
+    padding:0;
+}
+
+body {
+    text-align: center;
+    text-align: center;
+    padding: 20px;
+
+
+}
+
+
+
+
+#segmento{
+    position: relative;
+    float: left;
+    height: 265px;
+    width: 7px;
+    left: -200px;
+    top: 130px;
+    margin-left: 220px;
+
+}
+
+
+
+
+
+#fruta{
+
+    height: 319px;
+    width: 319px;
+    margin-left:475px;
+    margin-top: -180px;
+
+}
+
+
+#lentes{
+
+    height: 155px;
+    width: 425px;
+    margin-left:375px;
+    margin-top: -120px
+
+}
+
+#imagen{
+    height: 456px;
+    margin-left:-80px;
+    width: 608px;
+    top: -445px;
+}
+
+#vaso{
+    height: 456px;
+    width: 608px;
+    margin-left:-80px;
+
+}
+
+
+
+
+/*Container for the image frame aka the top image*/
+.frame{
+    position: absolute;
+    z-index: 2;
+    width: 160px;
+    height: 270px;
+
+
+
+}
+/*The container the character goes in for easy placement*/
+#Vaso{
+    height: 456px;
+    width: 800px;
+
+    margin: 0px auto;
+
+}
+
+/*Prevents spillover from middle layer moving up*/
+#contenedorAgua{
+    top: 130px;
+    position: relative;
+    overflow: hidden;
+    height: 265px;
+    width: 160px;
+    background:  #e7dcca;
+    margin-left: -100px;
+}
+/*The middle layer container, hiding base image initially*/
+#capaAgua{
+
+    position:absolute;
+    z-index: 1;
+
+
+}
+/*White div in #dudeoverlay that fill space the edge image doesn't*/
+#BloquearAgua{
+
+    top: 300px;
+    height: 261px;
+    width: 700px;
+    background: #e7dcca;
+
+    opacity:.75;
+
+}
+
+
+#agua{
+    height: 270px;
+    width: 150px;
+}
+
+
+#vaso{
+
+    width: 160px;
+    height: 270px;
+    margin-left: -1px;
+
+}
+
+

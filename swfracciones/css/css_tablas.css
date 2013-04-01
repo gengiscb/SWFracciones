@@ -7,6 +7,11 @@ div.tabla{
 div.tabla table{    
     width:699px;
 }
+
+table td{
+	font-weight:bold;
+    text-align:left;
+}
 table td.email div{      
     margin: 0px;
     padding: 0px;
@@ -15,7 +20,7 @@ table td.email div{
     word-wrap: break-word;
 }
 div.tabla th{
-	background:#167CB5;
+	background:#167CB5 url(../img/utileria/overlay.png) repeat-x -100px;
 }
 div.tabla table  tr.par{
 	background:#7AB5E2;

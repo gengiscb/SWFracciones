@@ -1,9 +1,10 @@
 <?php
 include_once 'config.inc.php';
-include_once 'sw/Sesion.php';;
+include_once 'sw/Sesion.php';
+;
 include_once 'sw/GestionPlantilla.php';
-sesionActiva();
-$gestionPlantilla = new GestionPlantilla()
+$sesion = new Sesion();
+$sesion->sesionActiva();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -29,9 +30,7 @@ $gestionPlantilla = new GestionPlantilla()
                 <div class="form_login">
                     <h1>Iniciar Sesi&oacute;n</h1>
                     <?php
-                        $sesion=new Sesion();
-                        echo $sesion->iniciarSesion();
-                        
+                    echo $sesion->iniciarSesion();
                     ?>
                     <!--                    include_php/_gestion_login.php-->
                     <form  method="post" action="<?php echo $_SERVER['PHP_SELF'] ?>" >

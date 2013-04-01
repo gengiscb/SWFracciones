@@ -3,12 +3,11 @@ include_once 'config.inc.php';
 include_once 'sw/GestionPlantilla.php';
 include_once 'sw/Sesion.php';
 include_once 'ControladorAlumno.php';
-filtro_login();
+$sesion = new Sesion(); 
+$sesion->filtro_login();
 $gestorPlantilla = new GestionPlantilla();
 $controladorServicioAlumno = new ControladorAlumno();
 
-//sesionActiva();
-$gestionPlantilla = new GestionPlantilla();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,9 +17,9 @@ $gestionPlantilla = new GestionPlantilla();
         <link href="css/css_plantilla.css" rel="stylesheet" type="text/css" />
         <link href="css/css_plantilla_v3.css" rel="stylesheet" type="text/css" />
         <link href="css/css_login.css" type="text/css" rel="stylesheet"  />
-
+		
         <link href="css/css_registro.css" type="text/css" rel="stylesheet"  />
-
+		<script type="text/javascript" src="js/jquery.min.js"></script>  
         <script type="text/javascript" language="javascript" src="js/js_index.js" ></script>
     </head>
     <body>

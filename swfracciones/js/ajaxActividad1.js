@@ -28,7 +28,7 @@ function nuevoAjax()
 
 
 
-function actualizarIntentos(idAct, idAlum){ 
+function actualizarIntentos(idAct, idAlum){
     var ajax=nuevoAjax();
     ajax.open("POST", "_ControladorActividades.php", true);
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
@@ -38,7 +38,8 @@ function actualizarIntentos(idAct, idAlum){
             var respuesta="";
             if(ajax.responseText){
                 respuesta=ajax.responseText;
-                if(respuesta='true'){
+                if($.trim(respuesta)=='true'){
+                    
                 }
                 else{
                     alert("Numero maximo de intentos, vuelva a ingresar a la actividad");
@@ -77,19 +78,5 @@ function actualizarFallos(idAct, idAlum){
     ajax.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
     ajax.send("ajax=fal&idAct="+idAct+"&idAlum="+idAlum);    
     ajax.onreadystatechange=function(){
-        if (ajax.readyState==4){
-//            return true;
-//            alert(ajax.responseText)
-//            var respuesta="";
-//            if(ajax.responseText){
-//                respuesta=ajax.responseText;
-//                if(respuesta='true'){
-//                }
-//                else{
-//                    alert("Numero maximo de intentos, vuelva a ingresar a la actividad");
-//                    window.location='principal_alumno.php';
-//                }
-//            }
-        }
     }
 }

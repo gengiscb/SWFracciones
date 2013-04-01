@@ -1,17 +1,17 @@
 <?php
+
 include_once 'ServicioUsuario.php';
 include_once 'DB/ProfesorDAO.php';
 
 class ServicioProfesor {
+
     public function actualizarPerfilProfesor($usuarioId, $nombre, $apellidoP, $apellidoM, $contrasenia) {
         $servicioUsuario = new ServicioUsuario();
-        $servicioUsuario->actualizarPerfilUsuario($usuarioId, $nombre, $apellidoP, $apellidoM, $contrasenia);
-//        $profesorDAO = new ProfesorDAO();
-//        $profesorDAO->actualizarInformacionProfesor( $usuarioId);
+        return $servicioUsuario->actualizarPerfilUsuario($usuarioId, $nombre, $apellidoP, $apellidoM, $contrasenia);
     }
 
     public function eliminarProfesor($usuarioId) {
-        $profesorDAO=new ProfesorDAO();
+        $profesorDAO = new ProfesorDAO();
         if ($profesorDAO->borrarProfesor($usuarioId)) {
             return true;
         } else {
@@ -22,13 +22,12 @@ class ServicioProfesor {
     public function agregarProfesor($matricula, $nombre, $contrasenia, $apellidoP, $apellidoM) {
         $servicioUsuario = new ServicioUsuario();
         $agregado = $servicioUsuario->agregarUsuario($matricula, $nombre, $contrasenia, $apellidoP, $apellidoM, 2);
-        if($agregado){
+        if ($agregado) {
             $usuario = $servicioUsuario->buscarUsuarioPorMatricula($matricula);
             $profesorDAO = new ProfesorDAO();
             $profesorDAO->insertarDatosProfesor($usuario->getIdUsuario());
             return true;
-        }
-        else{
+        } else {
             return false;
         }
     }
@@ -38,8 +37,8 @@ class ServicioProfesor {
         return $profesorDAO->seleccionarProfesorPorMatricula($profesorMatricula);
     }
 
-    public function obtenerTodosProfesores(){
-        $profesorDAO= new ProfesorDAO();
+    public function obtenerTodosProfesores() {
+        $profesorDAO = new ProfesorDAO();
         return $profesorDAO->seleccionarTodosProfesores();
     }
 

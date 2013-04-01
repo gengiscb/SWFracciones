@@ -24,7 +24,7 @@ function validarCamposAcceso(){
 function esMatriculaValida(matricula){
     if (matricula != undefined && matricula.value != "" ){
        
-           return true;
+        return true;
         
     }
     else{

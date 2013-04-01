@@ -1,17 +1,24 @@
 @charset "utf-8";
 /* CSS Document */
 
-registro{
-    font:Arial, Helvetica, sans-serif;
+table.registro{
+    font-family:"Comic Sans MS", cursive;	
+    /*font:Arial, Helvetica, sans-serif;*/
     align: center;
+	width:100%;
     float:none;
-    width:auto;
     height: auto;
 }
+
+#form_reg_prof table.registro tr td{
+	font-family:"Comic Sans MS", cursive;	
+}
+
 div.form_registro{
     width:100%;
     height:auto;
 }
+
 div.marco_registro{
     width:50%;
     alignment-adjust:central;
