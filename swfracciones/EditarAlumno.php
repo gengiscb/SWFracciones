@@ -29,9 +29,7 @@ include_once 'ControladorAlumno.php';
                 
                     <?php
                     echo $gestorPlantilla->generarEncabezadoHTML();
-                    echo  $gestorPlantilla->generarMenu();
-
-                    $controladorServicioAlumno->actualizarAlumnoC();
+                    echo  $gestorPlantilla->generarMenu();                    
                     $alumno = $controladorServicioAlumno->obtenerAlumnoC();
                     echo $_SESSION['matricula'];
                     ?>
@@ -41,12 +39,12 @@ include_once 'ControladorAlumno.php';
         <div class="contenido">
             <div class="marco_registro">            
                 <div class="form_registro">
-                    <h1>Registro</h1>
+                    <h1>Edicion alumno</h1>
 
                     <!--                    include_php/_gestion_login.php-->
                     <form  method="post"  action="<?php echo $_SERVER['PHP_SELF'].'?ver_perfil_alumno=ver_perfil&matricula=' . $alumno->getMatricula() ?>">
+                        <?php echo $controladorServicioAlumno->actualizarAlumnoC(); ?>
                         <table id="registro" cellpadding="0" cellspacing="0">
-
                             <tr>
                                 <td> Nombre(s):</td>                          	    
                                 <td> <input type="text" name="nombre" id="nombre" value="<?php echo $alumno->getNombre() ?>"/></td>

@@ -122,18 +122,18 @@ class GestorActividad1_1 extends GestorActividad {
     }
 
     private function obtenerPosiblesRespuestas($posicionCorrecta) {
-        $randPosition = rand(0, 3);
+//        $randPosition = rand(0, 3);
         $posibles_res = array();
-        $posibles_res[$randPosition] = $this->respuestas[$posicionCorrecta];
-        for ($indiceRespuestas = 0; $indiceRespuestas < 4; $indiceRespuestas++) {
-            if ($indiceRespuestas != $randPosition) {
+        $posibles_res[3] = $this->respuestas[$posicionCorrecta];
+        for ($indiceRespuestas = 0; $indiceRespuestas < 3; $indiceRespuestas++) {
+            
                 if($posicionCorrecta>3){
                     $posibles_res[$indiceRespuestas] = $this->respuestas[$indiceRespuestas];
                 }
                 else{
                     $posibles_res[$indiceRespuestas] = $this->respuestas[6-$indiceRespuestas];
                 }
-            }
+            
         }
         return $posibles_res;
     }
@@ -167,8 +167,10 @@ class GestorActividad1_1 extends GestorActividad {
     }
     public function getLightBox(){
         return '<div id="fade" class="fadebox"> 
-                    <button id="iniciar" astyle="height:50px" onclick="javascript:actualizarIntentos('.GestorActividad1_1::$idActividad.','.$this->idAlumno.')" >Iniciar Actividad</button>
+                    <button id="iniciar" astyle="height:50px" >Iniciar Actividad</button>
                 </div>';
+        //<button id="iniciar" astyle="height:50px" onclick="javascript:actualizarIntentos('.GestorActividad1_1::$idActividad.','.$this->idAlumno.')" >Iniciar Actividad</button>
+
     }
 }
 

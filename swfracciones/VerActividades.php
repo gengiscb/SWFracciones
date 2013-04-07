@@ -68,7 +68,7 @@ $controladorActividades = new _ControladorActividad();
             echo $gestorArctividad->getActividadCSS();
         }
         else {
-            header('Location: principal_alumno.php');
+            header('Location: index.php');
         }	
         ?>
         

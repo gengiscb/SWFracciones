@@ -26,14 +26,15 @@ function hideLightbox() {
 
 function esCorrecta(valor,idAct,idAlum){
     if(valor){
-        alert("La respuesta es correcta... la actividad se cerrara");
+        alert("La respuesta es correcta... la actividad se cerrara");     
         actualizarAsciertos(idAct, idAlum);
         window.location='principal_alumno.php';
     }    
     else{
         alert("La respuesta es incorrecta... vuelva a intentarlo");
-        actualizarFallos(idAct, idAlum);
-        window.location.reload();        
+        actualizarFallos(idAct, idAlum);        
+        window.location = window.location.href+'&int=y'; 
+//        window.location.reload();        
     }
         
 }

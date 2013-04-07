@@ -5,7 +5,7 @@ include_once 'DB/ProfesorDAO.php';
 class ServicioProfesor {
     public function actualizarPerfilProfesor($usuarioId, $nombre, $apellidoP, $apellidoM, $contrasenia) {
         $servicioUsuario = new ServicioUsuario();
-        $servicioUsuario->actualizarPerfilUsuario($usuarioId, $nombre, $apellidoP, $apellidoM, $contrasenia);
+        return $servicioUsuario->actualizarPerfilUsuario($usuarioId, $nombre, $apellidoP, $apellidoM, $contrasenia);
 //        $profesorDAO = new ProfesorDAO();
 //        $profesorDAO->actualizarInformacionProfesor( $usuarioId);
     }

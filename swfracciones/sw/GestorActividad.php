@@ -12,10 +12,10 @@ class  GestorActividad{
                     showLightbox();
                 </script>';
     }
-
+    
     public function getIntrucciones() {
     }
-
+    
     public function getActividadHTML() {
     }
 

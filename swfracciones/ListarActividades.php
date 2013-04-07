@@ -46,7 +46,7 @@ $listarActividad = new _ControladorActividad();
             <div class="marco">
                 <div class="tabla">
                     <form  method="get" action="<?php echo $_SERVER["PHP_SELF"]; ?>" >
-                        <?php echo $listarActividad->listarActividades(); ?>
+                        <?php echo $listarActividad->listarActividades($_SESSION['grupo']); ?>
                     </form>   
                 </div>
                

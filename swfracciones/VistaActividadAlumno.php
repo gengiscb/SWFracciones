@@ -7,6 +7,11 @@ include_once '_ControladorActividades.php';
 filtro_login();
 $gestorPlantilla = new GestionPlantilla();
 $controladorActividades = new _ControladorActividad();
+        $idActividad = $_GET['idAct'];
+        $idAlumno = $_GET['usuarioId'];
+    if(!$controladorActividades->comprobarIntentos($idActividad, $idAlumno)){
+        header("Location:  principal_alumno.php");
+    }
 ?>      
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -22,9 +27,10 @@ $controladorActividades = new _ControladorActividad();
         <?php
 //        $controladorActividad = new _ControladorActividad();
         $gestorArctividad = $controladorActividades->obtenerActividad();
-        $idActividad = $_GET['idAct'];
-        $idAlumno = $_GET['usuarioId'];
-        $controladorActividades->incrementarIngresos($idActividad, $idAlumno);
+
+        if(!isset($_GET['int'])){
+            $controladorActividades->incrementarIngresos($idActividad, $idAlumno);
+        }
 //        echo $controladorActividades->comprobarIntentos($idActividad, $idAlumno);
 //        $controladorActividades->incrementarIntentos($idActividad, $idAlumno);
         if($gestorArctividad!=null){

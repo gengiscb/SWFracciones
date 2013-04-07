@@ -45,8 +45,8 @@ $controladorActividades  = new _ControladorActividad();
               <form  method="get" action="<?php echo $_SERVER["PHP_SELF"]; ?>" > 
                     
                   <?php 
-				  $controladorActividades->finalizadoFecha();
-				  echo $controladorActividades->listarActividadesAlumno();
+                  $controladorActividades->finalizadofecha();
+                  echo $controladorActividades->listarActividadesAlumno();
 //                             $finalizadoFecha = new ControladorActividad();
 //                             $finalizadoFecha -> finalizadoFecha();?>
                      </form>

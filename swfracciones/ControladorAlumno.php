@@ -6,22 +6,27 @@ include_once 'sw/ServicioAlumno.php';
  */
 
 class ControladorAlumno{
-
-
     function agregarAlumnoC() {
         if (isset($_GET["btn_registrar"]) && $_GET["btn_registrar"] == "Registrar") {
             $nombre = $_GET["nombre"];
             $apellidoP = $_GET["apellidoP"];
             $apellidoM = $_GET["apellidoM"];
             $matricula = $_GET["matricula"];
-            $grupo = $_SESSION["grupo"];
+            $grupo = $_GET["grupo"];
             $contrasena = $_GET["contrasena"];
 ///* */          $tipoUsuario = $_GET["tipo_usuario"];
             $servicioAlumno = new ServicioAlumno();            
-            return $servicioAlumno->agregarAlumno($matricula, $nombre, $contrasena, $apellidoP, $apellidoM, "3", $grupo);
+            if($servicioAlumno->agregarAlumno($matricula, $nombre, $contrasena, $apellidoP, $apellidoM, "3", $grupo))
+            {
+                $msj="TRUE";
+            }
+            else{
+                $msj="FALSE";
+            }
+            return $msj;
         }
     }
-
+    
     function obtenerAlumnoC() {
         if (isset($_GET["ver_perfil_alumno"]) && $_GET["ver_perfil_alumno"] == "ver_perfil") {
             $matricula = $_GET["matricula"];
@@ -56,9 +61,16 @@ class ControladorAlumno{
             $contrasena = $_POST["contrasena"];
             $usuarioId = $_POST["usuarioID"];
             $servicioAlumno = new ServicioAlumno();            
-            return $servicioAlumno->actualizarPerfilAlumno($usuarioId, $nombre, $apellidoP, $apellidoM, $contrasena, $grupo);
-                    
+            if($servicioAlumno->actualizarPerfilAlumno($usuarioId, $nombre, $apellidoP, $apellidoM, $contrasena, $grupo)){
+                return "<div class='exito'>Alumno actualizado con exito</div>";   
+            }
+            else {
+                return "<div class='error'>Error en la actualizacion</div>";
+            }
         }
     }
 }
+
+$agregarAlumno = new ControladorAlumno();
+echo $agregarAlumno->agregarAlumnoC();
 ?>

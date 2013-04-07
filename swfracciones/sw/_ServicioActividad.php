@@ -14,12 +14,11 @@ class _ServicioActividad {
         $resultado = $ActividadDAO->listarActividadesAlumnos($_SESSION['usuarioId']);
         $resultadoHTML = "";
         for ($i = 0; $i < count($resultado); $i++) {
-            if ($ActividadDAO->obtenerEstadoActividad($resultado[$i]['idActividad'], $_SESSION['usuarioId']) != "Finalizado" && $ActividadDAO->obtenerEstadoActividad($resultado[$i]['idActividad'], $_SESSION['usuarioId']) != "Deshabilitada") {
+            if ($ActividadDAO->obtenerEstadoActividad($resultado[$i]['idActividad'], $_SESSION['usuarioId']) != "Finalizada" && $ActividadDAO->obtenerEstadoActividad($resultado[$i]['idActividad'], $_SESSION['usuarioId']) != "Deshabilitada") {
                 $resultadoHTML.="<a href='VistaActividadAlumno.php?idAct=" . $resultado[$i]['idActividad'] . "&usuarioId= " . $_SESSION['usuarioId'] . "' ><div class='clean-gray'>";
                 $resultadoHTML.="<span class='text_act'>";
                 $resultadoHTML.=$resultado[$i]['nombre'];
                 $resultadoHTML.="</span>";
-
                 $resultadoHTML.="<span class='text_act'>";
                 $resultadoHTML.=$resultado[$i]['fechaInicio'];
                 $resultadoHTML.="</span>";
@@ -30,60 +29,62 @@ class _ServicioActividad {
 
                 $resultadoHTML.="</div></a>";
             }
-            if (count($resultado) == 0) {
-                $resultadoHTML.="<div class='clean-gray'>No hay resultados</div>";
-            }
-            return $resultadoHTML;
         }
+        if ($resultadoHTML == "") {
+                $resultadoHTML.="<div class='clean-gray'>No hay actividades disponibles</div>";
+        }
+        return $resultadoHTML;
     }
 
-    public function listarActividades() {
+    public function listarActividades($grupo) {
+
         $ActividadDAO = new ActividadDAO();
         $resultado = $ActividadDAO->listarActividadesProfesor();
         $resultadoHTML = "";
         for ($i = 0; $i < count($resultado); $i++) {
 
 
-            $resultadoHTML.="<table><tr><th>Id de Actividad</th><th><span class='text_act'>";
-            $resultadoHTML.=$resultado[$i]['idActividad'];
-            $resultadoHTML.="</span></th></tr>";
-
-            $resultadoHTML.="<tr><th>Numero de Actividad</th><th><span class='text_act'>";
-            $resultadoHTML.=$resultado[$i]['numeroActividad'];
-            $resultadoHTML.="</span></th></tr>";
-
-            $resultadoHTML.="<tr><th>Nombre:</th><th><span class='text_act'>";
+            $resultadoHTML.="<div class='clean-gray'>";
+            //"<a href='VistaActividadAlumno.php?idAct=" . $resultado[$i]['idActividad'] . "&usuarioId= " . $_SESSION['usuarioId'] . "' >";
+            $resultadoHTML.="<span class='text_act'>";
+            $resultadoHTML.=$resultado[$i]['numeroActividad']."--.";
+            $resultadoHTML.="</span>";
+            $resultadoHTML.="<span class='text_act'>";
             $resultadoHTML.=$resultado[$i]['nombre'];
-            $resultadoHTML.="</span></tr></th>";
+            $resultadoHTML.="</span><br>";
 
+            $resultadoHTML.="<span>";
+            if($this->actividadEstaHabilitada($resultado[$i]['idActividad'], $grupo)){
+                $resultadoHTML.="<a  href='Habilitar.php?cid=" . $resultado[$i]['idActividad'] . "'>                
+                <input class='boton' type ='button' value='Habilitar' /></a>";
+            }
+            else {
+                $resultadoHTML.="<input  class='boton' onclick=\"alert('Solo puede habilitar una vez la actividad')\" type ='button' value='Habilitar' />";
+            }
+            $resultadoHTML.="<a  href='Deshabilitar.php?cid=" . $resultado[$i]['idActividad'] . "&nombre=" . $resultado[$i]['nombre'] . "'>
+                <input class='boton' type ='button' value='Desabilitar' /></a>";
+            $resultadoHTML.="<a href='VerActividades.php?idAct=" . $resultado[$i]['idActividad'] . "&usuarioId= " . $_SESSION['usuarioId'] . "&nombre=" . $resultado[$i]['nombre'] . "'>
+                <input class='boton' type ='button' value='Visualizar' /></a>";
 
+            $resultadoHTML.="</span>";
+            $resultadoHTML.="</div>";
 
-            $resultadoHTML.="<th>Habilitar
-                                </th>
-                                <th><a disabled='disabled' href=\"Habilitar.php?cid=" . $resultado[$i]['idActividad'] . "\"><img alt=\"Editar\" src=\"img/utileria/habilitar.jpg\"></a>
-				</th>
-				</tr>";
-            $resultadoHTML.="<th>Deshabilitar
-                                </th>
-				<th><a href=\"Deshabilitar.php?cid=" . $resultado[$i]['idActividad'] . "&nombre=" . $resultado[$i]['nombre'] . "\"><img alt=\"Editar\" src=\"img/utileria/deshabilitar.gif\"></a>
-				</th>
-				</tr>";
-            $resultadoHTML.="<th>Visualizar
-							</th>
-							<th><a href=\"VerActividades.php?idAct=" . $resultado[$i]['idActividad'] . "&usuarioId= " . $_SESSION['usuarioId']."&nombre=" . $resultado[$i]['nombre'] . "\"><img alt=\"Editar\" src=\"img/utileria/eye.gif\"></a>
-							</th>
-						</tr></table>";
         }
+
         if (count($resultado) == 0) {
             $resultadoHTML.="<div class='clean-gray'>No hay resultados</div>";
         }
         return $resultadoHTML;
     }
 
+    public function actividadEstaHabilitada($idActividad, $grupo) {
+        $ActividadDAO = new ActividadDAO();
+        return $ActividadDAO->actividadHabilitable($idActividad, $grupo);
+    }    
     public function habilitarActividad($idActividad, $fechaInicio, $fechaFinalizacion, $grupo) {
         $ActividadDAO = new ActividadDAO();
-        if ($estado = $ActividadDAO->actualizarEstadoActividad($idActividad, $grupo, $fechaInicio, $fechaFinalizacion)) {
-            return  'Se ha habilitado la actividad con anterioridad';
+        if ($ActividadDAO->actualizarEstadoActividad($idActividad, $grupo, $fechaInicio, $fechaFinalizacion)) {
+            return 'Se ha habilitado la actividad con anterioridad';
 //            echo "<script>window.location = 'listarActividades.php';</script>";
         } else {
             return 'Actividad Habilitada';
@@ -99,6 +100,11 @@ class _ServicioActividad {
     }
 
     //ricardo 
+        public function reinicieIntentos($idActividad, $idAlumno) {
+        $ActividadDAO = new ActividadDAO();
+        $resultado = $ActividadDAO->reiniciarIntentos($idActividad, $idAlumno);
+        return $resultado;
+    }
     public function incrementeIntentos($idActividad, $idAlumno) {
         $ActividadDAO = new ActividadDAO();
         $resultado = $ActividadDAO->incrementarIntentos($idActividad, $idAlumno);
@@ -146,14 +152,14 @@ class _ServicioActividad {
         $ActividadDAO->finalizadofecha();
     }
 
-    public function deshabilitarActividad($grupo,$idAct) {
+    public function deshabilitarActividad($grupo, $idAct) {
         $ActividadDAO = new ActividadDAO();
-        
-        if ($ActividadDAO->deshabilitarActividad($grupo,$idAct)) {
-            return  'Se ha deshabilitado la actividad con anterioridad';
+
+        if ($ActividadDAO->deshabilitarActividad($grupo, $idAct)) {
+            return 'Actividad deshabilitada';
 //            echo "<script>window.location = 'listarActividades.php';</script>";
         } else {
-            return 'Actividad desHabilitada';
+            return 'La actividad no ha sido desHabilitada';
             //echo "<script>window.location = 'listarActividades.php';</script>";
         }
     }

@@ -1,4 +1,4 @@
-<?php
+<?php //
 include_once 'config.inc.php';
 include_once 'sw/GestionPlantilla.php';
 include_once 'sw/Sesion.php';

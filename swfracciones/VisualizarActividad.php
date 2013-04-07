@@ -22,6 +22,7 @@ $finalizarActividad->finalizarActividad();
                 $controladorActividad->incrementarIntentos($idActividad, $idAlumno);
                 $controladorActividad->iniciarActividad($idActividad, $idAlumno);
             }
+            
             $controladorActividad->incrementarIngresos($idActividad, $idAlumno);
         } else {
             header("Location: VisualizarActividadesAlumnos.php");

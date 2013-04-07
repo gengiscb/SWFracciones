@@ -8,7 +8,7 @@ filtro_login_Excepcion();
 
 //sesionActiva();
 $gestionPlantilla = new GestionPlantilla();
-$controladorServicioProfesor = new ControladorProfesor();
+//$controladorServicioProfesor = new ControladorProfesor();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -19,6 +19,8 @@ $controladorServicioProfesor = new ControladorProfesor();
         <link href="css/css_plantilla_v3.css" rel="stylesheet" type="text/css" />
         <link href="css/css_login.css" type="text/css" rel="stylesheet"  />
         <link href="css/css_registro.css" type="text/css" rel="stylesheet"  />
+        <script type="text/javascript" language="javascript" src="js/jquery-1.6.4.js" ></script>
+        <script type="text/javascript" language="javascript" src="js/jquery.form.js" ></script>
         <script type="text/javascript" language="javascript" src="js/js_validarRegistro.js" ></script>
     </head>
     <body>    
@@ -42,11 +44,11 @@ $controladorServicioProfesor = new ControladorProfesor();
         <div class="contenido">
             <div class="marco_registro">            
                 <div class="form_registro">
-                    <h1>Registro</h1>
+                    <h1>Registro profesor</h1>
                     <?php
-                    	$controladorServicioProfesor->agregaProfesorC();
+//                    	if($controladorServicioProfesor->agregaProfesorC());
                     ?>
-                    <form  method="get" action="<?php echo $_SERVER["PHP_SELF"]; ?>" >
+                    <form id="form_reg_prof"  method="get" action="ControladorProfesor.php" >
                         <table class="registro" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td> Nombre(s):</td>  
@@ -61,7 +63,7 @@ $controladorServicioProfesor = new ControladorProfesor();
                                 <td> <input type="text" name="apellidoM" id="apellidoM" size="20" maxlength="46"  value=""/></td>
                             </tr>
                             <tr>
-                                <td> Matr&iacute;cula:</td> 
+                                <td> Matr&iacute;cula:<span>(Usuario 6 caracteres)</span></td> 
                                 <td> <input type="text" name="matricula" id="matricula" size="20" maxlength="46"  value=""/></td>
                             </tr>
                             <tr>
@@ -76,6 +78,7 @@ $controladorServicioProfesor = new ControladorProfesor();
                                 <td colspan="2">
                                     <input type="hidden" name="registrar_profesor" value="registrar"/>
                                     <input type="submit"  name="btn_registrar" class="boton"  id="registrar" value="Registrar"/>
+                                    <input type="button" onclick="document.location='index.php'"  name="btn_regresar" class="boton"  id="regresar" value="Regresar"/>
                                 </td>
                             </tr>
                         </table>

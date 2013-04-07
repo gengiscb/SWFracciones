@@ -6,8 +6,6 @@ include_once 'ControladorAlumno.php';
 include_once 'sw/Sesion.php';
 filtro_login();
 $gestionPlantilla = new GestionPlantilla();
-$agregarAlumno = new ControladorAlumno();
-$agregarAlumno->agregarAlumnoC();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -18,6 +16,8 @@ $agregarAlumno->agregarAlumnoC();
         <link href="css/css_plantilla_v3.css" rel="stylesheet" type="text/css" />
         <link href="css/css_login.css" type="text/css" rel="stylesheet"  />
         <link href="css/css_registro.css" type="text/css" rel="stylesheet"  />
+        <script type="text/javascript" language="javascript" src="js/jquery-1.6.4.js" ></script>
+        <script type="text/javascript" language="javascript" src="js/jquery.form.js" ></script>
         <script type="text/javascript" language="javascript" src="js/js_validarRegistro.js" ></script>
     </head>
     <body>    
@@ -34,7 +34,8 @@ $agregarAlumno->agregarAlumnoC();
                 <div class="form_registro">
                     <h1>Registro</h1>
                     <!--                    include_php/_gestion_login.php-->
-                    <form  method="get" action="<?php echo $_SERVER["PHP_SELF"]; ?>" >
+                    <form  method="get" id="form_reg_alum" action="ControladorAlumno.php" >
+                        <input type="hidden" name="grupo" value="<?php echo $_SESSION['grupo']?>"></input>
                         <table class="registro" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td> Nombre(s):</td>                          	  
@@ -63,7 +64,7 @@ $agregarAlumno->agregarAlumnoC();
                             </tr>
                             <tr>
                                 <td>Confirma tu contrase&ntilde;a:</td>
-                                <td><input type="password"  name="cpassword" value="" /></td>
+                                <td><input type="password"  name="cpassword" id="cpassword" value="" /></td>
                             </tr>
                             <tr>
                                 <td></td>                            

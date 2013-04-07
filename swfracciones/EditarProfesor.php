@@ -18,8 +18,9 @@ include_once 'ControladorProfesor.php';
         <link href="css/css_plantilla_v3.css" rel="stylesheet" type="text/css" />
         <link href="css/css_login.css" type="text/css" rel="stylesheet"  />
         <link href="css/css_registro.css" type="text/css" rel="stylesheet"  />
-        <script type="text/javascript" language="javascript" src="js/js_index.js" ></script>
-        <script type="text/javascript" language="javascript" src="js/js_validarRegistro.js" ></script>
+        <!--<script type="text/javascript" language="javascript" src="js/js_index.js" ></script>-->
+        <!--<script type="text/javascript" language="javascript" src="js/js_validarRegistro.js" ></script>-->
+        <script type="text/javascript" language="javascript" src="js/js_validaciones_eliminar.js" ></script>
     </head>
     <body>    
         <div class="banner">
@@ -28,8 +29,8 @@ include_once 'ControladorProfesor.php';
                     <?php
                     $gestorPlantilla->generarEncabezadoHTML();
                     $gestorPlantilla->generarMenu();
-                    $controladorServicioProfesor->actualizarProfesorC();
-                    $profesor = $controladorServicioProfesor->obtenerProfesorC();
+                    
+                    
                     //echo $_SESSION['matricula'];
                     ?>
                     <div class="slogan"><a href="index.php">SWFRACCIONES</a></div>
@@ -44,6 +45,10 @@ include_once 'ControladorProfesor.php';
 
                     <!--                    include_php/_gestion_login.php-->
                     <form  method="get"  action="<?php echo $_SERVER['PHP_SELF'] ?>">
+                        <?php echo trim($controladorServicioProfesor->actualizarProfesorC());
+                        $profesor = $controladorServicioProfesor->obtenerProfesorC();
+                        ?>
+                        <input type="hidden" name="usuarioId" value="<?php echo $_SESSION['usuarioId']?>"/>
                         <table id="registro" cellpadding="0" cellspacing="0">
 
                             <tr>
@@ -82,12 +87,14 @@ include_once 'ControladorProfesor.php';
                                 <input type="hidden" name="grupo" value="<?php echo $profesor->getIdProfesor() ?>"/>
                                 <input type="hidden" name="actualizar_profesor" value="registrar"/>                                
                                 <td ><input type="submit" class="boton" id="registrar" value="Guardar"/></td>
+                                <td><a onclick = "confirmarEliminacionProfesorProf(<?php echo $profesor->getIdUsuario() ?>)" href="#"><input class="boton" type="button" value="Eliminar Cuenta" ></input></a></td>
+                                
                             </tr>                    
                         </table>
                     </form>
                 </div>
             </div>
-            <a onclick = "confirmarEliminacionProfesorProf(<?php echo $profesor->getIdUsuario() ?>)" href="#"><input type="button" value="Eliminar Cuenta" ></input></a>
+            
         </div>
     </body>
 </html>

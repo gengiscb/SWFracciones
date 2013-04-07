@@ -47,9 +47,8 @@ function esCorrecta(valor,idAct,idAlum){
         window.location='principal_alumno.php';
     }    
     else{
-        alert("La respuesta es incorrecta... vuelva a intentarlo");
-        actualizarFallos(idAct, idAlum);
-        window.location.reload();
-//        actualizarIntentos(idAct, idAlum);
+        alert("La respuesta es incorrecta... vuelva a intentarlo, (reiniciando actividad)");
+        actualizarFallos(idAct, idAlum);        
+        window.location = window.location.href+'&int=y'; 
     }       
 }

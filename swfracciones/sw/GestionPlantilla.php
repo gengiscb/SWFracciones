@@ -33,9 +33,7 @@ class GestionPlantilla {
         return '<div class="menu">
                 <ul>
                     <li><a  href="principal_profesor.php">Principal</a></li>
-                    <li class="categoria"><a href="">Actividades</a> <ul>
-                            <li><a href="ListarActividades.php">Habilitar</a></li>
-                            </ul></li>                   
+                    <li class="categoria"><a href="ListarActividades.php">Actividades</a></li>                   
                     <li><a href="">Reportes</a></li>
                     <li><a href="vistaAlumnos.php?obtener_Alumnos=obtener">Alumnos</a></li>
                     <li class="categoria"><a href="">Mi cuenta</a>
@@ -71,10 +69,9 @@ class GestionPlantilla {
 
     function generarMenuAdmin() {
   
-        return '<div class="menu">
+        return '<div class="menu" style="width:480px;">
                 <ul>
                     <li><a  href="principal.php">Principal</a></li>
-                    <li class="categoria"><a href="">N/A</a></li>                   
                     <li><a href="RegistroProfesor.php">Registrar</a></li>
                     <li><a href="vistaProfesores.php?obtener_profesores=obtener">Profesores</a></li>
                     <li class="categoria"><a href="">Mi cuenta</a>

@@ -26,7 +26,7 @@ class _ControladorActividad {
     }
 
     function habilitarActividad() {
-        echo "x";
+//        echo "x";
         if (isset($_POST["btn_habilitar"]) && $_POST["btn_habilitar"] == "Habilitar") {            
             $select_dia = $_POST["select_dia"];
             $select_mes = $_POST["select_mes"];
@@ -45,13 +45,19 @@ class _ControladorActividad {
             $servicioActividad = new _ServicioActividad();
             return $servicioActividad->habilitarActividad($idActividad, $fechaInicio, $fechaFin, $grupo);
         }
-        echo "x";
+    }
+    
+    function esHabilitableLaActividad() {
+            $idActividad = $_POST["actividad"];
+            $grupo = $_POST["grupo"];
+            $servicioActividad = new _ServicioActividad();
+            return $servicioActividad->actividadEstaHabilitada($idActividad,$grupo);        
     }
 
-    public function listarActividades() {
-
+    public function listarActividades($grupo) {        
+        
         $ServicioActividad = new _ServicioActividad();
-        $resultado = $ServicioActividad->listarActividades();
+        $resultado = $ServicioActividad->listarActividades($grupo);
         return $resultado;
     }
 
@@ -65,13 +71,11 @@ class _ControladorActividad {
     }
 
     public function finalizarActividad($idActividad, $idAlumno) {
-
         $ServicioActividad = new _ServicioActividad();
         $ServicioActividad->finalizarActividad($idActividad, $idAlumno);
     }
 
     public function finalizadofecha() {
-
         $ServicioActividad = new _ServicioActividad();
         $ServicioActividad->finalizadofecha();
     }
@@ -91,11 +95,11 @@ class _ControladorActividad {
     //ricardo
     public function comprobarIntentos($idActividad, $idAlumno) {
         $ServicioActividad = new _ServicioActividad();
-        $intentos = $ServicioActividad->obtenerIntentos($idActividad, $idAlumno);
+        $intentos = $ServicioActividad->obtenerIntentos($idActividad, $idAlumno);        
         if ($intentos < 3) {
             return true;
         } else {
-
+            $ServicioActividad->reinicieIntentos($idActividad, $idAlumno);
             return false;
         }
     }
@@ -127,11 +131,11 @@ class _ControladorActividad {
 }
 if (isset($_POST['ajax'])) {
         $intanciaControlador = new _ControladorActividad();
-    if (strcmp($_POST['ajax'], "int") == 0) {        
+    if (strcmp($_POST['ajax'], "int") == 0) {
             $idActividad = $_POST['idAct'];
             $idAlumno = $_POST['idAlum'];
         if ($intanciaControlador->comprobarIntentos($idActividad, $idAlumno)) {
-            $intanciaControlador->incrementarIntentos($idActividad, $idAlumno);
+//            $intanciaControlador->incrementarIntentos($idActividad, $idAlumno);
             echo "true";
         } else {
             echo "false";
@@ -145,7 +149,7 @@ if (isset($_POST['ajax'])) {
         $idActividad = $_POST['idAct'];
         $idAlumno = $_POST['idAlum'];
         $intanciaControlador->incrementarFallos($idActividad, $idAlumno);
-        echo '-';
+        $intanciaControlador->incrementarIntentos($idActividad, $idAlumno);
     }
     elseif (strcmp($_POST['ajax'], "hab") == 0) {
         echo $intanciaControlador->habilitarActividad();

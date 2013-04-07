@@ -1,6 +1,36 @@
 // JavaScript Document
+var VERDAD = "TRUE";
 window.onload = function(){   
     document.getElementById("registrar").onclick=validarCamposRegistro;
+    var opciones= {
+        success: mostrarRespuesta
+    };
+    var opciones2= {
+        success: mostrarRespuestaAlumno
+    };
+    $('#form_reg_prof').ajaxForm(opciones) ; 
+    function mostrarRespuesta (responseText){        
+        if(responseText.trim()=="TRUE"){
+            alert("Registro exitoso");    
+            window.location="index.php";
+        }
+        else{
+            alert("Error al intentar registrar\n verifique sus datos");    
+        }
+//        alert(responseText);
+    };
+    $('#form_reg_alum').ajaxForm(opciones2) ; 
+    function mostrarRespuestaAlumno (responseText){
+        if(responseText.trim()=="TRUE"){
+            alert("Exito al registrar al alumno");    
+            window.location="vistaAlumnos.php?obtener_Alumnos=obtener";
+        }
+        else{
+            alert("Error al registrar al alumno \n verifique los datos ");    
+        }
+        
+        
+    };
 }
 function validarCamposRegistro(){
     if(!validarNombre()){
@@ -10,25 +40,26 @@ function validarCamposRegistro(){
     }else{
         if(!validarApellido(document.getElementById("apellidoP"))){
             alert("Apellido inválido.");
-          	document.getElementById("apellidoP").focus();
+            document.getElementById("apellidoP").focus();
             return false;			
         }else{
-			if(!validarApellido(document.getElementById("apellidoM"))){
-            	alert("Apellido inválido.");
-            	document.getElementById("apellidoM").focus();
-            	return false;			
-        	}else{
-            	if(!esMatriculaValida(document.getElementById("matricula"))){
-              		document.getElementById("matricula").focus();
-                	return false;
-            	}else{
-                	if(!validarContrasena()){
-  	           			document.getElementById("password").focus();
-                    	return false;
-                	}else{ 
-                    	return true;
-                	}
-				}
+            if(!validarApellido(document.getElementById("apellidoM"))){
+                alert("Apellido inválido.");
+                document.getElementById("apellidoM").focus();
+                return false;			
+            }else{
+                if(!esMatriculaValida(document.getElementById("matricula"))){
+                    alert("Matricula invalida");
+                    document.getElementById("matricula").focus();
+                    return false;
+                }else{
+                    if(!validarContrasena()){
+                        document.getElementById("password").focus();
+                        return false;
+                    }else{ 
+                        return true;
+                    }
+                }
             }
         }
     }		
@@ -36,7 +67,7 @@ function validarCamposRegistro(){
 
 function esMatriculaValida(matricula){
     if (matricula != undefined && matricula.value != "" && esTamanoAceptable(matricula.value) ){
-           return true;
+        return true;
         
     }
     else{
@@ -74,62 +105,62 @@ function validarNombre(){
 }
 
 function validarContrasena(){
-	var passwordN=document.getElementById("password").value;
-	var passwordC=document.getElementById("cpassword").value;
+    var passwordN=document.getElementById("password").value;
+    var passwordC=document.getElementById("cpassword").value;
 	
-	if(!esContrasenaCorrecta(passwordN)){
-		alert("Contraseña inválida");
-		document.getElementById("password").focus();
-		return false;
-	}
-	if(!esContrasenaCorrecta(passwordC)){
-		alert("Confirma tu contraseña");
-		document.getElementById("cpassword").focus();
-		return false;
-	}
-	//if(!esTamanoAceptable(passwordN)){				
-//		document.getElementById("password").focus();
-//		return false;
-//	}
-//	if(!esTamanoAceptable(passwordC)){				
-//		document.getElementById("cpassword").focus();
-//		return false;
-//	}
-	if(!sonContrasenasIguales()){			
-		document.getElementById("cpassword").focus();
-		return false;
-	}
-	return true;
+    if(!esContrasenaCorrecta(passwordN)){
+        alert("Contraseña inválida");
+        document.getElementById("password").focus();
+        return false;
+    }
+    if(!esContrasenaCorrecta(passwordC)){
+        alert("Confirma tu contraseña");
+        document.getElementById("cpassword").focus();
+        return false;
+    }
+    //if(!esTamanoAceptable(passwordN)){				
+    //		document.getElementById("password").focus();
+    //		return false;
+    //	}
+    //	if(!esTamanoAceptable(passwordC)){				
+    //		document.getElementById("cpassword").focus();
+    //		return false;
+    //	}
+    if(!sonContrasenasIguales()){			
+        document.getElementById("cpassword").focus();
+        return false;
+    }
+    return true;
 }
 
 
 function esContrasenaCorrecta(password){
-	if(password==""){
+    if(password==""){
 		
-		return false;
-	}
-	else{
-		return true;
-	}
+        return false;
+    }
+    else{
+        return true;
+    }
 }
 
 function esTamanoAceptable(matricula){
-	var tamano=matricula.length;
-	if(tamano>6){
-		alert("La matricula debe tener menos de 6 caracteres.");
-		return false;
-	}else{
-		return true;
-	}
+    var tamano=matricula.length;
+    if(tamano!=6){
+        alert("La matricula debe tener 6 caracteres.");
+        return false;
+    }else{
+        return true;
+    }
 }
 
 function sonContrasenasIguales(){
-	var password=document.getElementById("password").value;
-	var confirmarPassword=document.getElementById("cpassword").value;
-	if(password==confirmarPassword){
-		return true;
-	}else{
-		alert("No coinciden las contraseñas");
-		return false;
-	}
+    var password=document.getElementById("password").value;
+    var confirmarPassword=document.getElementById("cpassword").value;
+    if(password==confirmarPassword){
+        return true;
+    }else{
+        alert("No coinciden las contraseñas");
+        return false;
+    }
 }

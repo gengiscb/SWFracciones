@@ -8,10 +8,7 @@ class AlumnoDAO extends ConexionGeneral {
     public function seleccionarAlumnoPorMatricula($alumnoMatricula) {
         $usuarioDAO = new UsuarioDAO();
         $conexion = $this->abrirConexion();
-		
-    
         $usuario = $usuarioDAO->seleccionarUsuarioPorMatricula($alumnoMatricula);
-		
         $sql = "SELECT * FROM alumno WHERE usuarioId =".$usuario->getIdUsuario();
         $resultado = $this->ejecutarConsulta($sql, $conexion);
         $alumno=null;

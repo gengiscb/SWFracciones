@@ -9,7 +9,8 @@ class ServicioAlumno {
         $servicioUsuario = new ServicioUsuario();
         $servicioUsuario->actualizarPerfilUsuario($usuarioId, $nombre, $apellidoP, $apellidoM, $contrasenia);
         $alumnoDAO = new AlumnoDAO();
-        $alumnoDAO->actualizarInformacionAlumno($grupo, $usuarioId);
+        return $alumnoDAO->actualizarInformacionAlumno($grupo, $usuarioId);
+        
     }
 
     public function eliminarAlumno($usuarioId) {
