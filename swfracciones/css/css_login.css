@@ -8,11 +8,11 @@
 	h2{
 		text-align:center;
 	}
-	a{
+	div.marco a{
 		color:#119E00;/*#418eb6;*/
 		text-decoration:none;
 	}
-	label{
+	div.marco label{
             color: #119E00;
             width:150px;
             font-size:15px;
@@ -65,17 +65,18 @@
 		display:block; 
 	}
 
-	.boton{
+	/*.boton{
 		margin:10px 0 0 30px;
 		width:100px;
 		font-size:14px;
-	}
+	}*/
 	#highlight {
 		float:left;
 	}
-        div .slogan a{
+        div .slogan a, div .slogan a:hover{
+			color:#F90;
             margin: auto;
             margin-left: 170px;
             font-size: 80px;
-            color: #119E00;
+			text-shadow:0.1em 0.1em 0.1em #000;
         }        
