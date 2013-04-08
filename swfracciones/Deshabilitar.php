@@ -24,7 +24,8 @@ $controladorServicioActividades -> deshabilitarActividad();
         <!--<script type="text/javascript" language="javascript" src="js/js_principal.js"></script>-->
         <script type="text/javascript" language="javascript" src="js/js_validaciones_eliminar.js"></script>
         <script type="text/javascript" src="js/jquery-1.6.4.js"></script>
-        <script type="text/javascript" src="js/jquery.form.js"></script>        
+        <script type="text/javascript" src="js/jquery.form.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>     
         
         <script type="text/javascript" src="js/js_dehabilitar.js"></script>  
 

@@ -19,7 +19,7 @@ $gestorPlantilla = new GestionPlantilla();
         ?>
         <link href="css/css_principal.css" rel="stylesheet" type="text/css" />            
         <script type="text/javascript" language="javascript" src="js/js_principal.js"></script>
-        
+        <script type="text/javascript" src="js/jquery.min.js"></script>  
     </head>
     <body>
         <div class="banner">

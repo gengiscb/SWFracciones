@@ -19,6 +19,7 @@ $gestionPlantilla = new GestionPlantilla();
         <script type="text/javascript" language="javascript" src="js/jquery-1.6.4.js" ></script>
         <script type="text/javascript" language="javascript" src="js/jquery.form.js" ></script>
         <script type="text/javascript" language="javascript" src="js/js_validarRegistro.js" ></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>  
     </head>
     <body>    
         <div class="banner">
@@ -71,7 +72,7 @@ $gestionPlantilla = new GestionPlantilla();
                             </tr>
                             <tr>
                                 <input type="hidden" name="login" value="login"/>
-                                <td ><input type="submit"  name="btn_registrar" class="boton"  id="registrar" value="Registrar"/></td>
+                                <td  colspan="2"><input type="submit"  name="btn_registrar" class="boton"  id="registrar" value="Registrar"/></td>
                             </tr>                    
                         </table>
                     </form>

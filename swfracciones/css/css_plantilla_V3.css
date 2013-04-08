@@ -1,8 +1,23 @@
 @charset "utf-8";
 /* CSS Document */
 /*Etiquetas generales*/
-body{
-    background:#4D9221;    
+body{  
+background-image:url(../img/utileria/fondo.png), linear-gradient(right , #30FFFF 4%, #FFFFFF 52%, #30FFFF 76%);
+background-image:url(../img/utileria/fondo.png), -o-linear-gradient(right , #30FFFF 4%, #FFFFFF 52%, #30FFFF 76%);
+background-image:url(../img/utileria/fondo.png), -moz-linear-gradient(right , #30FFFF 4%, #FFFFFF 52%, #30FFFF 76%);
+background-image:url(../img/utileria/fondo.png), -webkit-linear-gradient(right , #30FFFF 4%, #FFFFFF 52%, #30FFFF 76%);
+background-image:url(../img/utileria/fondo.png), -ms-linear-gradient(right , #30FFFF 4%, #FFFFFF 52%, #30FFFF 76%);
+
+background-image:url(../img/utileria/fondo.png), -webkit-gradient(
+	linear,
+	right top,
+	left top,
+	color-stop(0.04, #30FFFF),
+	color-stop(0.52, #FFFFFF),
+	color-stop(0.76, #30FFFF)
+);
+	
+/*background-image:url(../img/utileria/fondo1.png);*/
 }
 
 label{
@@ -21,9 +36,10 @@ div.banner{
     margin: auto;
 }
 div.encabezado{
-    background: url(../img/banner/banner.png);
+	background:#003300;  
+    background: url(../img/banner/banner2.png);
     background-repeat: no-repeat;
-    /*background:#003300;*/                
+                 
     height:180px;
     margin-bottom: 10px;
     color:#FFF;
@@ -45,36 +61,194 @@ div.mini_perfil ul li:hover ul{
     background:#030;
 }
 /*Eslogan de la pagina*/
-div.slogan a{
-    color:#FFF;		
+div.slogan{
+				
+				height:60px;
+				font-size:46px;
+				float:left;	
+			}
+div.slogan a, div.slogan a:hover {
+	color:#F00;
+	text-decoration: none;
+	width:190px;		
+	height:58px;
+	padding:10px 0px 0px 15px;
+	display:block;
 }
 /*Menu del sitio web*/
 div.menu{
+	 z-index:10;
+	/*font-family:Arial, Helvetica, sans-serif;*/
+	font-size:18px;
+	margin:auto;
+	width:600px;
+	/*-webkit-box-shadow:0px 0 30px #013D7B;
+	-moz-box-shadow:0px 0 30px #013D7B; 
+	box-shadow:0px 0 30px #013D7B;*/
     -webkit-box-shadow:0px 0 30px #235A16;
     -moz-box-shadow:0px 0 30px #235A16; 
-    box-shadow:0px 0 30px #235A16;	
+    box-shadow:0px 0 30px #235A16;
+	
 }
+div.menu ul{
+	width: 100%;
+	text-align:center;
+	/*background:none;	*/                        
+	font-weight:bold;
+	float:left;
+    /*width: 120px;*/
+	margin: 0; 
+	padding: 7px 6px 0; 
+	background:#3AAA02 url(../img/utileria/overlay.png) repeat-x 0 -110px; 
+	line-height: 100%; 
+	border-radius: 1em; 
+	-webkit-border-radius: 5px;
+	 -moz-border-radius: 5px; 
+	border-radius: 5px; 
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0, .4); -moz-box-shadow: 0 1px 3px rgba(0,0,0, .4);
+}
+
 div.menu ul li{
-    background:#3AAA02;		
+	font-weight:bold;
+	float:left;
+	width: 120px;
+    
+    /*padding: 0;*/
+	margin: 0;
+	padding: 0 0 8px;
+	position: relative; 
+	list-style: none; 
+/*	display: table-cell;
+    background-color: #322f32;
+    margin: 0;	*/
 }
 div.menu ul li:hover{
-    background:#276419;
+    /*background:#276419;*/
+/*	height:28px;*/
+	/*background:#1A73B0;*/
+	/*background-color: #514c52;*/
+   /* border-top: 1px solid #322f32;
+    border-bottom: 1px solid #322f32;*/
 }
 
-div.mini_perfil ul li ul li a:hover{
-    background:#276419;
-}                
-div.menu ul li a{
-    color:#FFF;
-    background:#3AAA02; 
-    border:1px #119E00 solid;
+/*div.menu ul li.categoria{
+    border-collapse: collapse;
+	position:relative;
+    background-position: center center;
+    height: 6px;
+    padding: 0;
+    border-bottom: none;
+    padding-bottom: 10px
+}*/
+
+div.menu a, div.menu a:link{
+    /*background:#3AAA02; */
+    border-collapse: collapse;
+  	/*border:1px #4285B5 solid;*/
+	color:#FFF;
+	font-weight:100;
+	padding:10px 0px 2px 0px;
+    width: 100%;
+	height:28px;
+	display:block;
+	overflow:hidden;
+	
+    background-color: transparent;
+   /* text-transform: uppercase;*/
+    cursor: pointer;
+	
+	/*font-weight: bold; */
+	text-decoration: none; 
+	/*padding:  8px 20px;*/ 
+	margin: 0; 
+	border-radius: 5px; 
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px;	 
+	text-shadow: 0 1px 1px rgba(0,0,0, .3); 
+}
+
+div.menu ul li ul{
+	position:absolute;
+	left:0;
+    width: 100%;
+	display:none;
+	z-index:9999;
+    padding: 0;
+    margin: 0;
+}
+div.menu ul li ul li{
+	width: 100%;
+}
+
+div.menu ul li ul li a{
+	background:#3AAA02;
+}
+
+div.menu ul li:hover ul{
+    display:block;
+    width: 100%;
+	
+}
+
+div.menu .categoria a, div.menu li:hover > a {
+	
+}
+
+div.menu a:hover{ 
+background: #3AAA02 url(../img/utileria/overlay.png) repeat-x 0 -40px;
+	color: #444; 
+	-webkit-box-shadow: 0 1px 1px rgba(0,0,0, .2); 
+	-moz-box-shadow: 0 1px 1px rgba(0,0,0, .2); 
+	box-shadow: 0 1px 1px rgba(0,0,0, .2); 
+	text-shadow: 0 1px 0 rgba(255,255,255, 1);
+	 
+}
+
+div.menu ul ul li:hover a,
+div.menu li:hover li a {
+	background: none; 
+	border: none;
+	color: #333; 
+	-webkit-box-shadow: 
+	none; -moz-box-shadow: none;
+	width:100%;
 }
 
 
-div.menu ul li a:hover{                    
-    height:28px;
-    background:#276419;
+div.menu ul ul a:hover {
+	background: #3AAA02 url(../img/utileria/overlay.png) repeat-x 0 -100px !important; 
+	color: #fff !important; 
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	border-radius: 5px; 
+	text-shadow: 0 1px 1px rgba(0,0,0, .1);
 }
+
+div.menu ul ul {
+	display: none; 
+	margin: 0; 
+	padding: 0; 
+	position: absolute; 
+	top: 40px; left: 0; 
+	background: #ddd url(../img/utileria/overlay.png) repeat-x 0 0; 
+	border: solid 1px #b4b4b4; 
+	-webkit-border-radius: 5px; 
+	-moz-border-radius: 5px; 
+	border-radius: 5px; 
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0, .3); 
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0, .3); 
+	box-shadow: 0 1px 3px rgba(0,0,0, .3);}
+
+div.menu ul ul li {float: none; margin: 0; padding: 3px; }
+
+div.menu ul ul a {font-weight: normal; text-shadow: 0 1px 0 #fff; }
+
+div.menu li:hover > ul {
+	display: block;
+}
+
+div.menu ul:after {content: '.'; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
+* html #cssmenu  ul {height: 1%;}
 /*Marco*/
 
 div.marco{
@@ -84,7 +258,7 @@ div.marco{
 div.marco_interno{
     background:#B8E186;
 }
-.boton{
+/*.boton{
     background: #228900;
 }
 .boton:hover {
@@ -92,7 +266,7 @@ div.marco_interno{
     background: #005500;
     color:#d0e8f7
 }
-
+*/
 /*Pie de pagina*/
 div.pie{
     background:#013D7B;
@@ -103,4 +277,13 @@ div.pie{
     -moz-box-shadow:0px 0 50px #F768A1; 
     box-shadow:0px 0 50px #F768A1;
     box-shadow: 0px 0px 33px 32px #005500;
+}
+
+.texto_act{
+	
+	text-align:center;
+	font-family:"Comic Sans MS", cursive;
+	font-weight:bold;
+	color:#552B00;
+	font-size:100%;
 }

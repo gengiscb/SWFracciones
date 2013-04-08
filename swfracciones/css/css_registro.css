@@ -1,17 +1,18 @@
 @charset "utf-8";
 /* CSS Document */
 
-registro{
+table.registro{
     font:Arial, Helvetica, sans-serif;
     align: center;
+	width:200px;
     float:none;
-    width:auto;
     height: auto;
 }
 div.form_registro{
     width:100%;
     height:auto;
 }
+
 div.marco_registro{
     width:50%;
     alignment-adjust:central;

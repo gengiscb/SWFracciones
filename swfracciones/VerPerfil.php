@@ -18,9 +18,9 @@ $gestionPlantilla = new GestionPlantilla();
         <link href="css/css_plantilla.css" rel="stylesheet" type="text/css" />
         <link href="css/css_plantilla_v3.css" rel="stylesheet" type="text/css" />
         <link href="css/css_login.css" type="text/css" rel="stylesheet"  />
-
+		
         <link href="css/css_registro.css" type="text/css" rel="stylesheet"  />
-
+		<script type="text/javascript" src="js/jquery.min.js"></script>  
         <script type="text/javascript" language="javascript" src="js/js_index.js" ></script>
     </head>
     <body>

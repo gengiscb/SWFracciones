@@ -55,6 +55,7 @@ $controladorActividades = new _ControladorActividad();
         <link href="css/css_vista_actividad_alumno.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="js/jquery-1.6.4.js"></script>
         <script language="javascript" src="js/js_vista_actividad_alumno.js"></script>
+        <script type="text/javascript" src="js/jquery.min.js"></script>  
         <!--<script type="text/javascript" src="js/ajaxActividad1.js"></script>-->
         <?php
 //        $controladorActividad = new _ControladorActividad();

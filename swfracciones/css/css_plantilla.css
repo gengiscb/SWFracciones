@@ -1,23 +1,23 @@
 @charset "utf-8";
-/* CSS Document */
+/*CSS Document */
 /*Etiquetas generales*/
-body{
-    overflow-y:scroll;
-    background:#29B5E9;
-    font-family:Arial, Helvetica, sans-serif;
-    height: 3000px;
-}
+
 	p,h1,form,table,label,input,div,textarea,select,li,ul{
 		border:0;margin:0;padding:0;
 	}
 	ul{
 		list-style:none;
 	}
-	h1{
+	h1{	
+		color:#006;
+		font-family:Tahoma, Geneva, sans-serif;
 		text-align:center;
 		margin:10px 0px 0px 0px;
 		font-size:32px;		
 		padding-bottom:5px;
+		font-weight:bold;
+		text-decoration:!important;
+		/*text-shadow:0.1em 0.1em 0.1em #000;*/
 	}
 	a{
 		text-decoration:none;
@@ -66,7 +66,7 @@ body{
 		color:#FFF;
 		font-family:"Bauhaus 93", "Comic Sans MS";
 		font-size:30px;
-		position:fixed !important;
+		/*position:fixed !important;*/
 		-webkit-box-shadow:0px 0 50px #013D7B;
 		-moz-box-shadow:0px 0 50px #013D7B; 
 		box-shadow:0px 0 50px #013D7B;
@@ -144,89 +144,12 @@ body{
                     display:block;
                         height: 30px;
 		}
-			/*Eslogan de la pagina*/
-			div.slogan{
-				height:60px;
-				font-size:46px;
-				float:left;	
-			}
-			div.slogan a{
-				text-decoration: none;
-				color:#FFF;		
-				width:190px;
-				height:58px;
-				padding:10px 0px 0px 15px;
-				display:block;
-			}
-		/*Menu del sitio web*/
-		div.menu{                        
-                    z-index:10;
-/*			font-family:Arial, Helvetica, sans-serif;*/
-			font-size:18px;
-			margin:auto;
-			width:600px;
-			-webkit-box-shadow:0px 0 30px #013D7B;
-			-moz-box-shadow:0px 0 30px #013D7B; 
-			box-shadow:0px 0 30px #013D7B;	
-		
-		}
-		div.menu ul{                    
-                        width: 100%;
-			text-align:center;
-		}
-		div.menu ul li{
-			background:#499CC7;	                        
-			font-weight:bold;
-			float:left;
-                        width: 120px;
-		}
-		div.menu ul li.categoria{
-                    border-collapse: collapse;
-			position:relative;
-		}
-		div.menu ul li a:hover{                    
-			height:28px;
-			background:#1A73B0;
-		}
-		div.menu ul li a{
-                    border-collapse: collapse;
-                        border:1px #4285B5 solid;
-			color:#FFF;
-                        background:#499CC7;
-			font-weight:100;
-			padding:10px 0px 2px 0px;
-                        width: 100%;
-			/*width:148px;*/
-			height:28px;
-			/*border:1px #4285B5 solid;*/
-			display:block;
-			overflow:hidden;
-		}
-		/********************************************/
-				/********************************************/
-						/********************************************/
-		div.menu ul li ul{
-			position:absolute;
-			left:0;
-                        width: 100%;
-			display:none;
-	    }
-            div.menu ul li ul li{
-                width: 100%;
-            }
-		div.menu ul li:hover ul{
-		    display:block;
-                    width: 100%;
-			background:#013D7B;
-		}	
-				/********************************************/
-						/********************************************/
-				/********************************************/
+
 	/*Contenido de la pagina*/
 	div.contenido{
 		margin:auto;
                 margin-top: 10px;
-		padding-top:200px;
+		padding-top:50px;
 		width:748px;                
 	}
 		/*Marco*/
@@ -257,7 +180,93 @@ body{
 			-webkit-border-radius:10px;	
 			
 		}
-		.boton{
+.boton{
+	/* A semi-transparent text shadow */
+	text-shadow:1px 1px 0 rgba(255,255,255,0.4);
+	
+	/* Overriding the default underline styling of the links */
+	text-decoration:none !important;
+	white-space:nowrap;
+	
+	display:inline-block;
+	vertical-align:baseline;
+	position:relative;
+	cursor:pointer;
+	
+	background-repeat:no-repeat;
+
+	/* The following two rules are fallbacks, in case
+	   the browser does not support multiple backgrounds. */
+
+	background-position:bottom left;
+	background-image:url(../img/utileria/button_bg.png);
+	
+	/* Multiple backgrounds version. The background images
+	   are defined individually in color classes */
+	
+	background-position:bottom left, top right, 0 0, 0 0;
+	background-clip:border-box;
+	
+	/* Applying a default border raidus of 8px */
+	
+	/*-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;*/
+	
+	-moz-border-radius:4em;
+	-webkit-border-radius:4em;
+	border-radius:4em;
+	/* A 1px highlight inside of the button */
+	
+	-moz-box-shadow:0 0 1px #fff inset;
+	-webkit-box-shadow:0 0 1px #fff inset;
+	box-shadow:0 0 1px #fff inset;
+	
+	/* Animating the background positions with CSS3 */
+	/* Currently works only in Safari/Chrome */
+	
+	-webkit-transition:background-position 1s;
+	-moz-transition:background-position 1s;
+	transition:background-position 1s;
+	color:#693e0a !important;
+	border:1px solid #bea280 !important;	
+	/*background-color: #e38d27;*/
+	
+	background-color: #a9adb1;
+	
+	background-image:url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png), -moz-radial-gradient(center bottom, circle, rgba(197,199,202,1) 0,rgba(197,199,202,0) 100px),-moz-linear-gradient(#c5c7ca, #92989c);
+	background-image:url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(197,199,202,1)), to(rgba(197,199,202,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#c5c7ca), to(#92989c));
+	
+	/*Color anaranjado
+	background-image:url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png), -moz-radial-gradient(center bottom, circle, rgba(232,189,45,1) 0,rgba(232,189,45,0) 100px),-moz-linear-gradient(#f1982f, #d4821f);
+	background-image:url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(232,189,45,1)), to(rgba(232,189,45,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f1982f), to(#d4821f));*/
+}
+
+.boton#registrar:hover, .boton:hover{
+	background-position:top left;
+	background-position:top left, bottom right, 0 0, 0 0;
+	background-color:#89d228;
+	
+	background-image:url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png), -moz-radial-gradient(center bottom, circle, rgba(183,229,45,1) 0,rgba(183,229,45,0) 100px),-moz-linear-gradient(#90de31, #7fc01e);
+	background-image:url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(183,229,45,1)), to(rgba(183,229,45,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#90de31), to(#7fc01e));
+}
+.boton:active{
+	/* Moving the button 1px to the bottom when clicked */
+	bottom:-1px;
+}
+
+.boton#regresar:hover {
+	background-position:top left;
+	background-position:top left, bottom right, 0 0, 0 0;
+	background-color:#ec9732;
+	
+	background-image:url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png), -moz-radial-gradient(center bottom, circle, rgba(241,192,52,1) 0,rgba(241,192,52,0) 100px),-moz-linear-gradient(#f9a746, #e18f2b);
+	background-image:url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(241,192,52,1)), to(rgba(241,192,52,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f9a746), to(#e18f2b));
+}
+
+
+
+		/*.boton{
 			margin:10px 0 0 10px;
 			width:150px;
 			height:30px;
@@ -276,7 +285,7 @@ body{
 			border-top-color: #28597a;
 			background: #013D7B;
 			color:#d0e8f7
-		}
+		}*/
 	
 	/*Pie de pagina*/
 	div.pie{

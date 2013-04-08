@@ -46,7 +46,7 @@ class GestionPlantilla {
                 </ul>  
                 <div class="clearboth"></div>                     
             </div>
-';
+'.$this->efectosMenu();
     }
 
     function generarMenuAlumno() {
@@ -64,7 +64,7 @@ class GestionPlantilla {
                 <div class="clearboth"></div>                     
             </div>
             
-';        
+'.$this->efectosMenu();        
     }
 
     function generarMenuAdmin() {
@@ -83,9 +83,21 @@ class GestionPlantilla {
                 </ul>  
                 <div class="clearboth"></div>                     
             </div>
-';
+'.$this->efectosMenu();
         
     }
+	
+	function efectosMenu(){
+		return '<script>
+            $(document).ready(function(){
+    $(\'.menu li\').hover(function(){
+            $(this).find(\'ul:first\').css({visibility: "visible",display: "none"}).fadeIn(400); // effect 1
+            // $(this).find(\'ul:first\').css({visibility: "visible",display: "none"}).slideDown(400); // effect 2
+        },function(){
+            $(this).find(\'ul:first\').css({visibility: "hidden"});
+        });
+});</script>';
+	}
 
     function filtro_login() {
         session_start();
