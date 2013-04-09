@@ -82,7 +82,7 @@ include_once 'ControladorAlumno.php';
                                 <input type="hidden" name="grupo" value="<?php echo $alumno->getGrupo() ?>"/>
                                 <input type="hidden" name="usuarioID" value="<?php echo $alumno->getIdUsuario() ?>"/>
                                 <input type="hidden" name="actualizar_alumno" value="actualizar"/>
-                                <td ><input type="submit" class="boton" id="registrar" value="Guardar"/></td>
+                                <td colspan="2" ><input type="submit" class="boton" id="registrar" value="Guardar"/></td>
                             </tr>                    
                         </table>
                     </form>

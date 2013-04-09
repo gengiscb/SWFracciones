@@ -25,18 +25,11 @@ include_once 'ControladorProfesor.php';
     </head>
     <body>    
         <div class="banner">
-            <div class="encabezado" id="encabezado">
-                <div class="mini_perfil">
-                    <?php
-                    $gestorPlantilla->generarEncabezadoHTML();
-                    $gestorPlantilla->generarMenu();
-                    
-                    
-                    //echo $_SESSION['matricula'];
-                    ?>
-                    <div class="slogan"><a href="index.php">SWFRACCIONES</a></div>
-                    <div class="clearboth"></div>        
-                </div>         
+            <div class="encabezado" id="encabezado">  
+            	<?php			
+                    echo $gestorPlantilla->generarEncabezadoHTML();
+                    echo $gestorPlantilla->generarMenu();
+                ?>        
             </div>
         </div>
         <div class="contenido">
@@ -82,13 +75,10 @@ include_once 'ControladorProfesor.php';
                                 <td><input type="password"  name="ccontrasena" id="cpassword" value="<?php echo $profesor->getContrasena() ?>" /></td>
                             </tr>
                             <tr>
-                                <td></td>
-                            </tr>
-                            <tr>
                                 <input type="hidden" name="grupo" value="<?php echo $profesor->getIdProfesor() ?>"/>
                                 <input type="hidden" name="actualizar_profesor" value="registrar"/>                                
-                                <td ><input type="submit" class="boton" id="registrar" value="Guardar"/></td>
-                                <td><a onclick = "confirmarEliminacionProfesorProf(<?php echo $profesor->getIdUsuario() ?>)" href="#"><input class="boton" type="button" value="Eliminar Cuenta" ></input></a></td>
+                                <td colspan="2"><input type="submit" class="boton" id="registrar" value="Guardar"/>
+                                <a onclick = "confirmarEliminacionProfesorProf(<?php echo $profesor->getIdUsuario() ?>)" href="#"><input class="boton" id="regresar" type="button" value="Eliminar Cuenta" ></input></a></td>
                                 
                             </tr>                    
                         </table>

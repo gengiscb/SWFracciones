@@ -1,20 +1,20 @@
 @charset "utf-8";
 /* CSS Document */
 /*Etiquetas generales*/
-body{  
-background-image:url(../img/utileria/fondo.png), linear-gradient(right , #30FFFF 4%, #FFFFFF 52%, #30FFFF 76%);
-background-image:url(../img/utileria/fondo.png), -o-linear-gradient(right , #30FFFF 4%, #FFFFFF 52%, #30FFFF 76%);
-background-image:url(../img/utileria/fondo.png), -moz-linear-gradient(right , #30FFFF 4%, #FFFFFF 52%, #30FFFF 76%);
-background-image:url(../img/utileria/fondo.png), -webkit-linear-gradient(right , #30FFFF 4%, #FFFFFF 52%, #30FFFF 76%);
-background-image:url(../img/utileria/fondo.png), -ms-linear-gradient(right , #30FFFF 4%, #FFFFFF 52%, #30FFFF 76%);
+body{
+background-image:url(../img/utileria/fondo.png), linear-gradient(right , #08CDCD 10%, #FFFFFF 49%, #08CDCD 90%);
+background-image:url(../img/utileria/fondo.png), -o-linear-gradient(right , #08CDCD 10%, #FFFFFF 49%, #08CDCD 90%);
+background-image:url(../img/utileria/fondo.png), -moz-linear-gradient(right , #08CDCD 10%, #FFFFFF 49%, #08CDCD 90%);
+background-image:url(../img/utileria/fondo.png), -webkit-linear-gradient(right , #08CDCD 10%, #FFFFFF 49%, #08CDCD 90%);
+background-image:url(../img/utileria/fondo.png), -ms-linear-gradient(right , #08CDCD 10%, #FFFFFF 49%, #08CDCD 90%);
 
 background-image:url(../img/utileria/fondo.png), -webkit-gradient(
 	linear,
 	right top,
 	left top,
-	color-stop(0.04, #30FFFF),
-	color-stop(0.52, #FFFFFF),
-	color-stop(0.76, #30FFFF)
+	color-stop(0.1, #08CDCD),
+	color-stop(0.49, #FFFFFF),
+	color-stop(0.9, #08CDCD)
 );
 	
 /*background-image:url(../img/utileria/fondo1.png);*/
