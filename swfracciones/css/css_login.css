@@ -1,9 +1,16 @@
 	body{
 		color:#119E00;/*color:#418eb6;		*/
 	}
-	h1{
-		margin:10px 0 0 0;
-		font-size:32px;
+	.contenido .marco .form_login h1{	
+		color:#006;
+		font-family:"Comic Sans MS", cursive;
+		text-align:center;
+		margin:10px 0px 0px 0px;
+		font-size:32px;		
+		padding-bottom:5px;
+		font-weight:bold;
+		font-size:200%;
+		
 	}
 	h2{
 		text-align:center;

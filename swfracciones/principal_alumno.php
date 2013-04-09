@@ -38,7 +38,7 @@ $controladorActividades  = new _ControladorActividad();
         </div>
         <div class="contenido" >
 
-            <h1>Actividades Diaponibles</h1>
+            <h1 id="h1" >Actividades Diaponibles</h1>
             <div class="marco">
 
                 <div class="tabla">

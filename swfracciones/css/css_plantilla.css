@@ -10,14 +10,28 @@
 	}
 	h1{	
 		color:#006;
-		font-family:Tahoma, Geneva, sans-serif;
+		font-family:"Comic Sans MS", cursive;
 		text-align:center;
 		margin:10px 0px 0px 0px;
 		font-size:32px;		
 		padding-bottom:5px;
 		font-weight:bold;
-		text-decoration:!important;
-		/*text-shadow:0.1em 0.1em 0.1em #000;*/
+		font-size:200%;
+		
+	}
+	
+	#h1{
+		 z-index:10;
+		 width:auto;
+		margin:auto;
+    	-webkit-box-shadow:0px 0 30px #000;
+    	-moz-box-shadow:0px 0 30px #000; 
+    	box-shadow:0px 0 30px #000;
+		background:#5BB8C8 url(../img/utileria/overlay.png) repeat-x 0 -110px; 
+		border-radius: 1em; 
+		-webkit-border-radius: 5px;
+	 	-moz-border-radius: 5px; 
+	 	border-radius: 5px; 
 	}
 	a{
 		text-decoration:none;
