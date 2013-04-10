@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-03-2013 a las 21:36:44
+-- Tiempo de generación: 10-04-2013 a las 14:59:22
 -- Versión del servidor: 5.5.27
 -- Versión de PHP: 5.4.7
 
@@ -29,21 +29,17 @@ SET time_zone = "+00:00";
 CREATE TABLE IF NOT EXISTS `actividades` (
   `idActividad` int(11) NOT NULL AUTO_INCREMENT,
   `numeroActividad` varchar(30) NOT NULL,
-  `estadoActividad` varchar(45) NOT NULL,
-  `fechaInicio` date NOT NULL,
-  `fechaFinalizacion` date NOT NULL,
-  `grupo` varchar(45) NOT NULL,
-  `actividadFinalizada` varchar(45) NOT NULL,
   `nombre` varchar(100) NOT NULL,
   PRIMARY KEY (`idActividad`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 --
 -- Volcado de datos para la tabla `actividades`
 --
 
-INSERT INTO `actividades` (`idActividad`, `numeroActividad`, `estadoActividad`, `fechaInicio`, `fechaFinalizacion`, `grupo`, `actividadFinalizada`, `nombre`) VALUES
-(1, '11', 'Habilitada', '2013-03-11', '2013-01-01', '4', 'No', '“Medicion y comparacion de longitudes”');
+INSERT INTO `actividades` (`idActividad`, `numeroActividad`, `nombre`) VALUES
+(1, '11', 'Medicion y comparacion de longitudes'),
+(2, '12', 'Medicion y comparacion de superficies');
 
 -- --------------------------------------------------------
 
@@ -57,8 +53,8 @@ CREATE TABLE IF NOT EXISTS `actividadesalumno` (
   `ingresos` int(11) NOT NULL DEFAULT '0',
   `estado` varchar(45) NOT NULL,
   `intentos` int(11) NOT NULL DEFAULT '0',
-  `fechaInicio` date NOT NULL,
-  `fechaFinalizacion` date NOT NULL,
+  `fechaInicio` datetime NOT NULL,
+  `fechaFinalizacion` datetime NOT NULL,
   `Aciertos` int(11) NOT NULL,
   `Fallos` int(11) NOT NULL,
   PRIMARY KEY (`idActividad`,`idAlumno`),
@@ -70,7 +66,8 @@ CREATE TABLE IF NOT EXISTS `actividadesalumno` (
 --
 
 INSERT INTO `actividadesalumno` (`idActividad`, `idAlumno`, `ingresos`, `estado`, `intentos`, `fechaInicio`, `fechaFinalizacion`, `Aciertos`, `Fallos`) VALUES
-(1, 10, 1, '    Habilitada', 1, '0000-00-00', '0000-00-00', 0, 0);
+(1, 33, 0, 'Finalizado', 0, '2013-04-08 10:00:00', '2013-04-09 10:00:00', 0, 0),
+(2, 33, 5, 'Finalizada', 0, '2013-04-09 12:00:00', '2013-04-10 12:00:00', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -85,15 +82,14 @@ CREATE TABLE IF NOT EXISTS `alumno` (
   `usuarioId` int(11) NOT NULL,
   PRIMARY KEY (`idAlumno`),
   KEY `usuarioId` (`usuarioId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Volcado de datos para la tabla `alumno`
 --
 
 INSERT INTO `alumno` (`idAlumno`, `Edad`, `Grupo`, `usuarioId`) VALUES
-(3, 0, '2', 6),
-(4, 0, '4', 10);
+(14, 0, '5', 33);
 
 -- --------------------------------------------------------
 
@@ -106,16 +102,15 @@ CREATE TABLE IF NOT EXISTS `profesor` (
   `usuarioId` int(11) NOT NULL,
   PRIMARY KEY (`idProfesor`),
   KEY `usuarioId` (`usuarioId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Volcado de datos para la tabla `profesor`
 --
 
 INSERT INTO `profesor` (`idProfesor`, `usuarioId`) VALUES
-(3, 7),
-(4, 8),
-(5, 9);
+(5, 31),
+(6, 32);
 
 -- --------------------------------------------------------
 
@@ -132,19 +127,17 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `matricula` varchar(6) NOT NULL,
   `tipoUsuario` int(11) NOT NULL,
   PRIMARY KEY (`usuarioId`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=34 ;
 
 --
 -- Volcado de datos para la tabla `usuarios`
 --
 
 INSERT INTO `usuarios` (`usuarioId`, `contrasenia`, `nombre`, `apellidoP`, `apellidoM`, `matricula`, `tipoUsuario`) VALUES
-(1, 'admin', 'admin', 'admin', 'admin', 'admin', 1),
-(6, 'li', 'lui', 'li', 'li', 'li', 3),
-(7, '123', 'Angel', 'Angel', 'Angel', '0909', 2),
-(8, 'prof', 'Prof', 'Prof', 'Prof', 'prof', 2),
-(9, '{l', 'Ã±{', '{Ã±l', '{l', 'aslÃ±k', 2),
-(10, 'alum', 'alum', 'alum', 'alum', 'alum', 3);
+(29, 'admin', 'admin', 'admin', 'admin', 'admin', 1),
+(31, 'profe1', 'Prof', 'ProfM', 'Prof', 'profe1', 2),
+(32, 'profe1', 'prof2', 'prof2', 'prof2', 'profe2', 2),
+(33, 'alumn1', 'Alumn1', 'Alumn', 'alumn1', 'alumn1', 3);
 
 --
 -- Restricciones para tablas volcadas
