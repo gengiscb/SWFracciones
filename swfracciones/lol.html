@@ -1,0 +1,96 @@
+
+
+	   
+
+
+      
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        
+        <title>Principal</title>
+        <link href="css/css_plantilla.css" rel="stylesheet" type="text/css" />         
+        <link href="css/css_plantilla_v3.css" rel="stylesheet" type="text/css" />    
+        <link href="css/css_vista_actividad_alumno.css" rel="stylesheet" type="text/css" />
+        <script type="text/javascript" src="js/jquery-1.6.4.js"></script>
+<!--        <script type="text/javascript" src="js/js_vista_actividad_alumno.js">//
+            
+        </script>-->
+        <script type="text/javascript" src="js/ajaxActividad1.js"></script>
+        <!--<script type="text/javascript" src="js/jquery.min.js"></script>-->
+        2<link href="css/cssActividad1_2b.css" rel="stylesheet" type="text/css"/>        
+    </head>
+    <body>
+        <div class="banner">
+            <div class="encabezado">
+                
+            <div class="mini_perfil">                
+                <ul>
+                <li><img src="img/usuarios/usuario.png" alt="Imagen usuario"/></li>
+                </ul>
+            </div>
+            <div class="clearboth"></div>
+            <div class="menu" style="width:360px;">
+                <ul>
+                    <li><a  href="principal_alumno.php">Principal</a></li>
+                    <li><a href="principal_alumno.php">Actividades</a></li>                    
+                    <li class="categoria"><a href="">Mi cuenta</a>
+                        <ul>
+                            <li><a href="sw/logout.php">Cerrar Sesi&oacute;n</a></li>
+                        </ul>
+                    </li>
+                   
+                </ul>  
+                <div class="clearboth"></div>                     
+            </div>
+            
+<!--<script>
+            $(document).ready(function(){
+    $('.menu li').hover(function(){
+            $(this).find('ul:first').css({visibility: "visible",display: "none"}).fadeIn(400); // effect 1
+            // $(this).find('ul:first').css({visibility: "visible",display: "none"}).slideDown(400); // effect 2
+        },function(){
+            $(this).find('ul:first').css({visibility: "hidden"});
+        });
+});</script>  -->
+            </div>       
+        </div>
+        <div class="contenido" id ="contenedor">
+            <h1>
+                Medición y comparación de superficies                
+            </h1>
+            <div id="actividad" >
+                <br/><span class="texto_act">“De acuerdo al área pintada  selecciona que parte se ha pintado de la superficie total.”</span><br/>                <div id="contenedorAct" >
+                    <div id="fade" class="fadebox"> 
+                    <button id="iniciar" style="height:50px" >Iniciar Actividad</button>
+                </div>
+             <div id="pared" style="background"> 
+                <div id="paredPintada" >
+                </div>
+                <div id="paredPintada2">
+                </div>
+                <img id="pintor" src="img/act1_2b/painter.gif"/>
+            </div>
+                            </div>
+                
+            <div id="contestar">
+                <br/>
+                <span class="texto_act">Selecciona la respuesta correcta</span>
+                <br/>
+                <span class="respuestas">
+                    <input class="bot_act" type="button"  onclick="javascript:esCorrecta(0,2,33)" value="Un octavo"></input>
+                    <input class="bot_act" type="button" onclick="javascript:esCorrecta(1,2,33)"  value="Tres cuartos"></input>
+                    <input  class="bot_act" type="button" onclick="javascript:esCorrecta(0,2,33)"  value="Un cuarto"></input>
+                    <input class="bot_act" type="button"  onclick="javascript:esCorrecta(0,2,33)" value="La mitad"></input>
+                </span>
+            </div>
+            <script type="text/javascript">
+                    var distancia=450;
+                </script>
+            <script type="text/javascript" src="js/jsActividad1_2b.js"></script><script type="text/javascript">
+                    showLightbox();
+                </script>            </div>
+
+        </div>
+    </body>
+</html>

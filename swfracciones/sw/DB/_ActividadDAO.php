@@ -11,9 +11,9 @@ class ActividadDAO extends ConexionGeneral {
 
     public function listarActividadesAlumnos($idAlumno) {
         $conexion = $this->abrirConexion();
-        $sql = "SELECT * FROM  `actividadesalumno` JOIN `actividades`  ON `actividadesalumno`.`idAlumno` = `actividadesalumno`.`idAlumno` WHERE  `actividadesalumno`.`idAlumno` = $idAlumno  ORDER BY `actividadesalumno`.`fechaInicio` ASC";
-
-
+        
+        $sql = "SELECT * FROM  `actividadesalumno` JOIN `actividades`  ON `actividadesalumno`.`idActividad` = `actividades`.`idActividad` WHERE  `actividadesalumno`.`idAlumno` = $idAlumno  ORDER BY `actividadesalumno`.`fechaInicio` ASC";
+//echo $sql;
         $resultado_peticion = $this->ejecutarConsulta($sql, $conexion);
         $indice = 0;
         $lista = array();

@@ -14,7 +14,7 @@ class _ServicioActividad {
         $resultado = $ActividadDAO->listarActividadesAlumnos($_SESSION['usuarioId']);
         $resultadoHTML = "";
         for ($i = 0; $i < count($resultado); $i++) {
-            if ($ActividadDAO->obtenerEstadoActividad($resultado[$i]['idActividad'], $_SESSION['usuarioId']) != "Finalizada" && $ActividadDAO->obtenerEstadoActividad($resultado[$i]['idActividad'], $_SESSION['usuarioId']) != "Deshabilitada") {
+            if ($ActividadDAO->obtenerEstadoActividad($resultado[$i]['idActividad'], $_SESSION['usuarioId']) != "Finalizada" && $ActividadDAO->obtenerEstadoActividad($resultado[$i]['idActividad'], $_SESSION['usuarioId']) != "Finalizado" && $ActividadDAO->obtenerEstadoActividad($resultado[$i]['idActividad'], $_SESSION['usuarioId']) != "Deshabilitada") {
                 $resultadoHTML.="<a href='VistaActividadAlumno.php?idAct=" . $resultado[$i]['idActividad'] . "&usuarioId= " . $_SESSION['usuarioId'] . "' ><div class='clean-gray'>";
                 $resultadoHTML.="<span class='text_act'>";
                 $resultadoHTML.=$resultado[$i]['nombre'];

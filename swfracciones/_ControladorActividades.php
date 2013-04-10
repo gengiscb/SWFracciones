@@ -2,6 +2,7 @@
 
 include_once 'sw/_ServicioActividad.php';
 include_once 'sw/GestorActividad1_1.php';
+include_once 'sw/GestorActividad102.php';
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -22,6 +23,9 @@ class _ControladorActividad {
         if (strcmp($idActividad, '1') == 0) {
             $actividaObj = new GestorActividad1_1($_SESSION['usuarioId']);
         }
+        if (strcmp($idActividad, '2') == 0) {
+            $actividaObj = new GestorActividad1_2($_SESSION['usuarioId']);
+        }        
         return $actividaObj;
     }
 

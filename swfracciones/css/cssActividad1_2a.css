@@ -1,0 +1,102 @@
+
+body {position: relative;
+     /*margin: auto;*/
+/*     margin-top: 300px;
+    margin-left: 500px;*/
+}
+#contenedorAct{
+    position: relative;
+    width:800px;
+    height:533px;
+    /*background:url('../img/act1_1b/background.pool.png');*/
+    margin-left: 3px;
+    left: 2px;
+}
+#pasto {
+    background: url('../img/act1_2a/fondoCP.png') no-repeat left bottom;
+    /*margin-left: 80px;*/
+    top: 0px;
+    width: 800px; 
+    height: 533px;
+    z-index: 1;
+}
+#pastoPodado {
+    background: url(../img/act1_2a/fondoP.png) no-repeat left bottom;
+    position:relative; 
+    top: 202px; 
+    left: 1px;
+    width: 40px; 
+    height: 0px; 
+    z-index:2;
+}
+#pastoPodado2 {
+    background: url(../img/act1_2a/fondoP.png) no-repeat left bottom;
+    position:relative; 
+    top: 202px;
+    margin-left: 800px;
+    left: 1px;
+    width: 0px; 
+    height: 40px; 
+    z-index:3;
+}
+#podador {
+    /*background: url(../img/act1_2a/podador.gif) no-repeat left bottom;*/
+    position: relative;
+    margin-left: 630px;
+    position:relative; 
+    top: 50px;
+    /*height: px;*/
+    width: 180px;
+    z-index:4;
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+
+#flip{
+                -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+}
+.actividad{
+    /*margin: auto;*/
+    /*padding: 100px;*/
+}
+.fadebox {
+    display: none;
+    position: absolute;
+    top: 0px;
+    width:800px;
+    height:533px;
+/*    width: 100%;
+    height: 100%;*/
+    background-color: black;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=80);
+}
+/*.overbox {
+    display: none;
+    position: relative;
+    
+    top: 25%;
+    left: 25%;
+background: darkgreen;
+    width: 50%;
+    height: 50%;
+    z-index:1002;
+    overflow: auto;
+}*/
+.fadebox #iniciar{
+    position: relative;
+    margin: auto;
+    margin-top: 150px;
+    /*margin-left: 45%;*/
+}
