@@ -1,0 +1,197 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+#contenedorAct{    
+    position: relative;
+    width:800px;
+    height:456px;
+    background:url('../img/act1_2b/fondo_default.jpg');
+    margin-left: 3px;
+    left: 2px;
+}
+
+
+.fadebox {
+    display: none;
+    position: absolute;
+    top: 0px;
+    width:800px;
+    height:456px;
+    background-color: black;
+    z-index:1001;
+    -moz-opacity: 0.8;
+    opacity:.80;
+    filter: alpha(opacity=80);
+}
+
+.fadebox #iniciar{
+    position: relative;
+    margin: auto;
+    margin-top: 150px;
+    /*margin-left: 45%;*/
+}
+
+
+body {
+text-align: center;
+text-align: center;
+padding: 20px;
+
+
+}
+
+
+ #segmento{
+    position: relative;
+    float: left;
+   height: 265px;
+    width: 5px;
+    left: -100px;
+    top: 95px;
+   
+ }
+/*
+
+Container for the image frame aka the top image
+.frame{
+    position: absolute;
+    z-index: 2;
+}
+The container the character goes in for easy placement
+#Acuario{
+height: 456px;
+width: 800px;
+margin: 0px auto;
+
+}
+
+Prevents spillover from middle layer moving up
+#contenedorAcuario{
+
+position: relative;
+overflow: hidden;
+height: 280px;
+width: 475px;
+background: #FFF;
+left: 100px;
+top: 100px;
+}
+The middle layer container, hiding base image initially
+#capaAcuario{
+position:absolute;
+z-index: 1;
+height: 280px;
+width: 475px;
+}
+White div in #dudeoverlay that fill space the edge image doesn't
+#capaBloquear{
+
+top: 300px;
+height: 280px;
+width: 475px;
+background: #FFF;
+}
+
+
+#nadar{
+    height:280px; 
+    width:475px;
+}*/
+
+
+/*Container for the image frame aka the top image*/
+.pecera{
+        position: absolute;
+	z-index: 2;
+       
+        height: 270px;
+}
+/*The container the character goes in for easy placement*/
+#Acuario{
+height: 270px;
+width: 477px;
+
+margin: 0px auto;
+
+}
+
+/*Prevents spillover from middle layer moving up*/
+#contenedorAcuario{
+top: -170px;
+position: relative;
+overflow: hidden;
+height: 260px;
+width: 477px;
+background:  #e7dcca;
+}
+/*The middle layer container, hiding base image initially*/
+#capaAcuario{
+    
+position:absolute;
+z-index: 1;
+}
+/*White div in #dudeoverlay that fill space the edge image doesn't*/
+#capaBloquear{
+
+top: 300px;
+height: 260px;
+width: 700px;
+background: #e7dcca;
+-moz-opacity: .25;
+opacity:.35;
+
+}
+
+
+#agua{
+    height: 270px;
+    width: 476px;
+}
+
+#casas{
+  top: 100px;
+	position: absolute;
+	
+	left: 12px;
+        width: 400px;
+        height: 270px;
+}
+
+
+#casa_bob{
+    width: 50px;
+    height: 80px;
+    
+    
+}
+
+
+#casa_cal{
+    
+     width: 50px;
+    height: 80px;
+   
+}
+
+casa_pat{
+    
+     width: 5px;
+    height: 10px;
+    
+    
+}
+
+#arena{
+    width: 450px;
+    height: 61px;
+    
+   
+    
+}
+
+
+#arenas{
+   margin-top: -140px;
+  
+}
