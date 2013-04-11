@@ -34,7 +34,7 @@ class GestionPlantilla {
                 <ul>
                     <li><a  href="principal_profesor.php">Principal</a></li>
                     <li class="categoria"><a href="ListarActividades.php">Actividades</a></li>                   
-                    <li><a href="">Reportes</a></li>
+                    <li><a href="vistaReportes.php?idProfesor='.$_SESSION['grupo'].'">Reportes</a></li>
                     <li><a href="vistaAlumnos.php?obtener_Alumnos=obtener">Alumnos</a></li>
                     <li class="categoria"><a href="">Mi cuenta</a>
                         <ul>

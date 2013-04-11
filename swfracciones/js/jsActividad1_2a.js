@@ -12,10 +12,10 @@ podar=function () {
         .animate({
             'width':'180px',
             //            'height':'79px',
-            left:'-=630px'
+            'margin-left':'-=630px'
         },1500, function(){
             $('#podador').animate({
-                left:'+=630px'
+                'margin-left':'+=630px'
             },2000,function(){
                 $('#podador').animate({                
                     'margin-botton':'40px'
@@ -28,12 +28,14 @@ podar=function () {
             } );
         });
         $("#pastoPodado2").animate({
+            position:'relative',
             "width":"0px", 
             //            top:'300px',
             "margin-left":"747px"
         }, 0, function(){
             $("#pastoPodado2").animate({
                 //            top:'300px',    
+                position:'relative',
                 "width":"747px", 
                 "margin-left":"0px"
             }, 1500);

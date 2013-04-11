@@ -135,6 +135,7 @@ class ActividadDAO extends ConexionGeneral {
         $conexion = $this->abrirConexion();
         $query = "SELECT usuarioId FROM alumno WHERE grupo = " . $grupo . "";
         $resultado = $this->ejecutarConsulta($query, $conexion);
+        $lista= array();
         if (!$resultado) {
             $cerror = "No fue posible recuperar la información de la base de datos.<br>";
             $cerror .= "SQL: $query <br>";
