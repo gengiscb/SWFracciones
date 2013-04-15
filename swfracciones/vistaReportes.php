@@ -16,17 +16,20 @@ $gestorPlantilla = new GestionPlantilla();
         <link href="css/css_plantilla.css" rel="stylesheet" type="text/css" />         
         <link href="css/css_plantilla_v3.css" rel="stylesheet" type="text/css" />    
         <link href="css/css_principal.css" rel="stylesheet" type="text/css" />    
-        <link href="css/css_tablas.css" rel="stylesheet" type="text/css" />    
+        <!--<link href="css/css_tablas.css" rel="stylesheet" type="text/css" />-->    
         <link href="css/css_principal.css" rel="stylesheet" type="text/css" />            
         <script type="text/javascript" language="javascript" src="js/js_principal.js"></script>
         <script type="text/javascript" language="javascript" src="js/js_validaciones_eliminar.js"></script>
-
+        <script type="text/javascript">
+            var parametro_prof_id = "<?php echo '?idProfesor='.$_SESSION['grupo'].'&grf=o' ?> " ;
+            
+        </script>
         <script type="text/javascript" src="js/_Gjquery.min.js"></script>
         <script type="text/javascript" src="js/js_grafica.js"></script>
         <script type="text/javascript" src="js/jquery.dataTables.js"></script>
         <script type="text/javascript" src="js/js_reporte.js" ></script>
         <style type="text/css">
-            @import "css/demo_table_jui.css";
+            /*@import "css/demo_table_jui.css";*/
             @import "js/themes/smoothness/jquery-ui-1.8.4.custom.css";
             @import "css/tabla.css";
         </style>
@@ -54,8 +57,8 @@ $gestorPlantilla = new GestionPlantilla();
 
 
                 <p align="center">Tabla Reporte Alumnos.</p>
-                <div id= tabla style="OVERFLOW: auto;" >
-                    <table id="datatables" class="display" >
+                <div id= tabla >
+                    <table id="datatables" class="display"  >
                         <thead>
                             <tr>
                                 <th>ID</th>
@@ -67,7 +70,7 @@ $gestorPlantilla = new GestionPlantilla();
                                 <th>Total Intentos</th>
                             </tr>
                         </thead>
-                        <tbody>
+                        <tbody  >
                             <?php
                             echo $ctroladorReportes->obtenerHTMLTablaReporteProfesor();
                             ?>
@@ -75,7 +78,7 @@ $gestorPlantilla = new GestionPlantilla();
                     </table>
                 </div>
                 <p align="center">Gráfico del Reporte de Alumnos</p>   
-                <div id="grafico" style="width: 800px; height: 200px; margin: 0 auto"></div>
+                <div id="grafico" style="width: 720px; height: 200px; margin: 0 auto"></div>
             </div></div>
     </body>
 </html>

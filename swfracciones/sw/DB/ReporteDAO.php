@@ -9,19 +9,12 @@ class ReporteDAO extends ConexionGeneral {
        $conexion = $this->abrirConexion();
         $sql = "SELECT * FROM `actividadesalumno` JOIN `usuarios` JOIN `alumno`  ON `actividadesalumno`.`idAlumno` = `alumno`.`usuarioId` AND `alumno`.`usuarioId` = `usuarios`.`usuarioId` AND alumno.grupo=$idProfesor";
         $resultado_peticion = $this->ejecutarConsulta($sql, $conexion);
-        $rows = array();
-        $rows['name'] = 'Nombre';
-        $rows1 = array();
-        $rows1['name'] = 'AA';
+        $filas = array();
         while ($r = mysql_fetch_assoc($resultado_peticion)) {
-            $rows['data'][] = $r['idAlumno'];
-            $rows1['data'][] = (($r['ingresos'] - 1) * 3 + $r['intentos']) * 3;            
+            $filas[count($filas)] = $r;
         }
-        $resultadoGrafico = array();
-        array_push($resultadoGrafico, $rows);
-        array_push($resultadoGrafico, $rows1);
         $this->cerrarConexion($conexion);
-        return $resultadoGrafico;
+        return $filas;
     }
 
 //$sth = mysql_query("SELECT `ingresos`,`intentos`

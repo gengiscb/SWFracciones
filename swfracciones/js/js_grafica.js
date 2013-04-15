@@ -46,7 +46,7 @@ $(document).ready(function() {
                 },
                 series: []
             }
-                        $.getJSON("ControladorReportes.php?idProfesor=5&grf=o", function(json) {
+                        $.getJSON("ControladorReportes.php"+parametro_prof_id, function(json) {
                 options.xAxis.categories = json[0]['data'];
                 options.series[0] = json[1];
                 chart = new Highcharts.Chart(options);

@@ -27,6 +27,12 @@ $(document).ready(function(){
                     "sPaginationType":"full_numbers",
                     "aaSorting":[[1, "asc"]],
 					"bFilter": true,
-                    "bJQueryUI":true
+                    "bJQueryUI":true,
+                    "bAutoWidth" : true,
+                    "sScrollX": "100%",
+                    "sScrollXInner": "110%",
+                    "bScrollCollapse": true,
+                    "sScrollY": "200px",
+                    "bPaginate": false
                 });
             });
