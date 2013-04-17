@@ -17,7 +17,7 @@ $gestorPlantilla = new GestionPlantilla();
         <link href="css/css_plantilla_v3.css" rel="stylesheet" type="text/css" />    
         <link href="css/css_principal.css" rel="stylesheet" type="text/css" />    
         <!--<link href="css/css_tablas.css" rel="stylesheet" type="text/css" />-->    
-        <link href="css/css_principal.css" rel="stylesheet" type="text/css" />            
+        <link href="css/css_principal.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" language="javascript" src="js/js_principal.js"></script>
         <script type="text/javascript" language="javascript" src="js/js_validaciones_eliminar.js"></script>
         <script type="text/javascript">
@@ -29,7 +29,7 @@ $gestorPlantilla = new GestionPlantilla();
         <script type="text/javascript" src="js/jquery.dataTables.js"></script>
         <script type="text/javascript" src="js/js_reporte.js" ></script>
         <style type="text/css">
-            /*@import "css/demo_table_jui.css";*/
+            @import "css/demo_table_jui.css";
             @import "js/themes/smoothness/jquery-ui-1.8.4.custom.css";
             @import "css/tabla.css";
         </style>

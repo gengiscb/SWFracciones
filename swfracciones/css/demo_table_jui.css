@@ -65,7 +65,7 @@
 }
 
 table.display thead th {
-	padding: 3px 0px 3px 10px;
+	/*padding-right: 10px;*/
 	cursor: pointer;
 	* cursor: hand;
 }
@@ -79,14 +79,15 @@ div.dataTables_wrapper .ui-widget-header {
  * Sort arrow icon positioning
  */
 table.display thead th div.DataTables_sort_wrapper {
-	position: relative;
-	padding-right: 20px;
-	padding-right: 20px;
+	position: relative;        
+	/*padding-right: 10px;*/
+	/*padding-right: 5px;*/
 }
 
 table.display thead th div.DataTables_sort_wrapper span {
 	position: absolute;
-	top: 50%;
+	top: 6%;
+        right: 3%;
 	margin-top: -8px;
 	right: 0;
 }
@@ -185,13 +186,13 @@ table.display {
 }
 
 table.display tfoot th {
-	padding: 3px 0px 3px 10px;
+	padding: 0px 0px 0px 10px;
 	font-weight: bold;
 	font-weight: normal;
 }
 
 table.display tr.heading2 td {
-	border-bottom: 1px solid #aaa;
+	border-bottom: 3px solid #aaa;
 }
 
 table.display td {
