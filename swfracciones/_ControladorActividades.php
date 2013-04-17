@@ -3,14 +3,14 @@ include_once 'sw/_ServicioActividad.php';
 include_once 'sw/GestorActividad1_0.php';
 include_once 'sw/GestorActividad1_1.php';
 include_once 'sw/GestorActividad1_2.php';
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
+/**
+ * Clase: 
+ * Descripcion: Esta clase se encarga de 
+ * Requisitos relacionados:
+ * -
  */
-
 class _ControladorActividad {
     function listarActividadesAlumno() {
-        $resultado = "";
         $servicioActividad = new _ServicioActividad();
         $resultado = $servicioActividad->listarActividadesAlumno();
         return $resultado;

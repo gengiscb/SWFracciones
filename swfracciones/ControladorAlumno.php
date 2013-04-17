@@ -1,7 +1,12 @@
 <?php
 
 include_once 'sw/ServicioAlumno.php';
-
+/**
+ * Clase: 
+ * Descripcion: Esta clase se encarga de 
+ * Requisitos relacionados:
+ * -
+ */
 class ControladorAlumno {
 
     function agregarAlumnoC() {

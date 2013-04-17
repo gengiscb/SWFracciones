@@ -2,7 +2,12 @@
 
 include_once 'DB/_ActividadDAO.php';
 include_once 'sw/Sesion.php';
-
+/**
+ * Clase: 
+ * Descripcion: Esta clase se encarga de 
+ * Requisitos relacionados:
+ * -
+ */
 class _ServicioActividad {
 
     public function listarActividadesAlumno() {

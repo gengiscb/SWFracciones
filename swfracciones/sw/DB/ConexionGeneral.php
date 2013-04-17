@@ -1,7 +1,12 @@
 <?php
 
 include_once 'config.inc.php';
-
+/**
+ * Clase: 
+ * Descripcion: Esta clase se encarga de 
+ * Requisitos relacionados:
+ * -
+ */
 class ConexionGeneral {
 
     public function abrirConexion() {

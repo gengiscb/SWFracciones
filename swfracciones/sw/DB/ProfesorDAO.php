@@ -3,7 +3,12 @@
 include_once 'ConexionGeneral.php';
 include_once '/sw/domain/Profesor.php';
 include_once '/sw/domain/Usuario.php';
-
+/**
+ * Clase: 
+ * Descripcion: Esta clase se encarga de 
+ * Requisitos relacionados:
+ * -
+ */
 class ProfesorDAO extends ConexionGeneral {
 
     public function seleccionarProfesorPorMatricula($profesorMatricula) {

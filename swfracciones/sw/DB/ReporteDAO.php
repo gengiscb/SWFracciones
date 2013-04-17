@@ -1,7 +1,12 @@
 <?php
 
 include_once 'ConexionGeneral.php';
-
+/**
+ * Clase: 
+ * Descripcion: Esta clase se encarga de 
+ * Requisitos relacionados:
+ * -
+ */
 class ReporteDAO extends ConexionGeneral {
 
     public function __construct() {

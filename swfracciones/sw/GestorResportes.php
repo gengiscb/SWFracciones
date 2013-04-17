@@ -2,7 +2,12 @@
 
 include_once 'DB/ReporteDAO.php';
 include_once 'DB/_ActividadDAO.php';
-
+/**
+ * Clase: 
+ * Descripcion: Esta clase se encarga de 
+ * Requisitos relacionados:
+ * -
+ */
 class GestorResportes {
 
     //put your code here

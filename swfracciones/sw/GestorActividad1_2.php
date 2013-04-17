@@ -5,7 +5,12 @@
  * and open the template in the editor.
  */
 include_once 'GestorActividad.php';
-
+/**
+ * Clase: 
+ * Descripcion: Esta clase se encarga de 
+ * Requisitos relacionados:
+ * -
+ */
 class GestorActividad1_2 extends GestorActividad {
 
     private $nombre;

@@ -2,7 +2,12 @@
 
 include_once 'ServicioUsuario.php';
 include_once 'DB/ProfesorDAO.php';
-
+/**
+ * Clase: 
+ * Descripcion: Esta clase se encarga de 
+ * Requisitos relacionados:
+ * -
+ */
 class ServicioProfesor {
 
     public function actualizarPerfilProfesor($usuarioId, $nombre, $apellidoP, $apellidoM, $contrasenia) {

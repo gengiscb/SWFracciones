@@ -1,12 +1,13 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 include_once 'ConexionGeneral.php';
 include_once '/sw/domain/Actividad.php';
-
+/**
+ * Clase: 
+ * Descripcion: Esta clase se encarga de 
+ * Requisitos relacionados:
+ * -
+ */
 class ActividadDAO extends ConexionGeneral {
 
     public function listarActividadesAlumnos($idAlumno) {

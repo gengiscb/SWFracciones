@@ -1,6 +1,12 @@
 <?php
 include_once 'ConexionGeneral.php';
 include_once '/sw/domain/Usuario.php';
+/**
+ * Clase: 
+ * Descripcion: Esta clase se encarga de 
+ * Requisitos relacionados:
+ * -
+ */
 class UsuarioDAO extends ConexionGeneral {
 
     public function seleccionarUsuarioPorMatricula($usuarioMatricula) {

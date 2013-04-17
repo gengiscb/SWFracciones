@@ -1,5 +1,5 @@
 <?php 
-//Par�metros necesarios para la conexion con la base de datos
+//Parametros necesarios para la conexion con la base de datos
 $GLOBALS["servidor"] = "localhost"; 
 $GLOBALS["usuarioDB"] = "root";  
 $GLOBALS["contrasenaDB"] = "";  

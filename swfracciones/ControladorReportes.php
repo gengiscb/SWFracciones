@@ -2,7 +2,12 @@
 
 include_once 'config.inc.php';
 include_once 'sw/GestorResportes.php';
-
+/**
+ * Clase: 
+ * Descripcion: Esta clase se encarga de 
+ * Requisitos relacionados:
+ * -
+ */
 class ControladorReportes {
 
     public function obtenerJSONGrafica() {

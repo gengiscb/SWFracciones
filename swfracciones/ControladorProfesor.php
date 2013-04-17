@@ -1,7 +1,12 @@
 <?php
 
 include_once 'sw/ServicioProfesor.php';
-
+/**
+ * Clase: 
+ * Descripcion: Esta clase se encarga de 
+ * Requisitos relacionados:
+ * -
+ */
 class ControladorProfesor {
 
     function agregaProfesorC() {

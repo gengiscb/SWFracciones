@@ -1,7 +1,12 @@
 <?php
 
 include_once 'DB/UsuarioDAO.php';
-
+/**
+ * Clase: 
+ * Descripcion: Esta clase se encarga de 
+ * Requisitos relacionados:
+ * -
+ */
 class ServicioUsuario {
 
     public function actualizarPerfilUsuario($usuarioId, $nombre, $apellidoP, $apellidoM, $contrasenia) {
