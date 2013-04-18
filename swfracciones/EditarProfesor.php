@@ -77,8 +77,8 @@ include_once 'ControladorProfesor.php';
                             <tr>
                                 <input type="hidden" name="grupo" value="<?php echo $profesor->getIdProfesor() ?>"/>
                                 <input type="hidden" name="actualizar_profesor" value="registrar"/>                                
-                                <td colspan="2"><input type="submit" class="boton" id="registrar" value="Guardar"/>
-                                <a onclick = "confirmarEliminacionProfesorProf(<?php echo $profesor->getIdUsuario() ?>)" href="#"><input class="boton" id="regresar" type="button" value="Eliminar Cuenta" ></input></a></td>
+                                <td colspan="2"><input type="submit" class="boton" id="verde" value="Guardar"/>
+                                <a onclick = "confirmarEliminacionProfesorProf(<?php echo $profesor->getIdUsuario() ?>)" href="#"><input class="boton" id="naranja" type="button" value="Eliminar Cuenta" ></input></a></td>
                                 
                             </tr>                    
                         </table>

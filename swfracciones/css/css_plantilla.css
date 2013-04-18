@@ -9,7 +9,8 @@
 		list-style:none;
 	}
 	h1{	
-		color:#006;
+		color:#060;
+		
 		font-family:"Comic Sans MS", cursive;
 		text-align:center;
 		margin:10px 0px 0px 0px;
@@ -21,12 +22,13 @@
 	}
 	
 	#h1{
-		 z-index:10;
-		 width:auto;
+		color:#006;
+		z-index:10;
+		width:auto;
 		margin:auto;
-    	-webkit-box-shadow:0px 0 30px #000;
+    	/*-webkit-box-shadow:0px 0 30px #000;
     	-moz-box-shadow:0px 0 30px #000; 
-    	box-shadow:0px 0 30px #000;
+    	box-shadow:0px 0 30px #000;*/
 		background:#5BB8C8 url(../img/utileria/overlay.png) repeat-x 0 -110px; 
 		border-radius: 1em; 
 		-webkit-border-radius: 5px;
@@ -36,7 +38,7 @@
 	a{
 		text-decoration:none;
 	}
-	label{
+		label{
 		width:200px;
 		color:#418eb6;
 		font-size:20px;
@@ -194,12 +196,16 @@
 			-webkit-border-radius:10px;	
 			
 		}
+		
+		
 .boton{
+	font-family:"Comic Sans MS", cursive;
+	width:180px;
 	/* A semi-transparent text shadow */
 	text-shadow:1px 1px 0 rgba(255,255,255,0.4);
 	
 	/* Overriding the default underline styling of the links */
-	text-decoration:none !important;
+	text-decoration:none;
 	white-space:nowrap;
 	
 	display:inline-block;
@@ -222,14 +228,9 @@
 	background-clip:border-box;
 	
 	/* Applying a default border raidus of 8px */
-	
-	/*-moz-border-radius:8px;
-	-webkit-border-radius:8px;
-	border-radius:8px;*/
-	
-	-moz-border-radius:4em;
+	/*-moz-border-radius:4em;
 	-webkit-border-radius:4em;
-	border-radius:4em;
+	border-radius:4em;*/
 	/* A 1px highlight inside of the button */
 	
 	-moz-box-shadow:0 0 1px #fff inset;
@@ -242,40 +243,52 @@
 	-webkit-transition:background-position 1s;
 	-moz-transition:background-position 1s;
 	transition:background-position 1s;
-	color:#693e0a !important;
-	border:1px solid #bea280 !important;	
+	color:#060 !important;
+	border:1px solid #a9adb1 !important;	
 	/*background-color: #e38d27;*/
 	
 	background-color: #a9adb1;
 	
 	background-image:url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png), -moz-radial-gradient(center bottom, circle, rgba(197,199,202,1) 0,rgba(197,199,202,0) 100px),-moz-linear-gradient(#c5c7ca, #92989c);
 	background-image:url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(197,199,202,1)), to(rgba(197,199,202,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#c5c7ca), to(#92989c));
-	
-	/*Color anaranjado
-	background-image:url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png), -moz-radial-gradient(center bottom, circle, rgba(232,189,45,1) 0,rgba(232,189,45,0) 100px),-moz-linear-gradient(#f1982f, #d4821f);
-	background-image:url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(232,189,45,1)), to(rgba(232,189,45,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f1982f), to(#d4821f));*/
 }
 
-.boton#registrar:hover, .boton:hover{
+.boton#verde:hover{
 	background-position:top left;
 	background-position:top left, bottom right, 0 0, 0 0;
 	background-color:#89d228;
-	
+	border:1px solid #89d228 !important;
 	background-image:url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png), -moz-radial-gradient(center bottom, circle, rgba(183,229,45,1) 0,rgba(183,229,45,0) 100px),-moz-linear-gradient(#90de31, #7fc01e);
 	background-image:url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(183,229,45,1)), to(rgba(183,229,45,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#90de31), to(#7fc01e));
 }
-.boton:active{
+
+.boton:active {
 	/* Moving the button 1px to the bottom when clicked */
 	bottom:-1px;
 }
 
-.boton#regresar:hover {
+.boton#naranja:hover {
 	background-position:top left;
 	background-position:top left, bottom right, 0 0, 0 0;
 	background-color:#ec9732;
-	
+	border:1px solid #ec9732 !important;
 	background-image:url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png), -moz-radial-gradient(center bottom, circle, rgba(241,192,52,1) 0,rgba(241,192,52,0) 100px),-moz-linear-gradient(#f9a746, #e18f2b);
 	background-image:url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(241,192,52,1)), to(rgba(241,192,52,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f9a746), to(#e18f2b));
+}
+
+.boton#azul:hover, .boton#acceder:hover {
+	border:1px solid #63c7fe !important;
+	background-color:#63c7fe;
+	background-position:top left, bottom right, 0 0, 0 0;
+	background-image:	url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png),
+						-moz-radial-gradient(	center bottom, circle,
+												rgba(109,217,250,1) 0,rgba(109,217,250,0) 100px),
+						-moz-linear-gradient(#63c7fe, #58bef7);
+						
+	background-image:	url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png),
+						-webkit-gradient(	radial, 50% 100%, 0, 50% 100%, 100,
+											from(rgba(109,217,250,1)), to(rgba(109,217,250,0))),
+						-webkit-gradient(linear, 0% 0%, 0% 100%, from(#63c7fe), to(#58bef7));
 }
 
 

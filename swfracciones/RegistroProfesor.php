@@ -78,8 +78,8 @@ $gestionPlantilla = new GestionPlantilla();
                             <tr>                              
                                 <td colspan="2">
                                     <input type="hidden" name="registrar_profesor" value="registrar"/>
-                                    <input type="submit"  name="btn_registrar" class="boton"  id="registrar" value="Registrar"/>
-                                    <input type="button" onclick="document.location='index.php'"  name="btn_regresar" class="boton"  id="regresar" value="Regresar"/>
+                                    <input type="submit"  name="btn_registrar" class="boton"  id="verde" value="Registrar"/>
+                                    <input type="button" onclick="document.location='index.php'"  name="btn_regresar" class="boton"  id="naranja" value="Regresar"/>
                                 </td>
                             </tr>
                         </table>

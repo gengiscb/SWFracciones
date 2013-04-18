@@ -16,9 +16,18 @@
 }
 
 .clean-gray{
-border:solid 1px #DEDEDE;
-background:#EFEFEF;
-color:#222222;
-padding:4px;
-text-align:center;
+	border:solid 1px #DEDEDE;
+	font-family:"Comic Sans MS", cursive;
+	background:#060 url(../img/utileria/overlay.png) repeat-x -110px;
+	z-index:999;
+	color:#030;
+	font-size:130%;
+	font-weight:bold;
+	padding:4px;
+	text-align:center;
+	margin-bottom:10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px; 
+	border-radius: 10px; 
+	width:95%;
 }

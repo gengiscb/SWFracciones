@@ -32,7 +32,7 @@ $gestorPlantilla = new GestionPlantilla();
         </div>       
         </div>
         <div class="contenido" >
-            <h1>Bienvenido</h1>
+            <h1 id="h1">Bienvenido</h1>
         </div>
         <div id="actividad"></div>
     </body>

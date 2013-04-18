@@ -2,7 +2,7 @@
 		color:#119E00;/*color:#418eb6;		*/
 	}
 	.contenido .marco .form_login h1{	
-		color:#006;
+		color:#060;
 		font-family:"Comic Sans MS", cursive;
 		text-align:center;
 		margin:10px 0px 0px 0px;
@@ -12,20 +12,22 @@
 		font-size:200%;
 		
 	}
-	h2{
-		text-align:center;
-	}
+	
 	div.marco a{
-		color:#119E00;/*#418eb6;*/
+		color:#060;/*#418eb6;*/
+		font-weight:bold;
 		text-decoration:none;
 	}
 	div.marco label{
-            color: #119E00;
+		font-family:"Comic Sans MS", cursive;
+            color: #060;
             width:150px;
             font-size:15px;
+			font-weight:bold;
 	}
 	input,textarea,select{
-		border:#B8E186 1px solid;
+		
+		border:#060 1px solid;
 		width:180px; 
 		height:30px;	
 		margin:0 0 5px 0;

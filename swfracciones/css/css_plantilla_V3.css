@@ -20,6 +20,14 @@ background-image:url(../img/utileria/fondo.png), -webkit-gradient(
 /*background-image:url(../img/utileria/fondo1.png);*/
 }
 
+h2{
+	font-family:"Arial Black", Gadget, sans-serif;
+	color:#060;
+	font-size-adjust:120%;
+	text-align:center;
+}
+
+
 label{
     color:#418eb6;
 }	
@@ -101,6 +109,23 @@ div.menu ul{
 	padding: 7px 6px 0; 
 	background:#3AAA02 url(../img/utileria/overlay.png) repeat-x 0 -110px; 
 	line-height: 100%; 
+	-webkit-border-radius: 5px;
+	 -moz-border-radius: 5px; 
+	border-radius: 5px; 
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0, .4); -moz-box-shadow: 0 1px 3px rgba(0,0,0, .4);
+}
+
+div.menu ul li ul{
+	width: 90%;
+	text-align:center;
+	/*background:none;	*/                        
+	font-weight:bold;
+	float:left;
+    /*width: 120px;*/
+	margin: 0; 
+	padding: 7px 6px 0; 
+	background:#3AAA02 url(../img/utileria/overlay.png) repeat-x 0 -110px; 
+	line-height: 100%; 
 	border-radius: 1em; 
 	-webkit-border-radius: 5px;
 	 -moz-border-radius: 5px; 
@@ -172,17 +197,15 @@ div.menu ul li ul{
 	left:0;
     width: 100%;
 	display:none;
-	z-index:9999;
-    padding: 0;
-    margin: 0;
+    padding:0;
 }
 div.menu ul li ul li{
-	width: 100%;
+	width: 95%;
 }
 
-div.menu ul li ul li a{
+/*div.menu ul li ul li a{
 	background:#3AAA02;
-}
+}*/
 
 div.menu ul li:hover ul{
     display:block;
@@ -204,7 +227,7 @@ background: #3AAA02 url(../img/utileria/overlay.png) repeat-x 0 -40px;
 	 
 }
 
-div.menu ul ul li:hover a,
+/*div.menu ul ul li:hover a,
 div.menu li:hover li a {
 	background: none; 
 	border: none;
@@ -212,19 +235,19 @@ div.menu li:hover li a {
 	-webkit-box-shadow: 
 	none; -moz-box-shadow: none;
 	width:100%;
-}
+}*/
 
 
-div.menu ul ul a:hover {
+/*div.menu ul ul a:hover {
 	background: #3AAA02 url(../img/utileria/overlay.png) repeat-x 0 -100px !important; 
 	color: #fff !important; 
 	-webkit-border-radius: 5px; 
 	-moz-border-radius: 5px; 
 	border-radius: 5px; 
 	text-shadow: 0 1px 1px rgba(0,0,0, .1);
-}
+}*/
 
-div.menu ul ul {
+/*div.menu ul ul {
 	display: none; 
 	margin: 0; 
 	padding: 0; 
@@ -237,7 +260,7 @@ div.menu ul ul {
 	border-radius: 5px; 
 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0, .3); 
 	-moz-box-shadow: 0 1px 3px rgba(0,0,0, .3); 
-	box-shadow: 0 1px 3px rgba(0,0,0, .3);}
+	box-shadow: 0 1px 3px rgba(0,0,0, .3);}*/
 
 div.menu ul ul li {float: none; margin: 0; padding: 3px; }
 
@@ -248,11 +271,11 @@ div.menu li:hover > ul {
 }
 
 div.menu ul:after {content: '.'; display: block; clear: both; visibility: hidden; line-height: 0; height: 0;}
-* html #cssmenu  ul {height: 1%;}
 /*Marco*/
 
 div.marco{
-    background:#E6F5D0;
+    background:#5CB7C8;
+	background-image:url(../img/utileria/section_bg.png);
 }
 /*Marco interno*/
 div.marco_interno{

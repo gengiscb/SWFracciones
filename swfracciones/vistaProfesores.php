@@ -38,7 +38,7 @@ $controladorServicioProfesor = new ControladorProfesor();
         </div>
         <div class="contenido" >
 
-            <h1>Lista de Profesores</h1>
+            <h1 id="h1">Lista de Profesores</h1>
             <div class="marco">
 
                 <div class="tabla">
@@ -46,7 +46,7 @@ $controladorServicioProfesor = new ControladorProfesor();
                     ?>
                     <input type="hidden" name="obtener_Alumnos" value="obtener"></input>
                     <table>
-                        <caption><a class="boton" href="RegistroProfesor.php">Agregar Nuevo</a></caption>
+                        <caption><a id='verde' class="boton" href="RegistroProfesor.php">Agregar Nuevo</a></caption>
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>

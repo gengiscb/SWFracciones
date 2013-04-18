@@ -15,8 +15,7 @@ $listarActividad = new _ControladorActividad();
         <title>Actividades</title>
         <link href="css/css_plantilla.css" rel="stylesheet" type="text/css" />         
         <link href="css/css_plantilla_v3.css" rel="stylesheet" type="text/css" />    
-        <link href="css/css_principal.css" rel="stylesheet" type="text/css" />    
-        <link href="css/css_tablas.css" rel="stylesheet" type="text/css" />    
+        <link href="css/css_principal.css" rel="stylesheet" type="text/css" />      
 
         <link href="css/css_principal.css" rel="stylesheet" type="text/css" />            
         <script type="text/javascript" language="javascript" src="js/js_principal.js"></script>
@@ -38,11 +37,11 @@ $listarActividad = new _ControladorActividad();
         </div>
         <div class="contenido" >
 
-            <h1>Actividad</h1>
+            <h1 id="h1">Actividad</h1>
             <div class="marco">
 
                 <div class="tabla">
-            <h1>Habilitar Actividades</h1>
+            <h2>Habilitar Actividades</h2>
             <div class="marco">
                 <div class="tabla">
                     <form  method="get" action="<?php echo $_SERVER["PHP_SELF"]; ?>" >

@@ -1,3 +1,4 @@
+<link href="../css/css_plantilla.css" rel="stylesheet" type="text/css" />
 <?php
 
 /*
@@ -56,15 +57,15 @@ class _ServicioActividad {
             $resultadoHTML.="<span>";
             if($this->actividadEstaHabilitada($resultado[$i]['idActividad'], $grupo)){
                 $resultadoHTML.="<a  href='Habilitar.php?cid=" . $resultado[$i]['idActividad'] . "'>                
-                <input class='boton' type ='button' value='Habilitar' /></a>";
+                <input class='boton' id='verde' type ='button' value='Habilitar' /></a>";
             }
             else {
-                $resultadoHTML.="<input  class='boton' onclick=\"alert('Solo puede habilitar una vez la actividad')\" type ='button' value='Habilitar' />";
+                $resultadoHTML.="<input  class='boton' id='verde' onclick=\"alert('Solo puede habilitar una vez la actividad')\" type ='button' value='Habilitar' />";
             }
             $resultadoHTML.="<a  href='Deshabilitar.php?cid=" . $resultado[$i]['idActividad'] . "&nombre=" . $resultado[$i]['nombre'] . "'>
-                <input class='boton' type ='button' value='Desabilitar' /></a>";
+                <input class='boton' type ='button' id='naranja' value='Desabilitar' /></a>";
             $resultadoHTML.="<a href='VerActividades.php?idAct=" . $resultado[$i]['idActividad'] . "&usuarioId= " . $_SESSION['usuarioId'] . "&nombre=" . $resultado[$i]['nombre'] . "'>
-                <input class='boton' type ='button' value='Visualizar' /></a>";
+                <input class='boton' id='azul' type ='button' value='Visualizar' /></a>";
 
             $resultadoHTML.="</span>";
             $resultadoHTML.="</div>";
