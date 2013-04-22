@@ -17,15 +17,26 @@ $controladorServicioProfesor = new ControladorProfesor();
         <link href="css/css_plantilla_v3.css" rel="stylesheet" type="text/css" />    
         <link href="css/css_principal.css" rel="stylesheet" type="text/css" />    
         <link href="css/css_tablas.css" rel="stylesheet" type="text/css" />    
-        <?php
-        ?>
-        <link href="css/css_principal.css" rel="stylesheet" type="text/css" />            
-        <script type="text/javascript" language="javascript" src="js/js_principal.js"></script>
+        <link href="css/css_principal.css" rel="stylesheet" type="text/css" />  
+        <script type="text/javascript">
+            var parametro_prof_id = "<?php echo '?idProfesor='.$_SESSION['grupo'].'&grf=o' ?> " ;
+            
+        </script>          
         <script type="text/javascript" language="javascript" src="js/js_validaciones_eliminar.js"></script>
-        <script type="text/javascript" src="js/jquery.min.js"></script>  
+       	<script type="text/javascript" src="js/_Gjquery.min.js"></script>
+        <script type="text/javascript" src="js/js_grafica.js"></script>
+        <script type="text/javascript" src="js/jquery.dataTables.js"></script>
+        <script type="text/javascript" src="js/js_reporte.js" ></script>
+        <style type="text/css">
+            @import "css/demo_table_jui.css";
+            @import "js/themes/smoothness/jquery-ui-1.8.4.custom.css";
+			@import "css/tabla.css";
+        </style>
 
     </head>
     <body>
+    <script src="js/highcharts.js"></script>
+        <script src="js/themes/dark-green.js"></script>
         <div class="banner">
             <div class="encabezado">
                 <?php
@@ -37,7 +48,7 @@ $controladorServicioProfesor = new ControladorProfesor();
             </div>       
         </div>
         <div class="contenido" >
-
+			
             <h1 id="h1">Lista de Profesores</h1>
             <div class="marco">
 
@@ -45,8 +56,8 @@ $controladorServicioProfesor = new ControladorProfesor();
                     <?php
                     ?>
                     <input type="hidden" name="obtener_Alumnos" value="obtener"></input>
-                    <table>
-                        <caption><a id='verde' class="boton" href="RegistroProfesor.php">Agregar Nuevo</a></caption>
+                    <table id="datatables" class="display">
+                        <caption><a href="RegistroProfesor.php"><input type="button" class="boton" id="verde" value="Agregar Nuevo"/></a></caption>
                         <tr>
                             <th>ID</th>
                             <th>Nombre</th>

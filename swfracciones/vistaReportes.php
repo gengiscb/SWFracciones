@@ -18,7 +18,6 @@ $gestorPlantilla = new GestionPlantilla();
         <link href="css/css_principal.css" rel="stylesheet" type="text/css" />    
         <!--<link href="css/css_tablas.css" rel="stylesheet" type="text/css" />-->    
         <link href="css/css_principal.css" rel="stylesheet" type="text/css" />
-        <script type="text/javascript" language="javascript" src="js/js_principal.js"></script>
         <script type="text/javascript" language="javascript" src="js/js_validaciones_eliminar.js"></script>
         <script type="text/javascript">
             var parametro_prof_id = "<?php echo '?idProfesor='.$_SESSION['grupo'].'&grf=o' ?> " ;

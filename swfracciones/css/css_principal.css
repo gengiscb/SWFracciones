@@ -7,7 +7,7 @@
 */
 
 #actividad{
-    background: #0099FF;
+    background: #0099FF url(../img/utileria/section_bg.png);
     margin: auto;
     margin-top: 20px;
     border-radius: 15px;
@@ -17,8 +17,9 @@
 
 .clean-gray{
 	border:solid 1px #DEDEDE;
+	text-shadow: 0 1px 0 rgba(255,255,255, 1);
 	font-family:"Comic Sans MS", cursive;
-	background:#060 url(../img/utileria/overlay.png) repeat-x -110px;
+		background:#3AAA02 url(../img/utileria/overlay2.png) repeat-x -110px;
 	z-index:999;
 	color:#030;
 	font-size:130%;

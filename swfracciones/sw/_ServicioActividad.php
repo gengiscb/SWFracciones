@@ -60,12 +60,12 @@ class _ServicioActividad {
                 <input class='boton' id='verde' type ='button' value='Habilitar' /></a>";
             }
             else {
-                $resultadoHTML.="<input  class='boton' id='verde' onclick=\"alert('Solo puede habilitar una vez la actividad')\" type ='button' value='Habilitar' />";
+                $resultadoHTML.="<a><input  class='boton' id='verde' type ='button' onclick=\"alert('Solo puede habilitar una vez la actividad')\"  value='Habilitar' /></a>";
             }
             $resultadoHTML.="<a  href='Deshabilitar.php?cid=" . $resultado[$i]['idActividad'] . "&nombre=" . $resultado[$i]['nombre'] . "'>
-                <input class='boton' type ='button' id='naranja' value='Desabilitar' /></a>";
+                <input class='boton' id='naranja' type ='button' value='Desabilitar' /></a>";
             $resultadoHTML.="<a href='VerActividades.php?idAct=" . $resultado[$i]['idActividad'] . "&usuarioId= " . $_SESSION['usuarioId'] . "&nombre=" . $resultado[$i]['nombre'] . "'>
-                <input class='boton' id='azul' type ='button' value='Visualizar' /></a>";
+                <input class='boton' type ='button' id='azul' value='Visualizar' /></a>";
 
             $resultadoHTML.="</span>";
             $resultadoHTML.="</div>";

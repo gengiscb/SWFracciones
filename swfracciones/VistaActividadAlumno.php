@@ -19,7 +19,8 @@ $controladorActividades = new _ControladorActividad();
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />        
         <title>Principal</title>
         <link href="css/css_plantilla.css" rel="stylesheet" type="text/css" />         
-        <link href="css/css_plantilla_v3.css" rel="stylesheet" type="text/css" />    
+        <link href="css/css_plantilla_v3.css" rel="stylesheet" type="text/css" />
+        <link href="css/css_principal.css" rel="stylesheet" type="text/css" />
         <link href="css/css_vista_actividad_alumno.css" rel="stylesheet" type="text/css" />
         <script type="text/javascript" src="js/jquery-1.6.4.js"></script>
         <!--<script language="javascript" src="js/js_vista_actividad_alumno.js"></script>-->

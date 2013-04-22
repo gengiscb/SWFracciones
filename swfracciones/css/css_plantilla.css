@@ -10,6 +10,7 @@
 	}
 	h1{	
 		color:#060;
+		text-shadow: 0 1px 0 rgba(255,255,255, 1);
 		
 		font-family:"Comic Sans MS", cursive;
 		text-align:center;
@@ -197,8 +198,16 @@
 			
 		}
 		
+	a input.boton{
 		
-.boton{
+	}
+		
+		
+		
+		
+.boton, #iniciar{
+	padding-bottom:30px;
+	font-size:18px;
 	font-family:"Comic Sans MS", cursive;
 	width:180px;
 	/* A semi-transparent text shadow */
@@ -262,7 +271,7 @@
 	background-image:url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(183,229,45,1)), to(rgba(183,229,45,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#90de31), to(#7fc01e));
 }
 
-.boton:active {
+.boton:active, #inicar:active {
 	/* Moving the button 1px to the bottom when clicked */
 	bottom:-1px;
 }
@@ -276,7 +285,7 @@
 	background-image:url(../img/utileria/button_bg.png), url(../img/utileria/button_bg.png), -webkit-gradient(radial, 50% 100%, 0, 50% 100%, 100, from(rgba(241,192,52,1)), to(rgba(241,192,52,0))),-webkit-gradient(linear, 0% 0%, 0% 100%, from(#f9a746), to(#e18f2b));
 }
 
-.boton#azul:hover, .boton#acceder:hover {
+.boton#azul:hover, .boton#acceder:hover, #iniciar:hover {
 	border:1px solid #63c7fe !important;
 	background-color:#63c7fe;
 	background-position:top left, bottom right, 0 0, 0 0;

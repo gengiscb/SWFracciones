@@ -22,7 +22,6 @@ include_once 'ControladorAlumno.php';
         <link href="css/css_registro.css" type="text/css" rel="stylesheet"  />
 
         <script type="text/javascript" language="javascript" src="js/js_validarRegistro.js" ></script>
-        <script type="text/javascript" src="js/jquery.min.js"></script>  
     </head>
     <body>    
         <div class="banner">
@@ -82,7 +81,8 @@ include_once 'ControladorAlumno.php';
                                 <input type="hidden" name="grupo" value="<?php echo $alumno->getGrupo() ?>"/>
                                 <input type="hidden" name="usuarioID" value="<?php echo $alumno->getIdUsuario() ?>"/>
                                 <input type="hidden" name="actualizar_alumno" value="actualizar"/>
-                                <td colspan="2" ><input type="submit" class="boton" id="registrar" value="Guardar"/></td>
+                                <td colspan="2" ><input type="submit" class="boton" id="verde" value="Guardar"/><input type="button" onclick="document.location='index.php'"  name="btn_regresar" class="boton"  id="naranja" value="Cancelar"/></td>
+                                
                             </tr>                    
                         </table>
                     </form>
