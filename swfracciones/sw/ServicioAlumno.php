@@ -14,9 +14,9 @@ class ServicioAlumno {
 
     public function actualizarPerfilAlumno($usuarioId, $nombre, $apellidoP, $apellidoM, $contrasenia, $grupo) {
         $servicioUsuario = new ServicioUsuario();
-        $servicioUsuario->actualizarPerfilUsuario($usuarioId, $nombre, $apellidoP, $apellidoM, $contrasenia);
-        $alumnoDAO = new AlumnoDAO();
-        return $alumnoDAO->actualizarInformacionAlumno($grupo, $usuarioId);
+        return $servicioUsuario->actualizarPerfilUsuario($usuarioId, $nombre, $apellidoP, $apellidoM, $contrasenia);
+//        $alumnoDAO = new AlumnoDAO();
+//        return $alumnoDAO->actualizarInformacionAlumno($grupo, $usuarioId);
     }
 
     public function eliminarAlumno($usuarioId) {

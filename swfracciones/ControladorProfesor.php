@@ -2,10 +2,16 @@
 
 include_once 'sw/ServicioProfesor.php';
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: ControladorProfesor
+ * Descripcion: Esta clase se encarga de la conexion entre los visuales de gestion de profesor y la parte logiaca
  * Requisitos relacionados:
- * -
+ * -RF-PR001
+ * -RF-PR002
+ * -RF-PR003
+ * -RF-PR004
+ * -RF-AD001
+ * -RF-AD002
+ * -RF-PR003
  */
 class ControladorProfesor {
 

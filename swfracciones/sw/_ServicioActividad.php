@@ -58,7 +58,7 @@ class _ServicioActividad {
                 //$resultadoHTML.="<a><input  class='boton' id='verde' type ='button' onclick=\"alert('Solo puede habilitar una vez la actividad')\"  value='Habilitar' /></a>";
                 //$resultadoHTML.="<input  class='boton' id='' type ='button' disabled value='Habilitar' />";
                 $resultadoHTML.="<a  href='Deshabilitar.php?cid=" . $resultado[$i]['idActividad'] . "&nombre=" . $resultado[$i]['nombre'] . "'>
-                <input class='boton' id='naranja' type ='button' value='Desabilitar' /></a>";
+                <input class='boton' id='naranja' type ='button' value='Deshabilitar' /></a>";
             }
 
             $resultadoHTML.="<a href='VerActividades.php?idAct=" . $resultado[$i]['idActividad'] . "&usuarioId= " . $_SESSION['usuarioId'] . "&nombre=" . $resultado[$i]['nombre'] . "'>

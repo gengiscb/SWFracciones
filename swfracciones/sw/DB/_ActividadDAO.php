@@ -3,10 +3,16 @@
 include_once 'ConexionGeneral.php';
 include_once '/sw/domain/Actividad.php';
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: ActividadDAO
+ * Descripcion: Esta clase se encarga de gestionar la consulta de informacion de las actividades en la base de datos
  * Requisitos relacionados:
- * -
+ * -RF-ACT002
+ * -RF-ACT003
+ * -RF-ACT004
+ * -RF-ACT005
+ * -RF-ACT006
+ * -RF-ACT007
+ * -RF-ACT008
  */
 class ActividadDAO extends ConexionGeneral {
 

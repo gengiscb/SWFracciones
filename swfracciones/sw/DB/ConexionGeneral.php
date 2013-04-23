@@ -2,10 +2,10 @@
 
 include_once 'config.inc.php';
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: ConexionGeneral
+ * Descripcion: Esta clase es la interfaz general de acceso a la base de datos.
  * Requisitos relacionados:
- * -
+ * -Todos los accesos a base de datos
  */
 class ConexionGeneral {
 

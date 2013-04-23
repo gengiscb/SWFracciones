@@ -81,7 +81,7 @@ $controladorServicioAlumno = new ControladorAlumno();
                                 <input type="hidden" name="grupo" value="<?php echo $alumno->getGrupo() ?>"/>
                                 <input type="hidden" name="usuarioID" value="<?php echo $alumno->getIdUsuario() ?>"/>
                                 <input type="hidden" name="actualizar_alumno" value="actualizar"/>
-                                <td colspan="2" ><input type="submit" class="boton" id="verde" value="Guardar"/><input type="button" onclick="document.location='index.php'"  name="btn_regresar" class="boton"  id="naranja" value="Cancelar"/></td>
+                                <td colspan="2" ><input type="submit" class="boton" id="verde" value="Guardar"/><input type="button" onclick="javascript:window.history.go(-1);"  name="btn_regresar" class="boton"  id="naranja" value="Regresar"/></td>
 
                             </tr>                    
                         </table>

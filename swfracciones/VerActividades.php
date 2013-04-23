@@ -68,6 +68,7 @@ $controladorActividades = new _ControladorActividad();
                 <?php
                 echo $gestorArctividad->getHtmlResponder(2);
                 ?>
+                <input type="button" class="boton" value="Regresar" onclick="javascript:window.history.go(-1);"/>
             </div>
 
         </div>

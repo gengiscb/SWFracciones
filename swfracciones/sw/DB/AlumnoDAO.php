@@ -5,10 +5,10 @@ include_once '/sw/domain/Alumno.php';
 include_once '/sw/domain/Usuario.php';
 include_once 'UsuarioDAO.php';
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: AlumnoDAO
+ * Descripcion: Esta clase se encarga de gestionar la consulta de datos de la entidad Alumno
  * Requisitos relacionados:
- * -
+ * -RF-AL001
  */
 class AlumnoDAO extends ConexionGeneral {
 
@@ -43,7 +43,7 @@ class AlumnoDAO extends ConexionGeneral {
 
     public function actualizarInformacionAlumno($grupo, $usuarioId) {
         $conexion = $this->abrirConexion();
-        $query = "UPDATE alumno SET Grupo = '" . $grupo . "';";
+        $query = "UPDATE alumno SET Grupo = '" . $grupo . "'";
         $resultado = $this->ejecutarConsulta($query, $conexion);
         $this->cerrarConexion($conexion);
         return $resultado;

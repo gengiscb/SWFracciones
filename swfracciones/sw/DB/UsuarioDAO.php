@@ -2,10 +2,14 @@
 include_once 'ConexionGeneral.php';
 include_once '/sw/domain/Usuario.php';
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: UsuarioDAO
+ * Descripcion: Esta clase se encarga de realizar peticiones a la base de datos sobre la entidad usuario
  * Requisitos relacionados:
- * -
+ * -RF-PR002
+ * -RF-PR003
+ * -RF-PR004
+ * -RF-AL002
+ * -RF-AL003
  */
 class UsuarioDAO extends ConexionGeneral {
 

@@ -80,7 +80,7 @@ $controladorServicioProfesor->eliminarProfesorProf();
                                 <td colspan="2"><input type="submit" class="boton" id="verde" value="Guardar"/>                                    
                                     <a onclick = "confirmarEliminacionProfesorProf(<?php echo $profesor->getIdUsuario() ?>)" href="#">
                                         <input class="boton" id="naranja" type="button" value="Eliminar Cuenta" ></input></a>
-                                        <input type="button" onclick="javascript:window.history.go(-1);"  name="btn_regresar" class="boton"  id="naranja" value="Cancelar"/>
+                                        <input type="button" onclick="javascript:window.history.go(-1);"  name="btn_regresar" class="boton"  id="naranja" value="Regresar"/>
                                 </td>
                                         
 

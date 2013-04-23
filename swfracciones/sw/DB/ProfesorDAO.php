@@ -4,10 +4,16 @@ include_once 'ConexionGeneral.php';
 include_once '/sw/domain/Profesor.php';
 include_once '/sw/domain/Usuario.php';
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: ProfesorDAO
+ * Descripcion: Esta clase se encarga de gestionar consultas a la base de datos relacionadas con la entidad profesor.
  * Requisitos relacionados:
- * -
+ * -RF-PR001
+ * -RF-PR002
+ * -RF-PR003
+ * -RF-PR004
+ * -RF-AD001
+ * -RF-AD002
+ * -RF-AD003
  */
 class ProfesorDAO extends ConexionGeneral {
 

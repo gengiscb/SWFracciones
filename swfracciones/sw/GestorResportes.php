@@ -3,10 +3,12 @@
 include_once 'DB/ReporteDAO.php';
 include_once 'DB/_ActividadDAO.php';
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: GestorResportes
+ * Descripcion: Esta clase se encarga de gestionar la creacion de reportes.
  * Requisitos relacionados:
- * -
+ * -RF-RE001
+ * -RF-RE002
+ * -RF-RE003
  */
 class GestorResportes {
 
@@ -96,7 +98,8 @@ class GestorResportes {
                     }
                     if (($filaAct) != null) {
                         $ingresos+=trim($filaAct['ingresos']);
-                        $intentos+=trim($filaAct['intentos']);
+                        $intentos+=trim($filaAct['Fallos']);
+                        $intentos+=trim($filaAct['Aciertos']);
                         $asciertos += trim($filaAct['Aciertos']);
                         $totalPuntos +=($intentos > 0) ? $intentos : 1;
                         $trTabla.= '    <td align="center">' . $filaAct['Aciertos'] . '</td>';
@@ -111,14 +114,15 @@ class GestorResportes {
                         $trTabla.= '    <td align="center">0</td>';
                     }
                 }
-                $trTabla.= '    <td align="center">' . ((($ingresos > 0) ? $asciertos / $totalPuntos : 0) * 100) . '</td>';
-                $trTabla.= '    <td align="center">' . (( (($ingresos > 0) ? ($ingresos - 1 ) : 0) * 3) + $intentos ) . '</td>';
+                $AA = ((($ingresos > 0) ? $asciertos / $totalPuntos : 0) * 100);
+                $trTabla.= '    <td align="center">' .(round($AA * 100) / 100). '</td>';
+                //(( (($ingresos > 0) ? ($ingresos - 1 ) : 0) * 3) + $intentos )
+                $trTabla.= '    <td align="center">' . $intentos . '</td>';
                 $trTabla.= '</tr>';
             }
         }
         return $trTabla;
     }
-
     private function estaElementoEnArray($elemento, $array) {
         for ($a = 0; $a < count($array); $a++) {
 

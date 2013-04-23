@@ -60,7 +60,7 @@ $sesion->sesionActiva();
             </div>
             <div  class="marco">                
                 <h2>¿Nuevo Profesor?</h2>
-                <span id="span_registro"><a href="RegistroProfesor.php">Registrate aqui!</a></span>
+                <span id="span_registro"><a href="RegistroProfesor.php">Reg&iacute;strate aqui!</a></span>
             </div>
         </div>
     </body>

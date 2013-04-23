@@ -52,7 +52,7 @@ $gestionPlantilla = new GestionPlantilla();
                                 <td> <input type="text" name="apellidoM" id="apellidoM" size="20" maxlength="46"  value="" /></td>
                             </tr>
                             <tr>
-                                <td> Matr&iacute;cula:</td>     
+                                <td> Matr&iacute;cula:<span>(Usuario 6 caracteres)</span></td>     
                                 <td> <input type="text" name="matricula" id="matricula" size="20" maxlength="46"   value="" /></td>
                             </tr>
 

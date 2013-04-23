@@ -68,6 +68,7 @@ if (!$controladorActividades->comprobarIntentos($idActividad, $idAlumno)) {
                 echo $gestorArctividad->getHtmlResponder(1);
                 echo $gestorArctividad->getActividadJS();
                 ?>
+                <input type="button" class="boton" value="Regresar" onclick="javascript:window.history.go(-1);"/>
             </div>
 
         </div>

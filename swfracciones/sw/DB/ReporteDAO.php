@@ -2,10 +2,12 @@
 
 include_once 'ConexionGeneral.php';
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: ReporteDAO
+ * Descripcion: Esta clase se encarga de gestionar consultas a la base de datos para obtener atributos de la entidad reporte.
  * Requisitos relacionados:
- * -
+ * -RF-RE001
+ * -RF-RE002
+ * -RF-RE003
  */
 class ReporteDAO extends ConexionGeneral {
 

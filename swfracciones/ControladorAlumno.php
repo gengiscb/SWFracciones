@@ -2,10 +2,11 @@
 
 include_once 'sw/ServicioAlumno.php';
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: ControladorAlumno
+ * Descripcion: Esta clase se encarga de gestionar las interacciones entre la parte visual y la parte logia de gestion de alumnos
  * Requisitos relacionados:
- * -
+ * -RF-AL001
+ * -RF-AL002
  */
 class ControladorAlumno {
 
