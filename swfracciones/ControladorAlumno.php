@@ -69,6 +69,35 @@ class ControladorAlumno{
             }
         }
     }
+	function tablaAlumnos(){	
+		$alumnos=$this->obtenerAlumnosC();
+    	$SALTO = "\n";
+    	$cadena_post = "";
+    	$index = 1;
+		//    echo count($alumnos).$_SESSION['grupo'];
+		foreach($alumnos as $alumno) {
+        	$class = "";
+        	if ($index % 2 == 0)
+        		$class = "par";
+        
+        	$cadena_post .='            <tr>' . $SALTO;
+        	$cadena_post .='                <td>' . $alumno->getIdAlumno() . '</td>' . $SALTO;
+        	$cadena_post .='                <td>' . $alumno->getNombre() . '</td>' . $SALTO;
+        	$cadena_post .='                <td>' . $alumno->getApellidoP(). '</td>' . $SALTO;
+        	$cadena_post .='                <td>' . $alumno->getApellidoM() . '</td>' . $SALTO;
+        	$cadena_post .='                <td>' . $alumno->getGrupo() . '</td>' . $SALTO;
+        	$cadena_post .='                <td class="editar"><a href="EditarAlumno.php?ver_perfil_alumno=ver_perfil&matricula=' . $alumno->getMatricula() . '"><img src="img/utileria/editar.png" alt="Editar"/></a></td>' . $SALTO;
+        //href="adm_producto_borrar.php?productoId='.$producto['productoId'].'"
+        	$cadena_post .='               	<td class="borrar"><a onclick = "confirmarEliminacionUsuario(' . $alumno->getIdUsuario() . ')" href="#"><img src="img/utileria/borrar.png" alt="Borrar"/></a></td>' . $SALTO;
+//            $cadena_post .='                </td>'.$SALTO;
+        	$cadena_post .='            </tr>' . $SALTO;
+        	$index++;
+    	}
+    	if ($cadena_post == "") {
+        	$cadena_post .="<tr><td colspan='4'>No hay alumnos registrados</td></tr>" . $SALTO;
+    	}
+    	return $cadena_post;
+	}
 }
 
 $agregarAlumno = new ControladorAlumno();

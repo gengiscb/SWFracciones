@@ -82,8 +82,34 @@ class ControladorProfesor {
         }
     }
 
+	function tablaProfesores(){
+		$profesores=$this->obtenerProfesoresC();
+    	$SALTO = "\n";
+    	$cadena_post = "";
+    	$index = 1;
+		foreach($profesores as $profesor) {
+        	$class = "";
+        	if ($index % 2 == 0)
+        		$class = "par";
+        	$cadena_post .='            <tr class="' . $class . '">' . $SALTO;
+        	$cadena_post .='                <td>' . $profesor->getIdProfesor() . '</td>' . $SALTO;
+        	$cadena_post .='                <td>' . $profesor->getNombre() . '</td>' . $SALTO;
+        	$cadena_post .='                <td>' . $profesor->getApellidoP(). '</td>' . $SALTO;
+        	$cadena_post .='                <td>' . $profesor->getApellidoM() . '</td>' . $SALTO;
+        	$cadena_post .='                <td>' . $profesor->getIdProfesor() . '</td>' . $SALTO;
+        	$cadena_post .='                <td>'.$profesor->getContrasena().'</td>' . $SALTO;
+        //href="adm_producto_borrar.php?productoId='.$producto['productoId'].'"
+        	$cadena_post .='               	<td class="borrar"><a onclick = "confirmarEliminacionProfesor(' . $profesor->getIdUsuario() . ')" href="#"><img src="img/utileria/borrar.png" alt="Borrar"/></a></td>' . $SALTO;
+//            $cadena_post .='                </td>'.$SALTO;
+        	$cadena_post .='            </tr>' . $SALTO;
+        	$index++;
+    	}
+    	if ($cadena_post == "") {
+        	$cadena_post .="<tr><td colspan='4'>No hay profesores registrados</td></tr>" . $SALTO;
+    	}
+    	return $cadena_post;
+	}
 }
-
 $controladorProfesor = new ControladorProfesor ();
 echo trim($controladorProfesor->agregaProfesorC());
 
