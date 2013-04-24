@@ -4,10 +4,18 @@ include_once 'sw/GestorActividad1_0.php';
 include_once 'sw/GestorActividad1_1.php';
 include_once 'sw/GestorActividad1_2.php';
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: _ControladorActividad
+ * Descripcion: Esta clase se encarga de gestionar las interacciones entre la parte visual y la parte logia de gestion de Actividades
  * Requisitos relacionados:
- * -
+ * -RF-ACT001
+RF-ACT002
+RF-ACT003
+RF-ACT004
+RF-ACT005
+RF-ACT006
+RF-ACT007
+RF-ACT008
+
  */
 class _ControladorActividad {
     function listarActividadesAlumno() {

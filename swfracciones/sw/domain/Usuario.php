@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: Usuario
+ * Descripcion: Esta clase se encarga de simular la entidad usuario
  * Requisitos relacionados:
- * -
+ * -Modulo de gestion de acceso
  */
 class Usuario {
 

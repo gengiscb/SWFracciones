@@ -6,10 +6,18 @@
  */
 include_once 'GestorActividad.php';
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: GestorActividad1_1
+ * Descripcion: Esta clase se encarga de gestionar la actividad 1.0
  * Requisitos relacionados:
- * -
+ * RF-ACT004
+RF-ACT005
+RF-ACT006
+RF-ACT007
+RF-ACT008
+RF-ACT111
+RF-ACT112
+RF-ACT113
+RF-ACT114
  */
 class GestorActividad1_1 extends GestorActividad {
 

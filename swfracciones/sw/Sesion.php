@@ -8,6 +8,8 @@ include_once 'domain/Usuario.php';
  * Clase: Sesion
  * Descripcion: Esta clase se encarga de la gestion de la session de un usuario. 
  * Requisitos relacionados:
+ * -RF-AL003
+ * -RF-AC001
  */
 class Sesion {
 

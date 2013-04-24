@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: Alumno
+ * Descripcion: Esta clase se encarga de simular la entidad alumno
  * Requisitos relacionados:
- * -
+ * -Modulo gestion de alumno
  */
 
 class Alumno extends Usuario {

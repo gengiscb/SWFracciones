@@ -3,10 +3,13 @@
 include_once 'config.inc.php';
 include_once 'sw/GestorResportes.php';
 /**
- * Clase: 
+ * Clase: ControladorReportes
  * Descripcion: Esta clase se encarga de 
  * Requisitos relacionados:
- * -
+ * -RF-RE001
+RF-RE002
+RF-RE003
+
  */
 class ControladorReportes {
 

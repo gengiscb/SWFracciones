@@ -1,11 +1,21 @@
 <?php
 
 include_once 'DB/UsuarioDAO.php';
+
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: ServicioUsuario
+ * Descripcion: Esta clase se encarga de gestionar los servicios sobre el usuario
  * Requisitos relacionados:
- * -
+ * -RF-PR001
+  RF-PR002
+  RF-PR003
+  RF-PR004
+  RF-AL001
+  RF-AL002
+  RF-AL003
+  RF-AD001
+  RF-AD002
+  RF-AD003
  */
 class ServicioUsuario {
 
@@ -29,7 +39,7 @@ class ServicioUsuario {
     }
 
     public function agregarUsuario($matricula, $nombre, $contrasenia, $apellidoP, $apellidoM, $tipoUsuario) {
-        $usuarioDAO = new UsuarioDAO();        
+        $usuarioDAO = new UsuarioDAO();
         if (!$usuarioDAO->existeUsuario($matricula)) {
             $usuarioDAO->insertarUsuario($contrasenia, $nombre, $apellidoP, $apellidoM, $matricula, $tipoUsuario);
             return true;
@@ -55,4 +65,5 @@ class ServicioUsuario {
     }
 
 }
+
 ?>

@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: GestionPlantilla
+ * Descripcion: Esta clase se encarga de gestionar la plantilla general de la aplicacion web
  * Requisitos relacionados:
- * -
+ * -Todas las vistas
  */
 
 class GestionPlantilla {

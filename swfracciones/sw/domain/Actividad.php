@@ -1,10 +1,10 @@
 <?php
 
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: Actividad
+ * Descripcion: Esta clase se encarga de simular una actividad 
  * Requisitos relacionados:
- * -
+ * -Modulo gestor de actividades
  */
 class Actividad {
 

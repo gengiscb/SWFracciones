@@ -2,10 +2,10 @@
 
 include_once('Usuario.php');
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: Profesor
+ * Descripcion: Esta clase se encarga de simular la entidad profesor
  * Requisitos relacionados:
- * -
+ * -Modulo de profesor
  */
 
 class Profesor extends Usuario {

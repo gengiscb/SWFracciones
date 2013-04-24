@@ -3,10 +3,10 @@
 include_once 'DB/_ActividadDAO.php';
 include_once 'sw/Sesion.php';
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: _ServicioActividad
+ * Descripcion: Esta clase se encarga de gestionar la partelogica visual relacionada con los servicios sobre las actividades
  * Requisitos relacionados:
- * -
+ * -Modulo gestor de actividades
  */
 class _ServicioActividad {
 

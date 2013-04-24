@@ -5,10 +5,11 @@ include_once 'DB/AlumnoDAO.php';
 include_once 'DB/ProfesorDAO.php';
 include_once 'DB/UsuarioDAO.php';
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: ServicioAlumno
+ * Descripcion: Esta clase se encarga de gestionar los servicios sobre el alumno
  * Requisitos relacionados:
- * -
+ * -RF-AL001
+ * RF-AL002
  */
 class ServicioAlumno {
 

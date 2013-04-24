@@ -2,10 +2,27 @@
 
 
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: GestorActividad
+ * Descripcion: Esta clase es la interfaz que define el visual se una actividad
  * Requisitos relacionados:
  * -
+ * RF-ACT004
+RF-ACT006
+RF-ACT007
+RF-ACT008
+RF-ACT101
+RF-ACT102
+RF-ACT103
+RF-ACT104
+RF-ACT111
+RF-ACT112
+RF-ACT113
+RF-ACT114
+RF-ACT121
+RF-ACT122
+RF-ACT123
+RF-ACT124
+
  */
 class GestorActividad {
 

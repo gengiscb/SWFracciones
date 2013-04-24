@@ -3,10 +3,15 @@
 include_once 'ServicioUsuario.php';
 include_once 'DB/ProfesorDAO.php';
 /**
- * Clase: 
- * Descripcion: Esta clase se encarga de 
+ * Clase: ServicioProfesor
+ * Descripcion: Esta clase se encarga de  de gestionar los servicios sobre el profesor
  * Requisitos relacionados:
- * -
+ * -RF-PR001
+RF-PR002
+RF-PR003
+RF-PR004
+RF-AD001
+RF-AD003
  */
 class ServicioProfesor {
 
