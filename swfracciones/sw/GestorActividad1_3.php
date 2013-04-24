@@ -277,7 +277,7 @@ class GestorActividad1_3 extends GestorActividad {
     }
 public function getLightBox(){
         return '<div id="fade" class="fadebox"> 
-                    <button id="iniciar" astyle="height:50px" onclick="javascript:actualizarIntentos('.GestorActividad1_3::$idActividad.','.$this->idAlumno.')" >Iniciar Actividad 3</button>
+                    <button class="boton" id="inciar"  onclick="javascript:actualizarIntentos('.GestorActividad1_3::$idActividad.','.$this->idAlumno.')" >Iniciar Actividad 3</button>
                 </div>';
     }
 

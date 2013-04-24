@@ -25,13 +25,6 @@
     filter: alpha(opacity=80);
 }
 
-.fadebox #iniciar{
-    position: relative;
-    margin: auto;
-    margin-top: 150px;
-    /*margin-left: 45%;*/
-}
-
 
 body {
 text-align: center;

@@ -22,15 +22,7 @@
     -moz-opacity: 0.8;
     opacity:.80;
     filter: alpha(opacity=80);
-}
-
-.fadebox #iniciar{
-    position: relative;
-    margin: auto;
-    margin-top: 150px;
-    /*margin-left: 45%;*/
-}
-	
+}	
 
 *{
 margin:0;

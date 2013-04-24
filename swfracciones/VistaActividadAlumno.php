@@ -54,7 +54,7 @@ $controladorActividades = new _ControladorActividad();
             </div>       
         </div>
         <div class="contenido" id ="contenedor">
-            <h1>
+            <h1 id="h1">
                 <?php
                 echo $gestorArctividad->getNombreActividad();
                 ?>

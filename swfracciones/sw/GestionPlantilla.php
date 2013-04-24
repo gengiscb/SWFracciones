@@ -88,7 +88,7 @@ class GestionPlantilla {
     }
 	
 	function efectosMenu(){
-		return '<script>
+		return ''/*'<script>
             $(document).ready(function(){
     $(\'.menu li\').hover(function(){
             $(this).find(\'ul:first\').css({visibility: "visible",display: "none"}).fadeIn(400); // effect 1
@@ -96,7 +96,7 @@ class GestionPlantilla {
         },function(){
             $(this).find(\'ul:first\').css({visibility: "hidden"});
         });
-});</script>';
+});</script>'*/;
 	}
 
     function filtro_login() {

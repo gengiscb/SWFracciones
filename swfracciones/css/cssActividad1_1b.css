@@ -1,3 +1,4 @@
+
 /*div{
         border:#999 1px dotted;
         margin: auto;
@@ -53,9 +54,9 @@ background: darkgreen;
     z-index:1002;
     overflow: auto;
 }*/
-.fadebox #iniciar{
+/*.fadebox #iniciar{
     position: relative;
     margin: auto;
     margin-top: 150px;
-    /*margin-left: 45%;*/
-}
+    margin-left: 45%;
+}*/

@@ -164,7 +164,6 @@ if (isset($_POST['ajax'])) {
         echo $intanciaControlador->habilitarActividad();
     }
     elseif (strcmp($_POST['ajax'], "des") == 0) {
-        echo "X";
         echo $intanciaControlador->deshabilitarActividad();
     }
 }

@@ -94,9 +94,3 @@ background: darkgreen;
     z-index:1002;
     overflow: auto;
 }*/
-.fadebox #iniciar{
-    position: relative;
-    margin: auto;
-    margin-top: 150px;
-    /*margin-left: 45%;*/
-}
