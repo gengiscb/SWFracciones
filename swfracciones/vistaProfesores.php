@@ -3,6 +3,7 @@ include_once 'config.inc.php';
 include_once 'sw/GestionPlantilla.php';
 include_once 'ControladorProfesor.php';
 include_once 'sw/Sesion.php';
+
 $sesion = new Sesion();
 $sesion->filtro_login();
 $gestorPlantilla = new GestionPlantilla();

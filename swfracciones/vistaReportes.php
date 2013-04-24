@@ -1,6 +1,7 @@
 <?php
 include_once 'ControladorReportes.php';
 include_once 'sw/GestionPlantilla.php';
+
 $ctroladorReportes = new ControladorReportes();
 include_once 'sw/Sesion.php';
 $sesion = new Sesion();

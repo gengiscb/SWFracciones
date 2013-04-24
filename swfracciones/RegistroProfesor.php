@@ -4,6 +4,7 @@ include_once 'sw/GestionPlantilla.php';
 include_once 'sw/DB/ConexionGeneral.php';
 include_once 'ControladorProfesor.php';
 include_once 'sw/Sesion.php';
+
 $gestionPlantilla = new GestionPlantilla();
 $sesion = new Sesion();
 $sesion->filtro_login_Excepcion();
