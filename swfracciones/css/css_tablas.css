@@ -9,7 +9,8 @@ div.tabla table{
 }
 
 table td{
-	text-align:center;
+	font-weight:bold;
+    text-align:left;
 }
 table td.email div{      
     margin: 0px;

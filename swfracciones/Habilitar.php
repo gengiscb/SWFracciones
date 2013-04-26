@@ -234,7 +234,7 @@ for ($i = date('y'); $i < date('y') + 3; $i++) {
                                     <td>
 
                                         <input type="hidden" name="actividad" value="<?php echo $_GET['cid']; ?>"/>
-                                        <input type="submit"  name="btn_habilitar" class="boton"  id="habilitar" value="Habilitar"/></td><td><input  type="button" value="Volver" class="boton" onclick="location='ListarActividades.php'"/></td>
+                                        <input type="submit"  name="btn_habilitar" class="boton"  id="verde" value="Habilitar"/></td><td><input  type="button" value="Volver" class="boton" id="naranja" onclick="location='ListarActividades.php'"/></td>
                                 </tr>
 
                         </table>
