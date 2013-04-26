@@ -88,6 +88,7 @@ class GestorResportes {
                 $ingresos = 0;
                 $intentos = 0;
                 $asciertos = 0;
+                $fallos=0;
                 $totalPuntos = 0;
                 for ($i = 0; $i < count($listActi); $i++) {
                     $filaAct = null;
@@ -98,8 +99,9 @@ class GestorResportes {
                     }
                     if (($filaAct) != null) {
                         $ingresos+=trim($filaAct['ingresos']);
-                        $intentos+=trim($filaAct['Fallos']);
-                        $intentos+=trim($filaAct['Aciertos']);
+                        $intentos+=trim($filaAct['intentos']);
+//                        $intentos+=trim($filaAct['Aciertos']);
+                        $fallos += $filaAct['Fallos'] ;
                         $asciertos += trim($filaAct['Aciertos']);
                         $totalPuntos +=($intentos > 0) ? $intentos : 1;
                         $trTabla.= '    <td align="center">' . $filaAct['Aciertos'] . '</td>';
@@ -117,7 +119,7 @@ class GestorResportes {
                 $AA = ((($ingresos > 0) ? $asciertos / $totalPuntos : 0) * 100);
                 $trTabla.= '    <td align="center">' .(round($AA * 100) / 100). '</td>';
                 //(( (($ingresos > 0) ? ($ingresos - 1 ) : 0) * 3) + $intentos )
-                $trTabla.= '    <td align="center">' . $intentos . '</td>';
+                $trTabla.= '    <td align="center">' . ($asciertos+$fallos). '</td>';
                 $trTabla.= '</tr>';
             }
         }
