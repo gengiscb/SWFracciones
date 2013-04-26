@@ -22,16 +22,39 @@ $gestorPlantilla = new GestionPlantilla();
     <body>
         <div class="banner">
             <div class="encabezado">
-<?php
-echo $gestorPlantilla->generarEncabezadoHTML();
-echo $gestorPlantilla->generarMenu()
+                <?php
+                echo $gestorPlantilla->generarEncabezadoHTML();
+                echo $gestorPlantilla->generarMenu()
 //            echo generarMenuAdmin();
-?>  
+                ?>  
             </div>       
         </div>
         <div class="contenido" >
             <h1 id="h1">Bienvenido</h1>
+            <div class="marco">
+                <div class="tabla">
+                    <div class="marco">
+                        <div class="tabla">
+                            <a href="RegistroProfesor.php"><div class='clean-gray' id='profesor'>
+                                    <br/><span class='text_act'>
+                                        Registrar profesor
+                                    </span>
+                                    <span class='text_act'>
+                                    </span>
+                                    <br></br>
+                                </div><br/></a>
+                            <a href="vistaProfesores.php?obtener_profesores=obtener" ><div class='clean-gray' id='profesor'>
+                                    <br/><span class='text_act'>
+                                        Gestión de profesores
+                                    </span>
+                                    <span class='text_act'>
+                                    </span>
+                                    <br></br>
+                                </div><br/></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="actividad"></div>
     </body>
 </html>

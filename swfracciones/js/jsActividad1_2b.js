@@ -8,20 +8,27 @@ $(document).ready(function () {
 
   pintar=function () {
       hideLightbox();
+      $('#pintor').attr("src", "img/act1_2b/painterp.gif");      
+
         $('#pintor')
         .animate({
             'width':'220px',
             'margin-left':'-=630px'
-        },1500, function(){
+        },3000, function(){
+            $('#pintor').attr("src", "img/act1_2b/painter.gif");
             $('#pintor').animate({
                 'margin-left':'+=630px'
             },2000,function(){
                 $('#pintor').animate({                
                     'margin-botton':'40px'
                 },500,function(){
+                    $('#pintor').attr("src", "img/act1_2b/painter.gif");
                     if(!veces==0){
                         veces--;
                         pintar()
+                    }
+                    else{
+                        alert("Seleccione una respuesta");
                     }
                 });
             } );
@@ -35,12 +42,12 @@ $(document).ready(function () {
                 position:'relative',
                 "width":"742px", 
                 "margin-left":"0px"
-            }, 1500);
+            }, 2900);
         });
             
         $("#paredPintada").animate({            
             width: "800px"
-        }, 1500, function(){
+        }, 3000, function(){
             $("#paredPintada").css("top","32px");
             $("#paredPintada").css("height",x.toString() + y);
             $("#paredPintada2").css("width", "0px")

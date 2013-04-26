@@ -26,7 +26,8 @@ h2{
     text-align:center;
 }
 #h2{
-	font-family:Arial, Helvetica, sans-serif;
+	/*font-family:Arial, Helvetica, sans-serif;*/
+        font-family:"Comic Sans MS", cursive;
 }
 
 input,textarea,select{
@@ -84,9 +85,9 @@ div.slogan a, div.slogan a:hover {
 /*Menu del sitio web*/
 div.menu{
     z-index:10;
-
     font-size:18px;
     margin:auto;
+    margin-top: 55px;
     width:600px;
     -webkit-box-shadow:0px 0 30px #235A16;
     -moz-box-shadow:0px 0 30px #235A16; 

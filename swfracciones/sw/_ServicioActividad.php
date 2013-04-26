@@ -14,12 +14,12 @@ class _ServicioActividad {
                 $resultadoHTML.="<a href='VistaActividadAlumno.php?idAct=" . $resultado[$i]['idActividad'] . "&usuarioId= " . $_SESSION['usuarioId'] . "' ><div class='clean-gray'>";
                 $resultadoHTML.="<span class='text_act'>";
                 $resultadoHTML.=$resultado[$i]['nombre'];
-                $resultadoHTML.="</span>";
-                $resultadoHTML.="<span class='text_act'>";
+                $resultadoHTML.="</span> <br>";
+                $resultadoHTML.="<span class='text_fact'>De ";
                 $resultadoHTML.=$resultado[$i]['fechaInicio'];
                 $resultadoHTML.="</span>";
 
-                $resultadoHTML.="<span class='text_act'>";
+                $resultadoHTML.="<span class='text_fact'> hasta ";
                 $resultadoHTML.=$resultado[$i]['fechaFinalizacion'];
                 $resultadoHTML.="</span>";
 
@@ -33,7 +33,6 @@ class _ServicioActividad {
     }
 
     public function listarActividades($grupo) {
-
         $ActividadDAO = new ActividadDAO();
         $resultado = $ActividadDAO->listarActividadesProfesor();
         $resultadoHTML = "";
@@ -48,13 +47,15 @@ class _ServicioActividad {
 
             $resultadoHTML.="<span>";
             if ($this->actividadEstaHabilitada($resultado[$i]['idActividad'], $grupo)) {
-                $resultadoHTML.="<a  href='Habilitar.php?cid=" . $resultado[$i]['idActividad'] . "'>                
+                $resultadoHTML.="<a  href='Habilitar.php?cid=" . $resultado[$i]['idActividad'] . "'>
                 <input class='boton' id='verde' type ='button' value='Habilitar' /></a>";
             } else {
-                $resultadoHTML.="<a><input  class='boton' id='verde' type ='button' onclick=\"alert('Solo puede habilitar una vez la actividad')\"  value='Habilitar' /></a>";
-            }
-            $resultadoHTML.="<a  href='Deshabilitar.php?cid=" . $resultado[$i]['idActividad'] . "&nombre=" . $resultado[$i]['nombre'] . "'>
+                //$resultadoHTML.="<a><input  class='boton' id='verde' type ='button' onclick=\"alert('Solo puede habilitar una vez la actividad')\"  value='Habilitar' /></a>";
+                //$resultadoHTML.="<input  class='boton' id='' type ='button' disabled value='Habilitar' />";
+                $resultadoHTML.="<a  href='Deshabilitar.php?cid=" . $resultado[$i]['idActividad'] . "&nombre=" . $resultado[$i]['nombre'] . "'>
                 <input class='boton' id='naranja' type ='button' value='Desabilitar' /></a>";
+            }
+
             $resultadoHTML.="<a href='VerActividades.php?idAct=" . $resultado[$i]['idActividad'] . "&usuarioId= " . $_SESSION['usuarioId'] . "&nombre=" . $resultado[$i]['nombre'] . "'>
                 <input class='boton' type ='button' id='azul' value='Visualizar' /></a>";
 

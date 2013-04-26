@@ -46,12 +46,12 @@ body {position: relative;
     /*height: px;*/
     width: 220px;
     z-index:4;
-    -moz-transform: scaleX(-1);
+/*    -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
     transform: scaleX(-1);
     filter: FlipH;
-    -ms-filter: "FlipH";
+    -ms-filter: "FlipH";*/
 }
 
 #flip{

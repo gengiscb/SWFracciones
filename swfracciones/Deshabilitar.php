@@ -53,7 +53,7 @@ $controladorServicioActividades->deshabilitarActividad();
                                 </tr>
                                 <tr>
                                     <td ><input type="submit" name="btn_desHabilitar" class="boton"  id="naranja" value="deshabilitar"/> </td>
-                                    <td><input type="button" onclick = "location='ListarActividades.php'" class="boton"   value="Volver" id="naranja"/> </td>
+                                    <td><input type="button" onclick = "javascript:window.history.go(-1);" class="boton"   value="Volver" id="naranja"/> </td>
                                 </tr>                    
                             </table>
                     </form>

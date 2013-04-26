@@ -42,7 +42,7 @@ $controladorServicioAlumno = new ControladorAlumno();
         </div>
         <div class="contenido" >
 
-            <h1 id="h1">Lista de Alumnos</h1>
+            <h1 id="h1" >Lista de Alumnos</h1>
             <div class="marco">
 
                 <div id="tabla">

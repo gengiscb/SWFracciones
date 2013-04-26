@@ -7,6 +7,7 @@
 	}
 	td{
 		font-family:Arial, Helvetica, sans-serif;
+                font-family:"Comic Sans MS";
 		font-weight:bold;
 		text-align:left;
 	}
@@ -18,6 +19,7 @@
 		text-shadow: 0 1px 0 rgba(255,255,255, 1);
 		
 		font-family:Arial, Helvetica, sans-serif;
+                font-family:"Comic Sans MS", cursive;
 		text-align:center;
 		margin:10px 0px 0px 0px;
 		font-size:32px;		
@@ -57,6 +59,7 @@
 		font-size:20px;
 		margin:5px 0 15px;
 		font-family:Arial, Helvetica, sans-serif;
+                font-family:"Comic Sans MS", cursive;
 	}
 	input,textarea,select{
 		border:#235A16 1px solid;
@@ -76,6 +79,7 @@
 	}	
 	textarea{
 		font-family:Arial, Helvetica, sans-serif;
+                font-family:"Comic Sans MS", cursive;
 		height:60px;
                 min-width:200px;
 		min-height:60px;

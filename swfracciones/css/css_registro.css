@@ -2,7 +2,8 @@
 /* CSS Document */
 
 table.registro{
-    font:Arial, Helvetica, sans-serif;
+    font-family:"Comic Sans MS", cursive;	
+    /*font:Arial, Helvetica, sans-serif;*/
     align: center;
 	width:100%;
     float:none;

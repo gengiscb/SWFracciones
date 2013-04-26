@@ -84,7 +84,7 @@ class GestorActividad1_1 extends GestorActividad {
             <script type="text/javascript" src="js/jsActividad1_2b.js"></script>' . $this->obtenerHtmlInicializadorLighBox();
         ;
         $this->escenari = rand(1, 2);
-        echo $this->escenari;
+//        echo $this->escenari;
         $this->inicializarHtmlA();
         $this->inicializarHtmlB();
     }

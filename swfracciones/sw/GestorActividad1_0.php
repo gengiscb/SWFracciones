@@ -86,7 +86,7 @@ class GestorActividad1_0 extends GestorActividad {
             <script type="text/javascript" src="js/jsActividad1_1b.js"></script>' . $this->obtenerHtmlInicializadorLighBox();
         ;
         $this->escenari = rand(1, 2);
-        echo $this->escenari;
+        //echo $this->escenari;
         $this->inicializarHtmlA();
         $this->inicializarHtmlB();
     }
@@ -163,7 +163,7 @@ class GestorActividad1_0 extends GestorActividad {
 
     private function inicializarHtmlB() {
         $this->actividadHTMLB = '
-            <img id="imagen" src="img/act1_1b/nadador4.gif" />
+            <img id="imagen" src="img/act1_1b/nadador4.png" />
             <img id="segmento" height="10px" src="img/act1_1b/segmento2.png" />
             ';
     }

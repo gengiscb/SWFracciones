@@ -11,7 +11,7 @@ podar=function () {
     .animate({
         'width':'180px',
         'margin-left':'-=630px'
-    },1500, function(){
+    },3000, function(){
         $('#podador').animate({
             'margin-left':'+=630px'
         },2000,function(){
@@ -21,6 +21,9 @@ podar=function () {
                 if(!veces==0){
                     veces--;
                     podar()
+                }
+                else{
+                    alert("Seleccione una respuesta");
                 }
             });
         } );
@@ -34,12 +37,12 @@ podar=function () {
             position:'relative',
             "width":"747px", 
             "margin-left":"0px"
-        }, 1500);
+        }, 3000);
     });
             
     $("#pastoPodado").animate({            
         width: "800px"
-    }, 1500, function(){
+    }, 3000, function(){
         $("#pastoPodado").css("top","202px");
         $("#pastoPodado").css("height",x.toString() + y);
         $("#pastoPodado2").css("width", "0px")

@@ -30,11 +30,11 @@ $listarActividad = new _ControladorActividad();
             </div>       
         </div>
         <div class="contenido" >
-            <h1 id="h1">Actividad</h1>
+            <h1 id="h1">Gestión de Actividades</h1>
             <div class="marco">
 
                 <div class="tabla">
-                    <h2 id="h2">Habilitar Actividades</h2>
+<!--                    <h2 id="h2">Habilitar Actividades</h2>-->
                     <div class="marco">
                         <div class="tabla">
                             <form  method="get" action="<?php echo $_SERVER["PHP_SELF"]; ?>" >
@@ -43,7 +43,6 @@ $listarActividad = new _ControladorActividad();
                                 ?>
                             </form>   
                         </div>
-
                     </div>
                 </div>
                 <!--<div id="actividad"></div>-->

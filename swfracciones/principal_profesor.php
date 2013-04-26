@@ -28,8 +28,42 @@ $gestorPlantilla = new GestionPlantilla();
             </div>       
         </div>
         <div class="contenido" >
-            <h1 id="h1">Bienvenido</h1>
+            <h1 id="h1">Bienvenido</h1>            
+            <div class="marco">
+                <div class="tabla">
+                    <div class="marco">
+                        <div class="tabla">
+                            <a href="ListarActividades.php"><div class='clean-gray' id='profesor'>
+                                    <br/><span class='text_act'>
+                                            Gestión de Actividades
+                                        </span>
+                                        <span class='text_act'>
+                                        </span>
+                                        <br></br>
+                                </div><br/></a>
+                            <a href="vistaReportes.php?idProfesor= <?php echo $_SESSION['grupo'] ?>" ><div class='clean-gray' id='profesor'>
+                                    <br/><span class='text_act'>
+                                            Gestión de Reportes
+                                        </span>
+                                        <span class='text_act'>
+                                        </span>
+                                        <br></br>
+                                </div><br/></a>
+                                                        <a href="vistaAlumnos.php?obtener_Alumnos=obtener"><div class='clean-gray' id='profesor'>
+                                    <br/><span class='text_act'>
+                                            Gestión de alumnos
+                                        </span>
+                                        <span class='text_act'>
+                                        </span>
+                                        <br></br>
+                                </div><br/></a>
+                        </div>
+                    </div>
+                </div>
+                <!--<div id="actividad"></div>-->
+            </div>
+
         </div>
-        <div id="actividad"></div>
+
     </body>
 </html>

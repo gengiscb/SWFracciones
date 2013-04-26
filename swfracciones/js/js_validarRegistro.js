@@ -21,7 +21,7 @@ window.onload = function(){
     $('#form_reg_alum').ajaxForm(opciones2) ; 
     function mostrarRespuestaAlumno (responseText){
         if(responseText.trim()=="TRUE"){
-            alert("Exito al registrar al alumno");    
+            alert("Éxito al registrar al alumno");    
             window.location="vistaAlumnos.php?obtener_Alumnos=obtener";
         }
         else{

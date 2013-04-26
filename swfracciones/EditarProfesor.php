@@ -77,9 +77,12 @@ $controladorServicioProfesor->eliminarProfesorProf();
                             <tr>
                                 <input type="hidden" name="grupo" value="<?php echo $profesor->getIdProfesor() ?>"/>
                                 <input type="hidden" name="actualizar_profesor" value="registrar"/>                                
-                                <td colspan="2"><input type="submit" class="boton" id="verde" value="Guardar"/>
-                                    <input type="button" onclick="document.location='index.php'"  name="btn_regresar" class="boton"  id="naranja" value="Cancelar"/>
-                                    <a onclick = "confirmarEliminacionProfesorProf(<?php echo $profesor->getIdUsuario() ?>)" href="#"><input class="boton" id="naranja" type="button" value="Eliminar Cuenta" ></input></a></td>
+                                <td colspan="2"><input type="submit" class="boton" id="verde" value="Guardar"/>                                    
+                                    <a onclick = "confirmarEliminacionProfesorProf(<?php echo $profesor->getIdUsuario() ?>)" href="#">
+                                        <input class="boton" id="naranja" type="button" value="Eliminar Cuenta" ></input></a>
+                                        <input type="button" onclick="javascript:window.history.go(-1);"  name="btn_regresar" class="boton"  id="naranja" value="Cancelar"/>
+                                </td>
+                                        
 
                             </tr>                    
                         </table>

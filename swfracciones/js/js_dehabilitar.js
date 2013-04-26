@@ -4,7 +4,7 @@ $(document).ready(function() {
     };
     $('#deshab_form').ajaxForm(opciones) ; 
     function mostrarRespuesta (responseText){
-        alert(responseText);
+        alert($.trim(responseText));
     };
  
 }); 

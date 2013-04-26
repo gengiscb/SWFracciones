@@ -9,10 +9,10 @@ class GestionPlantilla {
 
     function generarEncabezadoHTML() {
         return '
-            <div class="mini_perfil">                
-                <ul>
-                <li><img src="img/usuarios/usuario.png" alt="Imagen usuario"/></li>
-                </ul>
+            <div class="mini_perfil">
+                <ul>'.
+                //<li><img src="img/usuarios/usuario.png" alt="Imagen usuario"/></li>
+                '</ul>
             </div>
             <div class="clearboth"></div>
             ';
@@ -50,11 +50,11 @@ class GestionPlantilla {
     }
 
     function generarMenuAlumno() {
-        return '<div class="menu" style="width:360px;">
+        return '<div class="menu" style="width:240px;">
                 <ul>
-                    <li><a  href="principal_alumno.php">Principal</a></li>
-                    <li><a href="principal_alumno.php">Actividades</a></li>                    
-                    <li class="categoria"><a href="">Mi cuenta</a>
+                    <li><a  href="principal_alumno.php">Actividades</a></li>'.
+                    //<li><a href="principal_alumno.php">Actividades</a></li>                    
+                    '<li class="categoria"><a href="">Mi cuenta</a>
                         <ul>
                             <li><a href="sw/logout.php">Cerrar Sesi&oacute;n</a></li>
                         </ul>

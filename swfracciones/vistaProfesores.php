@@ -49,8 +49,8 @@ $controladorServicioProfesor = new ControladorProfesor();
                     <?php
                     ?>
                     <input type="hidden" name="obtener_Alumnos" value="obtener"></input>
-                    <table id="datatables" class="display">
-                        <caption><a href="RegistroProfesor.php"><input type="button" class="boton" id="verde" value="Agregar Nuevo"/></a></caption>
+                    <caption><a href="RegistroProfesor.php"><input type="button" class="boton" id="verde" value="Agregar Nuevo"/></a></caption>
+                    <table id="datatables" class="display">                        
                         <thead>
                             <tr>
                                 <th>ID</th>

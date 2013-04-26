@@ -30,13 +30,13 @@ class GestorActividad1_2 extends GestorActividad {
     public function __construct($idAlumno) {
         $this->nombre = "Fracciones y Volumenes";
         //La mitad, Un cuarto, Un octavo, Tres cuartos, Tres octavos, Cinco octavos y Siete octavos
-        $this->respuestas[0] = new respuestaAct13("La mitad", -130); //bien
-        $this->respuestas[1] = new respuestaAct13("Un cuarto", -62); //bien
-        $this->respuestas[2] = new respuestaAct13("Un octavo", -31); //bien
-        $this->respuestas[3] = new respuestaAct13("Tres cuartos", -195); //bien
-        $this->respuestas[4] = new respuestaAct13("Tres octavos", -96); //bien
-        $this->respuestas[5] = new respuestaAct13("Cinco octavos", -162); //bien
-        $this->respuestas[6] = new respuestaAct13("Siete octavos", -230); //bien
+        $this->respuestas[0] = new respuestaAct13("La mitad", -126); //bien
+        $this->respuestas[1] = new respuestaAct13("Un cuarto", -60); //bien
+        $this->respuestas[2] = new respuestaAct13("Un octavo", -30); //bien
+        $this->respuestas[3] = new respuestaAct13("Tres cuartos", -190); //bien
+        $this->respuestas[4] = new respuestaAct13("Tres octavos", -94); //bien
+        $this->respuestas[5] = new respuestaAct13("Cinco octavos", -160); //bien
+        $this->respuestas[6] = new respuestaAct13("Siete octavos", -227); //bien
         $posicion = rand(0, 6);
         $this->idAlumno = $idAlumno;
         $this->respuestas[$posicion]->setEsCorrecta();
@@ -102,7 +102,7 @@ class GestorActividad1_2 extends GestorActividad {
         $escenario2 = $this->escenario2;
 
         $this->escenario = rand($escenario1, $escenario2);
-        echo $this->escenario;
+//        echo $this->escenario;
         $this->inicializarHtmlA();
         $this->inicializarHtmlB();
     }
@@ -193,22 +193,12 @@ class GestorActividad1_2 extends GestorActividad {
     <img id="segmento" height="10px" src="img/act1_3b/segmento2.png" />
 
   <div id="contenedorAcuario">
-    
-
-     <div class="pecera">
-     
+     <div class="pecera">     
        <img id="img_pecera" src="img/act1_3b/pez.png"/>
-       
-       
-       
- 
      </div>
-                               
        <div id="capaAcuario">    
          <div id="capaBloquear">&nbsp;</div>
        </div>
-      
-      
       <img id="img_agua" src="img/act1_3b/nadar.gif" id="agua"/>
      
 

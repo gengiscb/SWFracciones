@@ -1,8 +1,9 @@
 
 $('#iniciar').click(function(){
     hideLightbox();
-    $('#iniciar').attr('disabled', 'disabled');                    
-    $('#imagen').animate({
+    $('#iniciar').attr('disabled', 'disabled');
+    $('#imagen').attr("src", "img/act1_1b/nadador4.gif");
+    $('#imagen').animate({        
         left: "+="+distancia+"px"
     },6000,function (){
         $('#imagen').attr("src", "img/act1_1b/nadador4.png");

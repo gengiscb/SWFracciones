@@ -9,7 +9,6 @@ include_once 'sw/GestorActividad1_2.php';
  */
 
 class _ControladorActividad {
-
     function listarActividadesAlumno() {
         $resultado = "";
         $servicioActividad = new _ServicioActividad();
@@ -63,7 +62,6 @@ class _ControladorActividad {
     }
 
     public function listarActividades($grupo) {
-
         $ServicioActividad = new _ServicioActividad();
         $resultado = $ServicioActividad->listarActividades($grupo);
         return $resultado;

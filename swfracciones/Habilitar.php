@@ -175,7 +175,7 @@ $gestorPlantilla = new GestionPlantilla();
                                         <input type="submit"  name="btn_habilitar" class="boton"  id="verde" value="Habilitar"/>
                                     </td>
                                     <td>
-                                        <input  type="button" value="Volver" class="boton" id="naranja" onclick="location='ListarActividades.php'"/>
+                                        <input  type="button" value="Volver" class="boton" id="naranja" onclick="javascript:window.history.go(-1);"/>
                                     </td>
                                 </tr>
                         </table>

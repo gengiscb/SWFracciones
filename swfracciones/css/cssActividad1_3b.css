@@ -9,8 +9,8 @@
     background:url('../img/act1_3b/fondo_acuario.jpg');
     margin-left: 3px;
     left: 2px;
-    
-   
+
+
 }
 
 
@@ -36,81 +36,67 @@
 
 
 body {
-text-align: center;
-text-align: center;
-padding: 20px;
+    text-align: center;
+    text-align: center;
+    padding: 20px;
 
 
 }
 
 
- #segmento{
+#segmento{
     position: relative;
     float: left;
-   height: 264px;
+    height: 264px;
     width: 10px;
-    left: -100px;
+    left: -60px;
     top: 75px;
-   
- }
+
+}
 
 .pecera{
-        position: absolute;
-	z-index: 2;
-       
-        
-        height: 350px ;
-        width: 600px;
-        margin-top: 100px;
-        margin-left: -25px;
-        
+    position: absolute;
+    z-index: 2;
+
+    height: 350px ;
+    width: 600px;
+    margin-top: 100px;
+    margin-left: -25px;
+
 }
 /*The container the character goes in for easy placement*/
 #Acuario{
-height: 456px;
-width: 640px;
-margin-left:  150px; 
+    position: relative;
+    height: 456px;
+    width: 640px;
+    margin-left:  150px; 
 
 
 }
 
 /*Prevents spillover from middle layer moving up*/
 #contenedorAcuario{
-position: relative;
-overflow: hidden;
-height: 370px;
-width: 650px;
-margin-left: -50px;
- top: -250px;
-
-
-
-
-
+    position: relative;
+    overflow: hidden;
+    height: 370px;
+    width: 650px;
+    left: -70px;
+    top: 10px;
 }
 /*The middle layer container, hiding base image initially*/
 #capaAcuario{
-    
-position:absolute;
-z-index: 1;
-
-
+    position:absolute;
+    z-index: 1;
 }
 /*White div in #dudeoverlay that fill space the edge image doesn't*/
 #capaBloquear{
-
-height: 310px;
-width: 555px;
-background: url('../img/act1_3b/opacidad.png');
--moz-opacity: .35;
-opacity:.35;
-margin-left: 55px;
-margin-top: 15px;
-
-
-
-
-
+    height: 310px;
+    width: 555px;
+    background: url('../img/act1_3b/opacidad.png');
+    -moz-opacity: .35;
+    opacity:.35;
+    margin-left: 55px;
+    margin-top: 15px;
 }
 
 
@@ -121,22 +107,22 @@ margin-top: 15px;
 
 
 #img_pecera{
-    
+
     margin-left: 25px;
     margin-top: -130px;
     height: 385px;
     width: 630px;
-    
+
 }
 
 
 #img_agua{
-    
+
     margin-left: 10px;
     margin-top: 0px;
     height: 340px;
     width: 560px;
-    
-   
-    
+
+
+
 }

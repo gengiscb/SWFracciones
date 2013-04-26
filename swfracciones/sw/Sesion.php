@@ -57,7 +57,7 @@ class Sesion {
         if (isset($_SESSION['login'])) {
             $logueado = $_SESSION['login'];
             if ($logueado) {
-                if ($$_SESSION['tipo'] == 3) {
+                if ($_SESSION['tipo'] == 3) {
                     header("Location: principal_alumno.php");
                 } else if ($_SESSION['tipo'] == 2) {
                     header("Location: principal_profesor.php");

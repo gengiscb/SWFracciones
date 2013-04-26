@@ -10,7 +10,7 @@ $(document).ready(function() {
     };
     $('#hab_form').ajaxForm(opciones) ; 
     function mostrarRespuesta (responseText){
-        alert(responseText);
+        alert($.trim(responseText));
 
     };
 });

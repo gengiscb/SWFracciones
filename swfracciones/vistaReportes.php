@@ -16,7 +16,7 @@ $gestorPlantilla = new GestionPlantilla();
         <link href="css/css_plantilla_v3.css" rel="stylesheet" type="text/css" />    
         <link href="css/css_principal.css" rel="stylesheet" type="text/css" />    
         <!--<link href="css/css_tablas.css" rel="stylesheet" type="text/css" />-->    
-        <link href="css/css_principal.css" rel="stylesheet" type="text/css" />
+        <!--<link href="css/css_principal.css" rel="stylesheet" type="text/css" />-->
         <script type="text/javascript" language="javascript" src="js/js_validaciones_eliminar.js"></script>
         <script type="text/javascript">
             var parametro_prof_id = "<?php echo '?idProfesor=' . $_SESSION['grupo'] . '&grf=o' ?> " ;
@@ -46,7 +46,9 @@ $gestorPlantilla = new GestionPlantilla();
         <div class="contenido" >
             <h1 id="h1">Lista de Alumnos</h1>
             <div class="marco">        
-                <h2 id="h2">Tabla Reporte Alumnos.</h2>
+                <h2 id="h2">Gráfico del Reporte de Alumnos</h2>   
+                <div id="grafico" style="width: 720px; height: 200px; margin: 0 auto"></div>
+                <h2 id="h2" >Tabla Reporte Alumnos.</h2>
                 <div id= tabla >
                     <table id="datatables" class="display"  >
                         <thead>
@@ -67,8 +69,6 @@ $gestorPlantilla = new GestionPlantilla();
                         </tbody>
                     </table>
                 </div>
-                <h2 id="h2">Gráfico del Reporte de Alumnos</h2>   
-                <div id="grafico" style="width: 720px; height: 200px; margin: 0 auto"></div>
             </div></div>
     </body>
 </html>
