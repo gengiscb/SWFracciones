@@ -1,19 +1,18 @@
-// JavaScript Document
-//$(function (){
-	$('#iniciar').click(function(){
-            hideLightbox();
-            $('#iniciar').attr('disabled', 'disabled');                    
+
+$('#iniciar').click(function(){
+    hideLightbox();
+    $('#iniciar').attr('disabled', 'disabled');                    
     $('#imagen').animate({
-		left: "+="+distancia+"px"
-		},6000,function (){
-			$('#imagen').attr("src", "img/act1_1b/nadador4.png");
-                        alert("Seleccione una respuesta");
-		});
-	});
-	$("#stop").click(function(){
+        left: "+="+distancia+"px"
+    },6000,function (){
+        $('#imagen').attr("src", "img/act1_1b/nadador4.png");
+        alert("Seleccione una respuesta");
+    });
+});
+$("#stop").click(function(){
     $("#imagen").stop();
-	$("#imagen").attr("src","img/act1_1b/nadador4.png");
-	});
+    $("#imagen").attr("src","img/act1_1b/nadador4.png");
+});
 //});
 function showLightbox() {
     document.getElementById('iniciar').style.display='block';
@@ -34,7 +33,6 @@ function esCorrecta(valor,idAct,idAlum){
         alert("La respuesta es incorrecta... vuelva a intentarlo");
         actualizarFallos(idAct, idAlum);        
         window.location = window.location.href+'&int=y'; 
-//        window.location.reload();        
     }
         
 }

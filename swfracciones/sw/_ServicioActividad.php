@@ -1,10 +1,5 @@
-<link href="../css/css_plantilla.css" rel="stylesheet" type="text/css" />
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 include_once 'DB/_ActividadDAO.php';
 include_once 'sw/Sesion.php';
 
@@ -32,7 +27,7 @@ class _ServicioActividad {
             }
         }
         if ($resultadoHTML == "") {
-                $resultadoHTML.="<div class='clean-gray'>No hay actividades disponibles</div>";
+            $resultadoHTML.="<div class='clean-gray'>No hay actividades disponibles</div>";
         }
         return $resultadoHTML;
     }
@@ -43,23 +38,19 @@ class _ServicioActividad {
         $resultado = $ActividadDAO->listarActividadesProfesor();
         $resultadoHTML = "";
         for ($i = 0; $i < count($resultado); $i++) {
-
-
             $resultadoHTML.="<div class='clean-gray'>";
-            //"<a href='VistaActividadAlumno.php?idAct=" . $resultado[$i]['idActividad'] . "&usuarioId= " . $_SESSION['usuarioId'] . "' >";
             $resultadoHTML.="<span class='text_act'>";
-            $resultadoHTML.=$resultado[$i]['numeroActividad']."--.";
+            $resultadoHTML.=$resultado[$i]['numeroActividad'] . "--.";
             $resultadoHTML.="</span>";
             $resultadoHTML.="<span class='text_act'>";
             $resultadoHTML.=$resultado[$i]['nombre'];
             $resultadoHTML.="</span><br>";
 
             $resultadoHTML.="<span>";
-            if($this->actividadEstaHabilitada($resultado[$i]['idActividad'], $grupo)){
+            if ($this->actividadEstaHabilitada($resultado[$i]['idActividad'], $grupo)) {
                 $resultadoHTML.="<a  href='Habilitar.php?cid=" . $resultado[$i]['idActividad'] . "'>                
                 <input class='boton' id='verde' type ='button' value='Habilitar' /></a>";
-            }
-            else {
+            } else {
                 $resultadoHTML.="<a><input  class='boton' id='verde' type ='button' onclick=\"alert('Solo puede habilitar una vez la actividad')\"  value='Habilitar' /></a>";
             }
             $resultadoHTML.="<a  href='Deshabilitar.php?cid=" . $resultado[$i]['idActividad'] . "&nombre=" . $resultado[$i]['nombre'] . "'>
@@ -69,7 +60,6 @@ class _ServicioActividad {
 
             $resultadoHTML.="</span>";
             $resultadoHTML.="</div>";
-
         }
 
         if (count($resultado) == 0) {
@@ -81,15 +71,14 @@ class _ServicioActividad {
     public function actividadEstaHabilitada($idActividad, $grupo) {
         $ActividadDAO = new ActividadDAO();
         return $ActividadDAO->actividadHabilitable($idActividad, $grupo);
-    }    
+    }
+
     public function habilitarActividad($idActividad, $fechaInicio, $fechaFinalizacion, $grupo) {
         $ActividadDAO = new ActividadDAO();
         if ($ActividadDAO->actualizarEstadoActividad($idActividad, $grupo, $fechaInicio, $fechaFinalizacion)) {
             return 'Se ha habilitado la actividad con anterioridad';
-//            echo "<script>window.location = 'listarActividades.php';</script>";
         } else {
             return 'Actividad Habilitada';
-            //echo "<script>window.location = 'listarActividades.php';</script>";
         }
     }
 
@@ -101,11 +90,12 @@ class _ServicioActividad {
     }
 
     //ricardo 
-        public function reinicieIntentos($idActividad, $idAlumno) {
+    public function reinicieIntentos($idActividad, $idAlumno) {
         $ActividadDAO = new ActividadDAO();
         $resultado = $ActividadDAO->reiniciarIntentos($idActividad, $idAlumno);
         return $resultado;
     }
+
     public function incrementeIntentos($idActividad, $idAlumno) {
         $ActividadDAO = new ActividadDAO();
         $resultado = $ActividadDAO->incrementarIntentos($idActividad, $idAlumno);
@@ -155,13 +145,10 @@ class _ServicioActividad {
 
     public function deshabilitarActividad($grupo, $idAct) {
         $ActividadDAO = new ActividadDAO();
-
         if ($ActividadDAO->deshabilitarActividad($grupo, $idAct)) {
             return 'Actividad deshabilitada';
-//            echo "<script>window.location = 'listarActividades.php';</script>";
         } else {
             return 'La actividad no ha sido desHabilitada';
-            //echo "<script>window.location = 'listarActividades.php';</script>";
         }
     }
 

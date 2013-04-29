@@ -34,7 +34,7 @@ class GestionPlantilla {
                 <ul>
                     <li><a  href="principal_profesor.php">Principal</a></li>
                     <li class="categoria"><a href="ListarActividades.php">Actividades</a></li>                   
-                    <li><a href="vistaReportes.php?idProfesor='.$_SESSION['grupo'].'">Reportes</a></li>
+                    <li><a href="vistaReportes.php?idProfesor=' . $_SESSION['grupo'] . '">Reportes</a></li>
                     <li><a href="vistaAlumnos.php?obtener_Alumnos=obtener">Alumnos</a></li>
                     <li class="categoria"><a href="">Mi cuenta</a>
                         <ul>
@@ -46,11 +46,11 @@ class GestionPlantilla {
                 </ul>  
                 <div class="clearboth"></div>                     
             </div>
-'.$this->efectosMenu();
+' . $this->efectosMenu();
     }
 
     function generarMenuAlumno() {
-                    return '<div class="menu" style="width:360px;">
+        return '<div class="menu" style="width:360px;">
                 <ul>
                     <li><a  href="principal_alumno.php">Principal</a></li>
                     <li><a href="principal_alumno.php">Actividades</a></li>                    
@@ -64,11 +64,11 @@ class GestionPlantilla {
                 <div class="clearboth"></div>                     
             </div>
             
-'.$this->efectosMenu();        
+' . $this->efectosMenu();
     }
 
     function generarMenuAdmin() {
-  
+
         return '<div class="menu" style="width:480px;">
                 <ul>
                     <li><a  href="principal.php">Principal</a></li>
@@ -83,21 +83,12 @@ class GestionPlantilla {
                 </ul>  
                 <div class="clearboth"></div>                     
             </div>
-'.$this->efectosMenu();
-        
+' . $this->efectosMenu();
     }
-	
-	function efectosMenu(){
-		return ''/*'<script>
-            $(document).ready(function(){
-    $(\'.menu li\').hover(function(){
-            $(this).find(\'ul:first\').css({visibility: "visible",display: "none"}).fadeIn(400); // effect 1
-            // $(this).find(\'ul:first\').css({visibility: "visible",display: "none"}).slideDown(400); // effect 2
-        },function(){
-            $(this).find(\'ul:first\').css({visibility: "hidden"});
-        });
-});</script>'*/;
-	}
+
+    function efectosMenu() {
+        return '';
+    }
 
     function filtro_login() {
         session_start();
@@ -134,11 +125,7 @@ class GestionPlantilla {
     }
 
     function agregarCSSkMenuAdmin() {
-//        if ($_SESSION['tipo'] == 1) {
-            return '<link href="css/css_menu_adm.css" rel="stylesheet" type="text/css" />';
-//        } else {
-//            return '';
-//        }
+        return '<link href="css/css_menu_adm.css" rel="stylesheet" type="text/css" />';
     }
 
     function estilo() {

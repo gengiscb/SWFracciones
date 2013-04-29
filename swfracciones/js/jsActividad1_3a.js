@@ -1,23 +1,22 @@
-// JavaScript Document
 
-
-//$(function (){
-	$('#iniciar').click(function(){
-            hideLightbox();
-            $('#iniciar').attr('disabled', 'disabled');
-         //   $('#imagen').attr("src", "img/act1_2a/agua.gif");
-	   $("#capaAgua").animate({top: "+="+distancia+"px"},{queue:false, duration:5000}, function(){
-           //    $('#imagen').attr("src", "img/act1_2a/agua.gif");	
-            alert("Seleccione una respuesta");
-        });  
-     });
+$('#iniciar').click(function(){
+    hideLightbox();
+    $('#iniciar').attr('disabled', 'disabled');
+    $("#capaAgua").animate({
+        top: "+="+distancia+"px"
+        },{
+        queue:false, 
+        duration:5000
+    }, function(){
+        alert("Seleccione una respuesta");
+    });  
+});
 
 $("#detener").click(function(){
     $("#capaAgua").stop();
-     $('#imagen').attr("src", "img/act1_2a/agua.png");
+    $('#imagen').attr("src", "img/act1_2a/agua.png");
 });
 	   
-//	});
 
 function showLightbox() {
     document.getElementById('iniciar').style.display='block';
@@ -37,6 +36,5 @@ function esCorrecta(valor,idAct,idAlum){
         alert("La respuesta es incorrecta... vuelva a intentarlo");
         actualizarFallos(idAct, idAlum);
         window.location.reload();
-//        actualizarIntentos(idAct, idAlum);
     }       
 }

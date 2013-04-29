@@ -4,11 +4,9 @@ include_once 'sw/GestionPlantilla.php';
 include_once 'sw/DB/ConexionGeneral.php';
 include_once 'ControladorProfesor.php';
 include_once 'sw/Sesion.php';
-filtro_login_Excepcion();
-
-//sesionActiva();
 $gestionPlantilla = new GestionPlantilla();
-//$controladorServicioProfesor = new ControladorProfesor();
+$sesion = new Sesion();
+$sesion->filtro_login_Excepcion();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -22,18 +20,16 @@ $gestionPlantilla = new GestionPlantilla();
         <script type="text/javascript" language="javascript" src="js/jquery-1.6.4.js" ></script>
         <script type="text/javascript" language="javascript" src="js/jquery.form.js" ></script>
         <script type="text/javascript" language="javascript" src="js/js_validarRegistro.js" ></script>
-        <script type="text/javascript" src="js/jquery.min.js"></script>  
     </head>
     <body>    
         <div class="banner">
             <div class="encabezado" id="encabezado">
-                <?php if(isset($_SESSION['tipo']) && ($_SESSION['tipo'])==1){
+                <?php
+                if (isset($_SESSION['tipo']) && ($_SESSION['tipo']) == 1) {
                     echo $gestionPlantilla->generarEncabezadoHTML();
                     echo $gestionPlantilla->generarMenu();
-                }
-                else    
-                {
-                    echo  '     <div class="mini_perfil">
+                } else {
+                    echo '     <div class="mini_perfil">
                     <div class="slogan"><a href="index.php">Registrate..</a></div>
                     <div class="clearboth"></div>        
                 </div>         ';
@@ -79,7 +75,6 @@ $gestionPlantilla = new GestionPlantilla();
                                 <td colspan="2">
                                     <input type="hidden" name="registrar_profesor" value="registrar"/>
                                     <input type="submit"  name="btn_registrar" class="boton"  id="verde" value="Registrar"/>
-                                    
                                     <input type="button" onclick="document.location='index.php'"  name="btn_regresar" class="boton"  id="naranja" value="Regresar"/>
                                 </td>
                             </tr>

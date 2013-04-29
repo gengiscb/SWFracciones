@@ -1,5 +1,3 @@
-
-
 <?php
 
 /*
@@ -8,9 +6,10 @@
  */
 
 class Alumno extends Usuario {
+
     private $idAlumno;
     private $grupo;
-    
+
     public function __construct($idUsuario, $contrasena, $nombre, $apellidoP, $apellidoM, $matricula, $tipoUsuario, $grupo, $idAlumno) {
         parent::__construct($idUsuario, $contrasena, $nombre, $apellidoP, $apellidoM, $matricula, $tipoUsuario);
         $this->idAlumno = $idAlumno;
@@ -34,4 +33,5 @@ class Alumno extends Usuario {
     }
 
 }
+
 ?>

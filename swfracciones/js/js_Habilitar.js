@@ -4,14 +4,14 @@
  */
 
 
- $(document).ready(function() {
-            var opciones= {
-                success: mostrarRespuesta 
-            };
-            $('#hab_form').ajaxForm(opciones) ; 
-             function mostrarRespuesta (responseText){
-                 alert(responseText);
+$(document).ready(function() {
+    var opciones= {
+        success: mostrarRespuesta 
+    };
+    $('#hab_form').ajaxForm(opciones) ; 
+    function mostrarRespuesta (responseText){
+        alert(responseText);
 
-             };
-        });
+    };
+});
  

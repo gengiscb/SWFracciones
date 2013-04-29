@@ -21,30 +21,30 @@ class GestorActividad1_1 extends GestorActividad {
     private $actividadJSB;
     private $respuestaCorrecta;
     private $htmlResponder;
-    private static $idActividad=1;
+    private static $idActividad = 2;
     private $idAlumno;
 
     public function __construct($idAlumno) {
-        $this->nombre = "Medición y comparación de longitudes";
+        $this->nombre = "Medición y comparación de superficies";
         //La mitad, Un cuarto, Un octavo, Tres cuartos, Tres octavos, Cinco octavos y Siete octavos
-        $this->respuestas[0] = new respuestaAct11("Tres octavos", 225);
-        $this->respuestas[1] = new respuestaAct11("Cinco octavos", 375);
-        $this->respuestas[2] = new respuestaAct11("La mitad", 300);
-        $this->respuestas[3] = new respuestaAct11("Un cuarto", 150);
-        $this->respuestas[4] = new respuestaAct11("Un octavo", 75);
-        $this->respuestas[5] = new respuestaAct11("Tres cuartos", 450);        
-        $this->respuestas[6] = new respuestaAct11("Siete octavos", 525);
+        $this->respuestas[0] = new respuestaAct12("Tres octavos", 225);
+        $this->respuestas[1] = new respuestaAct12("Cinco octavos", 375);
+        $this->respuestas[2] = new respuestaAct12("La mitad", 3);
+        $this->respuestas[3] = new respuestaAct12("Un cuarto", 1);
+        $this->respuestas[4] = new respuestaAct12("Un octavo", 0);
+        $this->respuestas[5] = new respuestaAct12("Tres cuartos", 5);
+        $this->respuestas[6] = new respuestaAct12("Siete octavos", 525);
         $posicion = rand(2, 5);
-        $this->idAlumno=$idAlumno;
+        $this->idAlumno = $idAlumno;
         $this->respuestas[$posicion]->setEsCorrecta();
         $this->respuestaCorrecta = $this->respuestas[$posicion];
-        
+
         $pos_res = $this->obtenerPosiblesRespuestas($posicion);
 
-        $this->instruccionesA = '<br/><span class="texto_act">“De acuerdo al desplazamiento del corredor selecciona la parte del camino que ha avanzado.”</span><br/>';
-        $this->instruccionesB = '<br/><span class="texto_act">“De acuerdo al desplazamiento del nadador  selecciona la parte de la piscina que ha avanzado.”</span><br/>';
-        $this->actividadCSSA = '<link href="css/cssActividad1_1a.css" rel="stylesheet" type="text/css"/>';
-        $this->actividadCSSB = '<link href="css/cssActividad1_1b.css" rel="stylesheet" type="text/css"/>';
+        $this->instruccionesA = '<br/><span class="texto_act">“De acuerdo al área podada  selecciona que parte se ha podado de la superficie total.”</span><br/>';
+        $this->instruccionesB = '<br/><span class="texto_act">“De acuerdo al área pintada  selecciona que parte se ha pintado de la superficie total.”</span><br/>';
+        $this->actividadCSSA = '<link href="css/cssActividad1_2a.css" rel="stylesheet" type="text/css"/>';
+        $this->actividadCSSB = '<link href="css/cssActividad1_2b.css" rel="stylesheet" type="text/css"/>';
 
         $this->htmlResponder = '
             <div id="contestar">
@@ -52,10 +52,10 @@ class GestorActividad1_1 extends GestorActividad {
                 <span class="texto_act">Selecciona la respuesta correcta</span>
                 <br/>
                 <span class="respuestas">
-                    <input class="bot_act" type="button"  onclick="javascript:esCorrecta('.$pos_res[0]->getEsCorrecta().','.GestorActividad1_1::$idActividad.','.$this->idAlumno.')" value="'.$pos_res[0]->getValor().'"></input>
-                    <input class="bot_act" type="button" onclick="javascript:esCorrecta('.$pos_res[3]->getEsCorrecta().','.GestorActividad1_1::$idActividad.','.$this->idAlumno.')"  value="'.$pos_res[3]->getValor().'"></input>
-                    <input  class="bot_act" type="button" onclick="javascript:esCorrecta('.$pos_res[1]->getEsCorrecta().','.GestorActividad1_1::$idActividad.','.$this->idAlumno.')"  value="'.$pos_res[1]->getValor().'"></input>
-                    <input class="bot_act" type="button"  onclick="javascript:esCorrecta('.$pos_res[2]->getEsCorrecta().','.GestorActividad1_1::$idActividad.','.$this->idAlumno.')" value="'.$pos_res[2]->getValor().'"></input>
+                    <input class="bot_act" type="button"  onclick="javascript:esCorrecta(' . $pos_res[0]->getEsCorrecta() . ',' . GestorActividad1_1::$idActividad . ',' . $this->idAlumno . ')" value="' . $pos_res[0]->getValor() . '"></input>
+                    <input class="bot_act" type="button" onclick="javascript:esCorrecta(' . $pos_res[3]->getEsCorrecta() . ',' . GestorActividad1_1::$idActividad . ',' . $this->idAlumno . ')"  value="' . $pos_res[3]->getValor() . '"></input>
+                    <input  class="bot_act" type="button" onclick="javascript:esCorrecta(' . $pos_res[1]->getEsCorrecta() . ',' . GestorActividad1_1::$idActividad . ',' . $this->idAlumno . ')"  value="' . $pos_res[1]->getValor() . '"></input>
+                    <input class="bot_act" type="button"  onclick="javascript:esCorrecta(' . $pos_res[2]->getEsCorrecta() . ',' . GestorActividad1_1::$idActividad . ',' . $this->idAlumno . ')" value="' . $pos_res[2]->getValor() . '"></input>
                 </span>
             </div>';
         $this->htmlResponderB = '
@@ -64,26 +64,24 @@ class GestorActividad1_1 extends GestorActividad {
                 <span class="texto_act">Selecciona la respuesta correcta</span>
                 <br/>
                 <span class="respuestas">
-                    <input class="bot_act" type="button"   value="'.$pos_res[0]->getValor().'"></input>
-                    <input class="bot_act" type="button"   value="'.$pos_res[3]->getValor().'"></input>
-                    <input  class="bot_act" type="button"  value="'.$pos_res[1]->getValor().'"></input>
-                    <input class="bot_act" type="button"   value="'.$pos_res[2]->getValor().'"></input>
+                    <input class="bot_act" type="button"   value="' . $pos_res[0]->getValor() . '"></input>
+                    <input class="bot_act" type="button"   value="' . $pos_res[3]->getValor() . '"></input>
+                    <input  class="bot_act" type="button"  value="' . $pos_res[1]->getValor() . '"></input>
+                    <input class="bot_act" type="button"   value="' . $pos_res[2]->getValor() . '"></input>
                 </span>
             </div>';
         $this->actividadJSA = '
                <script type="text/javascript">
-                    var distancia=' . $this->respuestaCorrecta->getDistancia() . ';
+                    var veces=' . $this->respuestaCorrecta->getDistancia() . ';
                 </script>
-                <script type="text/javascript" src="js/jquery.min.js"></script>  
-            <script type="text/javascript" src="js/jsActividad1_1a.js"></script>' . $this->obtenerHtmlInicializadorLighBox();
+            <script type="text/javascript" src="js/jsActividad1_2a.js"></script>' . $this->obtenerHtmlInicializadorLighBox();
         ;
 
         $this->actividadJSB = '
             <script type="text/javascript">
-                    var distancia=' . $this->respuestaCorrecta->getDistancia() . ';
+                    var veces=' . $this->respuestaCorrecta->getDistancia() . ';
                 </script>
-                <script type="text/javascript" src="js/jquery.min.js"></script>  
-            <script type="text/javascript" src="js/jsActividad1_1b.js"></script>' . $this->obtenerHtmlInicializadorLighBox();
+            <script type="text/javascript" src="js/jsActividad1_2b.js"></script>' . $this->obtenerHtmlInicializadorLighBox();
         ;
         $this->escenari = rand(1, 2);
         echo $this->escenari;
@@ -128,55 +126,60 @@ class GestorActividad1_1 extends GestorActividad {
         $posibles_res = array();
         $posibles_res[3] = $this->respuestas[$posicionCorrecta];
         for ($indiceRespuestas = 0; $indiceRespuestas < 3; $indiceRespuestas++) {
-            
-                if($posicionCorrecta>3){
-                    $posibles_res[$indiceRespuestas] = $this->respuestas[$posicionCorrecta-($indiceRespuestas+1)];
-                }
-                else{
-                    $posibles_res[$indiceRespuestas] = $this->respuestas[$posicionCorrecta+($indiceRespuestas+1)];
-                }
-            
+
+            if ($posicionCorrecta > 3) {
+                $posibles_res[$indiceRespuestas] = $this->respuestas[$posicionCorrecta - ($indiceRespuestas + 1)];
+            } else {
+                $posibles_res[$indiceRespuestas] = $this->respuestas[$posicionCorrecta + ($indiceRespuestas + 1)];
+            }
         }
         return $posibles_res;
     }
-
     private function inicializarHtmlA() {
-        $this->actividadHTMLA = '
-            <img id="nube"  src="img/act1_1a/clouds-01.png" />
-            <img id="nube2"  src="img/act1_1a/clouds-02.png" />
-            <img id="imagen" height="134px" src="img/act1_1a/atleta10.png" />
-            <img id="segmento" height="10px" src="img/act1_1a/segmento.png" />
+        $this->actividadHTMLA = '            
+             <div id="pasto" style="background"> 
+                <div id="pastoPodado" >                    
+                </div>
+                <div id="pastoPodado2">
+                </div>
+                <img id="podador" src="img/act1_2a/podador.gif"/>
+            </div>
             ';
     }
-    public function getNombreActividad(){
+
+    public function getNombreActividad() {
         return $this->nombre;
     }
 
     public function getHtmlResponder($tipo) {
-        if($tipo==1){
+        if ($tipo == 1) {
             return $this->htmlResponder;
-        }
-        else{
+        } else {
             return $this->htmlResponderB;
         }
     }
 
     private function inicializarHtmlB() {
         $this->actividadHTMLB = '
-            <img id="imagen" src="img/act1_1b/nadador4.gif" />
-            <img id="segmento" height="10px" src="img/act1_1b/segmento2.png" />
+             <div id="pared" style="background"> 
+                <div id="paredPintada" >
+                </div>
+                <div id="paredPintada2">
+                </div>
+                <img id="pintor" src="img/act1_2b/painter.gif"/>
+            </div>
             ';
     }
-    public function getLightBox(){
+
+    public function getLightBox() {
         return '<div id="fade" class="fadebox"> 
                     <button class="boton" id="iniciar" astyle="height:50px" >Iniciar Actividad</button>
                 </div>';
-        //<button id="iniciar" astyle="height:50px" onclick="javascript:actualizarIntentos('.GestorActividad1_1::$idActividad.','.$this->idAlumno.')" >Iniciar Actividad</button>
-
     }
+
 }
 
-class respuestaAct11 {
+class respuestaAct12 {
 
     private $valor;
     private $distancia;
@@ -205,10 +208,9 @@ class respuestaAct11 {
     }
 
     public function getEsCorrecta() {
-        if($this->esCorrecta){
+        if ($this->esCorrecta) {
             return $this->esCorrecta;
-        }
-        else {
+        } else {
             return 0;
         }
     }

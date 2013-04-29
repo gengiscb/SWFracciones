@@ -1,26 +1,22 @@
-// JavaScript Document
 
+$('#iniciar').click(function(){
+    hideLightbox();
+    $('#iniciar').attr('disabled', 'disabled');
+    $("#capaAcuario").animate({
+        top:"+="+distancia+"px"
+    },{
+        queue:false,
+        duration:5000
+    },function(){
+        alert("Seleccione una respuesta");    
+    });
+});
 
-//$(function (){
-	   $('#iniciar').click(function(){
-               hideLightbox();
-           $('#iniciar').attr('disabled', 'disabled');
-       //    $('#imagen').attr("src", "img/act1_2b/agua.gif");
-	   $("#capaAcuario").animate({top:"+="+distancia+"px"},{queue:false,duration:5000},function(){
-         //   $('#imagen').attr("src", "img/act1_2a/agua.gif");	
-            alert("Seleccione una respuesta");    
-        
-           });
-           
-           
-     });
-
-    $("#detener").click(function(){
+$("#detener").click(function(){
     $("#capaAcuario").stop(); 
-   // $('#imagen').attr("src", "img/act1_2b/agua.gif");
 });
 	   
-	//});
+//});
 
 
 function showLightbox() {
@@ -41,6 +37,5 @@ function esCorrecta(valor,idAct,idAlum){
         alert("La respuesta es incorrecta... vuelva a intentarlo");
         actualizarFallos(idAct, idAlum);
         window.location.reload();
-//        actualizarIntentos(idAct, idAlum);
     }       
 }

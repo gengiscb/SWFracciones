@@ -1,14 +1,8 @@
 <?php
 
 include_once 'sw/ServicioProfesor.php';
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
 
 class ControladorProfesor {
-
-    //Necesito pasar los post del registro y no se como llamar  a la funcion no se si borrar la de arriba y modificarla 
 
     function agregaProfesorC() {
         if (isset($_GET["registrar_profesor"]) && $_GET["registrar_profesor"] == "registrar") {
@@ -16,9 +10,7 @@ class ControladorProfesor {
             $apellidoP = $_GET["apellidoP"];
             $apellidoM = $_GET["apellidoM"];
             $matricula = $_GET["matricula"];
-//            $grupo = $_GET["grupo"];
             $contrasena = $_GET["contrasena"];
-///* */       $tipoUsuario = $_GET["tipo_usuario"];
             $servicioProfesor = new ServicioProfesor();
             if ($servicioProfesor->agregarProfesor($matricula, $nombre, $contrasena, $apellidoP, $apellidoM)) {
                 return "TRUE";
@@ -82,35 +74,36 @@ class ControladorProfesor {
         }
     }
 
-	function tablaProfesores(){
-		$profesores=$this->obtenerProfesoresC();
-    	$SALTO = "\n";
-    	$cadena_post = "";
-    	$index = 1;
-		foreach($profesores as $profesor) {
-        	$class = "";
-        	if ($index % 2 == 0)
-        		$class = "par";
-        	$cadena_post .='            <tr class="' . $class . '">' . $SALTO;
-        	$cadena_post .='                <td>' . $profesor->getIdProfesor() . '</td>' . $SALTO;
-        	$cadena_post .='                <td>' . $profesor->getNombre() . '</td>' . $SALTO;
-        	$cadena_post .='                <td>' . $profesor->getApellidoP(). '</td>' . $SALTO;
-        	$cadena_post .='                <td>' . $profesor->getApellidoM() . '</td>' . $SALTO;
-        	$cadena_post .='                <td>' . $profesor->getIdProfesor() . '</td>' . $SALTO;
-        	$cadena_post .='                <td>'.$profesor->getContrasena().'</td>' . $SALTO;
-        //href="adm_producto_borrar.php?productoId='.$producto['productoId'].'"
-        	$cadena_post .='               	<td class="borrar"><a onclick = "confirmarEliminacionProfesor(' . $profesor->getIdUsuario() . ')" href="#"><img src="img/utileria/borrar.png" alt="Borrar"/></a></td>' . $SALTO;
-//            $cadena_post .='                </td>'.$SALTO;
-        	$cadena_post .='            </tr>' . $SALTO;
-        	$index++;
-    	}
-    	if ($cadena_post == "") {
-        	$cadena_post .="<tr><td colspan='4'>No hay profesores registrados</td></tr>" . $SALTO;
-    	}
-    	return $cadena_post;
-	}
+    function tablaProfesores() {
+        $profesores = $this->obtenerProfesoresC();
+        $SALTO = "\n";
+        $cadena_post = "";
+        $index = 1;
+        foreach ($profesores as $profesor) {
+            $class = "";
+            if ($index % 2 == 0)
+                $class = "par";
+            $cadena_post .='            <tr class="' . $class . '">' . $SALTO;
+            $cadena_post .='                <td>' . $profesor->getIdProfesor() . '</td>' . $SALTO;
+            $cadena_post .='                <td>' . $profesor->getNombre() . '</td>' . $SALTO;
+            $cadena_post .='                <td>' . $profesor->getApellidoP() . '</td>' . $SALTO;
+            $cadena_post .='                <td>' . $profesor->getApellidoM() . '</td>' . $SALTO;
+            $cadena_post .='                <td>' . $profesor->getIdProfesor() . '</td>' . $SALTO;
+            $cadena_post .='                <td>' . $profesor->getContrasena() . '</td>' . $SALTO;
+
+            $cadena_post .='               	<td class="borrar"><a onclick = "confirmarEliminacionProfesor(' . $profesor->getIdUsuario() . ')" href="#"><img src="img/utileria/borrar.png" alt="Borrar"/></a></td>' . $SALTO;
+
+            $cadena_post .='            </tr>' . $SALTO;
+            $index++;
+        }
+        if ($cadena_post == "") {
+            $cadena_post .="<tr><td colspan='4'>No hay profesores registrados</td></tr>" . $SALTO;
+        }
+        return $cadena_post;
+    }
+
 }
+
 $controladorProfesor = new ControladorProfesor ();
 echo trim($controladorProfesor->agregaProfesorC());
-
 ?>

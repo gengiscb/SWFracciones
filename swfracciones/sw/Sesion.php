@@ -4,6 +4,11 @@ include_once ('sw/DB/UsuarioDAO.php');
 include_once ('DB/ProfesorDAO.php');
 include_once 'domain/Usuario.php';
 
+/**
+ * Clase: Sesion
+ * Descripcion: Esta clase se encarga de la gestion de la session de un usuario. 
+ * Requisitos relacionados:
+ */
 class Sesion {
 
     function iniciarSesion() {
@@ -47,47 +52,44 @@ class Sesion {
         }
     }
 
-}
-
-function sesionActiva() {
-    session_start();
-    if (isset($_SESSION['login'])) {
-        $logueado = $_SESSION['login'];
-        if ($logueado) {
-            if ($$_SESSION['tipo'] == 3) {
-                header("Location: principal_alumno.php");
-            } else if ($_SESSION['tipo'] == 2) {
-                header("Location: principal_profesor.php");
-            } else if ($_SESSION['tipo'] == 1) {
-                header("Location: principal.php");
+    function sesionActiva() {
+        session_start();
+        if (isset($_SESSION['login'])) {
+            $logueado = $_SESSION['login'];
+            if ($logueado) {
+                if ($$_SESSION['tipo'] == 3) {
+                    header("Location: principal_alumno.php");
+                } else if ($_SESSION['tipo'] == 2) {
+                    header("Location: principal_profesor.php");
+                } else if ($_SESSION['tipo'] == 1) {
+                    header("Location: principal.php");
+                }
             }
         }
     }
-}
 
-function filtro_login() {
-    session_start();
-    if (isset($_SESSION['login'])) {
-        $logueado = $_SESSION['login'];
-        if (!$logueado) {
+    function filtro_login() {
+        session_start();
+        if (isset($_SESSION['login'])) {
+            $logueado = $_SESSION['login'];
+            if (!$logueado) {
+                header("Location: " . $GLOBALS['raiz_sitio'] . "index.php");
+            }
+        } else {
             header("Location: " . $GLOBALS['raiz_sitio'] . "index.php");
         }
-    } else {
-        header("Location: " . $GLOBALS['raiz_sitio'] . "index.php");
+    }
+
+    function cerrarSesion() {
+        session_start();
+        $_SESSION['login'] = false;
+        session_destroy();
+        header("Location: " . $GLOBALS['raiz_sitio']);
+    }
+
+    function filtro_login_Excepcion() {
+        session_start();
     }
 }
 
-function filtro_login_Excepcion() {
-    session_start();
-    if (isset($_SESSION['login'])) {
-        $logueado = $_SESSION['login'];
-        if (!$logueado) {
-//            header("Location: " . $GLOBALS['raiz_sitio'] . "index.php");
-        }
-    } else {
-//        header("Location: " . $GLOBALS['raiz_sitio'] . "index.php");
-    }
-}
-
-?>
-	   
+?>	   

@@ -11,7 +11,7 @@ class ActividadDAO extends ConexionGeneral {
 
     public function listarActividadesAlumnos($idAlumno) {
         $conexion = $this->abrirConexion();
-        
+
         $sql = "SELECT * FROM  `actividadesalumno` JOIN `actividades`  ON `actividadesalumno`.`idActividad` = `actividades`.`idActividad` WHERE  `actividadesalumno`.`idAlumno` = $idAlumno  ORDER BY `actividadesalumno`.`fechaInicio` ASC";
 //echo $sql;
         $resultado_peticion = $this->ejecutarConsulta($sql, $conexion);
@@ -39,21 +39,20 @@ class ActividadDAO extends ConexionGeneral {
         return $lista;
     }
 
-    public function actividadHabilitable($idActividad, $grupo){
+    public function actividadHabilitable($idActividad, $grupo) {
         $habilitada = true;
         $conexionDB = $this->abrirConexion();
-            $sql = "Select * from actividadesalumno join alumno on actividadesalumno.idalumno = alumno.usuarioid where grupo=$grupo and   idactividad=$idActividad    ";
+        $sql = "Select * from actividadesalumno join alumno on actividadesalumno.idalumno = alumno.usuarioid where grupo=$grupo and   idactividad=$idActividad    ";
 //            echo $sql;
-            $resultado = $this->ejecutarConsulta($sql, $conexionDB);
-            $num_filas = mysql_num_rows($resultado);
-            
-            if($num_filas>0){
-                $habilitada = false;
-            }
+        $resultado = $this->ejecutarConsulta($sql, $conexionDB);
+        $num_filas = mysql_num_rows($resultado);
+
+        if ($num_filas > 0) {
+            $habilitada = false;
+        }
         $this->cerrarConexion($conexionDB);
         return $habilitada;
     }
-
 
     public function actualizarEstadoActividad($idActividad, $grupo, $fechaInicio, $fechaFinalizacion) {
         $habilitada = false;
@@ -98,14 +97,15 @@ class ActividadDAO extends ConexionGeneral {
         $conexion = $this->abrirConexion();
         $query = "UPDATE actividadesalumno SET aciertos = (aciertos + 1), estado='Finalizada' WHERE idActividad =" . $idActividad . " AND idAlumno=" . $idAlumno . "";
 //        echo $query;
-        $resultado = $this->ejecutarConsulta($query, $conexion);
+        $this->ejecutarConsulta($query, $conexion);
         $this->cerrarConexion($conexion);
     }
+
     public function incrementarFallos($idActividad, $idAlumno) {
         $conexion = $this->abrirConexion();
         $query = "UPDATE actividadesalumno SET fallos = (fallos + 1) WHERE idActividad =" . $idActividad . " AND idAlumno=" . $idAlumno . "";
 //        echo $query;
-        $resultado = $this->ejecutarConsulta($query, $conexion);
+        $this->ejecutarConsulta($query, $conexion);
         $this->cerrarConexion($conexion);
     }
 
@@ -113,20 +113,22 @@ class ActividadDAO extends ConexionGeneral {
         $conexion = $this->abrirConexion();
         $query = "UPDATE actividadesalumno SET intentos = (intentos + 1) WHERE idActividad =" . $idActividad . " AND idAlumno=" . $idAlumno . "";
 //        echo $query;
-        $resultado = $this->ejecutarConsulta($query, $conexion);
+        $this->ejecutarConsulta($query, $conexion);
         $this->cerrarConexion($conexion);
     }
+
     public function reiniciarIntentos($idActividad, $idAlumno) {
         $conexion = $this->abrirConexion();
         $query = "UPDATE actividadesalumno SET intentos = 0 WHERE idActividad =" . $idActividad . " AND idAlumno=" . $idAlumno . "";
 //        echo $query;
-        $resultado = $this->ejecutarConsulta($query, $conexion);
+        $this->ejecutarConsulta($query, $conexion);
         $this->cerrarConexion($conexion);
     }
+
     public function incrementarIngresos($idActividad, $idAlumno) {
         $conexion = $this->abrirConexion();
         $query = "UPDATE actividadesalumno SET ingresos = (ingresos + 1), intentos = 0 WHERE idActividad =" . $idActividad . " AND idAlumno=" . $idAlumno . "";
-        $resultado = $this->ejecutarConsulta($query, $conexion);
+        $this->ejecutarConsulta($query, $conexion);
         $this->cerrarConexion($conexion);
     }
 
@@ -135,7 +137,7 @@ class ActividadDAO extends ConexionGeneral {
         $conexion = $this->abrirConexion();
         $query = "SELECT usuarioId FROM alumno WHERE grupo = " . $grupo . "";
         $resultado = $this->ejecutarConsulta($query, $conexion);
-        $lista= array();
+        $lista = array();
         if (!$resultado) {
             $cerror = "No fue posible recuperar la información de la base de datos.<br>";
             $cerror .= "SQL: $query <br>";
@@ -208,27 +210,19 @@ class ActividadDAO extends ConexionGeneral {
     }
 
     public function finalizarActividad($idActividad, $idAlumno) {
-
         $conexion = $this->abrirConexion();
-
         $query = "UPDATE actividadesalumno SET estado = 'Finalizado' WHERE idActividad = '$idActividad' AND idAlumno= '$idAlumno'";
-
-
         $resultado = $this->ejecutarConsulta($query, $conexion);
-
-
         if (!$resultado) {
             $cerror = "No fue posible recuperar la información de la base de datos.<br>";
             $cerror .= "SQL: $query <br>";
             $cerror .= "Descripción: " . mysql_error($conexion);
             die($cerror);
         }
-
         $this->cerrarConexion($conexion);
-        echo $finalizada;
     }
 
-    public function finalizadofecha() {        
+    public function finalizadofecha() {
         date_default_timezone_set('America/Mexico_City');
         $conexion = $this->abrirConexion();
         $fecha = date("Y-m-d H:i:s");

@@ -3,8 +3,8 @@ include_once 'config.inc.php';
 include_once 'sw/GestionPlantilla.php';
 include_once 'ControladorProfesor.php';
 include_once 'sw/Sesion.php';
-filtro_login();
-
+$sesion = new Sesion();
+$sesion->filtro_login();
 $gestorPlantilla = new GestionPlantilla();
 $controladorServicioProfesor = new ControladorProfesor();
 ?>      
@@ -21,12 +21,12 @@ $controladorServicioProfesor = new ControladorProfesor();
        	<script type="text/javascript" src="js/_Gjquery.min.js"></script>
         <script type="text/javascript" src="js/jquery.dataTables.js"></script>
         <script type="text/javascript" src="js/js_reporte.js" ></script>
-         <style type="text/css">
+        <style type="text/css">
             @import "css/demo_table_jui.css";
             @import "js/themes/smoothness/jquery-ui-1.8.4.custom.css";
-			/*@import "css/tabla.css";*/
+            /*@import "css/tabla.css";*/
         </style>   
-        
+
 
     </head>
     <body>
@@ -41,7 +41,7 @@ $controladorServicioProfesor = new ControladorProfesor();
             </div>       
         </div>
         <div class="contenido" >
-			
+
             <h1 id="h1">Lista de Profesores</h1>
             <div class="marco">
 
@@ -52,24 +52,23 @@ $controladorServicioProfesor = new ControladorProfesor();
                     <table id="datatables" class="display">
                         <caption><a href="RegistroProfesor.php"><input type="button" class="boton" id="verde" value="Agregar Nuevo"/></a></caption>
                         <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>ApellidoP</th>
-                            <th>ApellidoM</th>
-                            <th>Grupo</th>                            
-                            <th>Password</th>
-                            <th>Borrar</th>                            
-                        </tr>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>ApellidoP</th>
+                                <th>ApellidoM</th>
+                                <th>Grupo</th>                            
+                                <th>Password</th>
+                                <th>Borrar</th>                            
+                            </tr>
                         </thead>
                         <tbody>
-                        
-					<?php
-//                            echo listarProductosConOpciones();
-						echo $controladorServicioProfesor->tablaProfesores();
 
-					?>
-                    </tbody>
+                            <?php
+//                            echo listarProductosConOpciones();
+                            echo $controladorServicioProfesor->tablaProfesores();
+                            ?>
+                        </tbody>
                     </table>
                 </div>
             </div>

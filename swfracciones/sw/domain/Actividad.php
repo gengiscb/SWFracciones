@@ -6,16 +6,14 @@
  */
 
 class Actividad {
+
     private $fechaInicio;
     private $fechaFinal;
     private $nombre;
     private $estado;
     private $idAlumno;
     private $numeroActividad;
-//    private $idActividad;
-//    private $urlEscenario;
-//    private $urlRespuestas;
-    
+
     public function __construct($fechaInicio, $fechaFinal, $numeroActividad) {
         $this->fechaInicio = $fechaInicio;
         $this->fechaFinal = $fechaFinal;
@@ -34,5 +32,7 @@ class Actividad {
     public function getNumeroActividad() {
         return $this->numeroActividad;
     }
+
 }
+
 ?>

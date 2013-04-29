@@ -3,8 +3,8 @@ include_once 'config.inc.php';
 include_once 'sw/GestionPlantilla.php';
 include_once 'ControladorAlumno.php';
 include_once 'sw/Sesion.php';
-filtro_login();
-
+$sesion = new Sesion();
+$sesion->filtro_login();
 $gestorPlantilla = new GestionPlantilla();
 $controladorServicioAlumno = new ControladorAlumno();
 ?>      
@@ -22,11 +22,11 @@ $controladorServicioAlumno = new ControladorAlumno();
        	<script type="text/javascript" src="js/_Gjquery.min.js"></script>
         <script type="text/javascript" src="js/jquery.dataTables.js"></script>
         <script type="text/javascript" src="js/js_reporte.js" ></script>
-        
+
         <style type="text/css">
             @import "css/demo_table_jui.css";
             @import "js/themes/smoothness/jquery-ui-1.8.4.custom.css";
-			
+
         </style>
     </head>
     <body>
@@ -37,7 +37,6 @@ $controladorServicioAlumno = new ControladorAlumno();
                 echo $gestorPlantilla->generarMenu();
                 //            echo generarMenuAdmin();;
                 $controladorServicioAlumno->eliminarAlumnoC();
-                echo $_SESSION['grupo'];
                 ?>  
             </div>       
         </div>
@@ -47,25 +46,26 @@ $controladorServicioAlumno = new ControladorAlumno();
             <div class="marco">
 
                 <div id="tabla">
+                    <a href="RegistroAlumno.php"><input type="button" class="boton" value="Agregar Alumno" id="verde"/></a>
                     <input type="hidden" name="obtener_Alumnos" value="obtener"></input>	
                     <table id="datatables" class="display">
-                    	<caption><a href="RegistroAlumno.php"><input type="button" class="boton" value="Agregar Alumno" id="verde"/></a></caption>
+                        <caption></caption>
                         <thead>
-                        <tr>
-                        	
-                            <th>ID</th>
-                            <th>Nombre</th>
-                            <th>ApellidoP</th>
-                            <th>ApellidoM</th>
-                            <th>Grupo</th>
-                            <th>Editar</th>
-                            <th>Borrar</th>                            
-                        </tr>
+                            <tr>
+
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>ApellidoP</th>
+                                <th>ApellidoM</th>
+                                <th>Grupo</th>
+                                <th>Editar</th>
+                                <th>Borrar</th>                            
+                            </tr>
                         </thead>
                         <tbody>
-						<?php
-							echo $controladorServicioAlumno->tablaAlumnos();
-                        ?>					
+                            <?php
+                            echo $controladorServicioAlumno->tablaAlumnos();
+                            ?>					
                         </tbody>
                     </table>
                 </div>

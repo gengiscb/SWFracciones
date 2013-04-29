@@ -4,7 +4,8 @@ include_once 'sw/GestionPlantilla.php';
 include_once 'sw/DB/ConexionGeneral.php';
 include_once 'ControladorAlumno.php';
 include_once 'sw/Sesion.php';
-filtro_login();
+$sesion = new Sesion();
+$sesion->filtro_login();
 $gestionPlantilla = new GestionPlantilla();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -23,20 +24,20 @@ $gestionPlantilla = new GestionPlantilla();
     </head>
     <body>    
         <div class="banner">
-        <div class="encabezado" id="encabezado">
-            <?php
-            echo $gestionPlantilla->generarEncabezadoHTML();
-            echo  $gestionPlantilla->generarMenu();
-            ?>
-        </div>
+            <div class="encabezado" id="encabezado">
+                <?php
+                echo $gestionPlantilla->generarEncabezadoHTML();
+                echo $gestionPlantilla->generarMenu();
+                ?>
             </div>
+        </div>
         <div class="contenido">
             <div class="marco_registro">            
                 <div class="form_registro">
                     <h1>Registro</h1>
                     <!--                    include_php/_gestion_login.php-->
                     <form  method="get" id="form_reg_alum" action="ControladorAlumno.php" >
-                        <input type="hidden" name="grupo" value="<?php echo $_SESSION['grupo']?>"></input>
+                        <input type="hidden" name="grupo" value="<?php echo $_SESSION['grupo'] ?>"></input>
                         <table class="registro" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td> Nombre(s):</td>                          	  
@@ -47,7 +48,7 @@ $gestionPlantilla = new GestionPlantilla();
                                 <td> <input type="text" name="apellidoP" id="apellidoP" value="" /></td>
                             </tr>
                             <tr>
-                               <td> Apellido Materno:</td>    
+                                <td> Apellido Materno:</td>    
                                 <td> <input type="text" name="apellidoM" id="apellidoM" size="20" maxlength="46"  value="" /></td>
                             </tr>
                             <tr>
@@ -57,7 +58,7 @@ $gestionPlantilla = new GestionPlantilla();
 
                             <tr>
                                 <td> Grupo:</td>   
-                                <td> <input type="text" disabled="disabled" name="grupo" id="grupo" size="20" maxlength="46"   value="<?php echo $_SESSION['grupo']?>" /></td>
+                                <td> <input type="text" disabled="disabled" name="grupo" id="grupo" size="20" maxlength="46"   value="<?php echo $_SESSION['grupo'] ?>" /></td>
                             </tr>
                             <tr>
                                 <td>Contrase&ntilde;a:</td>    

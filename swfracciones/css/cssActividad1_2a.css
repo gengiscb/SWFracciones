@@ -82,15 +82,3 @@ body {position: relative;
     opacity:.80;
     filter: alpha(opacity=80);
 }
-/*.overbox {
-    display: none;
-    position: relative;
-    
-    top: 25%;
-    left: 25%;
-background: darkgreen;
-    width: 50%;
-    height: 50%;
-    z-index:1002;
-    overflow: auto;
-}*/

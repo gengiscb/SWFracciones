@@ -1,4 +1,5 @@
 <?php
+
 include_once 'DB/UsuarioDAO.php';
 
 class ServicioUsuario {
@@ -23,8 +24,7 @@ class ServicioUsuario {
     }
 
     public function agregarUsuario($matricula, $nombre, $contrasenia, $apellidoP, $apellidoM, $tipoUsuario) {
-        $usuarioDAO = new UsuarioDAO();
-        $exito = false;        
+        $usuarioDAO = new UsuarioDAO();        
         if (!$usuarioDAO->existeUsuario($matricula)) {
             $usuarioDAO->insertarUsuario($contrasenia, $nombre, $apellidoP, $apellidoM, $matricula, $tipoUsuario);
             return true;
@@ -38,22 +38,16 @@ class ServicioUsuario {
         return $usuarioDAO->seleccionarUsuarioPorMatricula($matricula);
     }
 
-    public function obtenerTodosUsuarios(){
-        $usuarioDAO= new UsuarioDAO();
+    public function obtenerTodosUsuarios() {
+        $usuarioDAO = new UsuarioDAO();
         return $usuarioDAO->seleccionarTodosUsuarios("");
     }
 
-  
-    public function validarUsuarios($matricula, $contrasena){
-		
-		$usuarioDAO = new UsuarioDAO();
-		$usuarioDAO->AccesoUsuarios($matricula, $contrasena);
-		
-		
-		}
+    public function validarUsuarios($matricula, $contrasena) {
 
+        $usuarioDAO = new UsuarioDAO();
+        $usuarioDAO->AccesoUsuarios($matricula, $contrasena);
+    }
 
 }
 ?>
-
-

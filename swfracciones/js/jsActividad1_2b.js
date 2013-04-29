@@ -1,8 +1,5 @@
     var x = 0;
-    var y = "px"
-//    var veces = 5;
-
-    
+    var y = "px"    
 $(document).ready(function () {
     showLightbox();
     $('#iniciar').click(pintar);
@@ -14,7 +11,6 @@ $(document).ready(function () {
         $('#pintor')
         .animate({
             'width':'220px',
-            //            'height':'79px',
             'margin-left':'-=630px'
         },1500, function(){
             $('#pintor').animate({
@@ -33,11 +29,9 @@ $(document).ready(function () {
         $("#paredPintada2").animate({
             position:'relative',
             "width":"0px", 
-            //            top:'300px',
             "margin-left":"742px"
         }, 0, function(){
             $("#paredPintada2").animate({
-                //            top:'300px',    
                 position:'relative',
                 "width":"742px", 
                 "margin-left":"0px"
@@ -73,7 +67,6 @@ function esCorrecta(valor,idAct,idAlum){
         alert("La respuesta es incorrecta... vuelva a intentarlo");
         actualizarFallos(idAct, idAlum);        
         window.location = window.location.href+'&int=y'; 
-//        window.location.reload();        
     }
         
 }

@@ -3,12 +3,11 @@ include_once 'config.inc.php';
 include_once 'sw/GestionPlantilla.php';
 include_once 'sw/Sesion.php';
 include_once 'ControladorAlumno.php';
-filtro_login();
+$sesion = new Sesion(); 
+$sesion->filtro_login();
 $gestorPlantilla = new GestionPlantilla();
 $controladorServicioAlumno = new ControladorAlumno();
 
-//sesionActiva();
-$gestionPlantilla = new GestionPlantilla();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">

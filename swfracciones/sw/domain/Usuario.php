@@ -7,16 +7,16 @@
 
 class Usuario {
 
-    private  $idUsuario;
-    private  $contrasena;
-    private  $nombre;
-    private  $apellidoP;
-    private  $apellidoM;
-    private  $matricula;
-    private  $tipoUsuario;
+    private $idUsuario;
+    private $contrasena;
+    private $nombre;
+    private $apellidoP;
+    private $apellidoM;
+    private $matricula;
+    private $tipoUsuario;
 
-    public function __construct($idUsuario,$contrasena, $nombre, $apellidoP, $apellidoM, $matricula, $tipoUsuario) {
-        $this->idUsuario=$idUsuario;
+    public function __construct($idUsuario, $contrasena, $nombre, $apellidoP, $apellidoM, $matricula, $tipoUsuario) {
+        $this->idUsuario = $idUsuario;
         $this->contrasena = $contrasena;
         $this->nombre = $nombre;
         $this->apellidoP = $apellidoP;

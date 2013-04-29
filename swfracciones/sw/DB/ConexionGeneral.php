@@ -1,7 +1,10 @@
 <?php
+
 include_once 'config.inc.php';
+
 class ConexionGeneral {
-    public function abrirConexion() {        
+
+    public function abrirConexion() {
         $conexion = @mysql_connect($GLOBALS["servidor"], $GLOBALS["usuarioDB"], $GLOBALS["contrasenaDB"]) or
                 die('<div class="error" style="font-family:Arial, Helvetica, sans-serif;font-size:20px;">Intente acceder en otro momento ERROR: " ' . mysql_error()) . '"</div>';
         $this->selecionarBD($conexion);
@@ -13,7 +16,6 @@ class ConexionGeneral {
     }
 
     public function ejecutarConsulta($query, $conexion) {
-//        echo "<br>$query<br>";
         return mysql_query($query, $conexion);
     }
 

@@ -5,10 +5,10 @@ include_once 'sw/DB/ConexionGeneral.php';
 include_once 'sw/Sesion.php';
 include_once 'ControladorProfesor.php';
 include_once 'ControladorAlumno.php';
-    filtro_login();
-    $gestorPlantilla = new GestionPlantilla();
-    $controladorServicioProfesor = new ControladorProfesor();
-    $controladorServicioAlumno = new ControladorAlumno();
+$sesion = new Sesion();
+$sesion->filtro_login();
+$gestorPlantilla = new GestionPlantilla();
+$controladorServicioAlumno = new ControladorAlumno();
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
@@ -26,24 +26,24 @@ include_once 'ControladorAlumno.php';
     <body>    
         <div class="banner">
             <div class="encabezado" id="encabezado">
-                
-                    <?php
-                    echo $gestorPlantilla->generarEncabezadoHTML();
-                    echo  $gestorPlantilla->generarMenu();                    
-                    $alumno = $controladorServicioAlumno->obtenerAlumnoC();
-                    echo $_SESSION['matricula'];
-                    ?>
-                
+
+                <?php
+                echo $gestorPlantilla->generarEncabezadoHTML();
+                echo $gestorPlantilla->generarMenu();                
+//                echo $_SESSION['matricula'];
+                ?>
+
             </div>
         </div>
         <div class="contenido">
             <div class="marco_registro">            
                 <div class="form_registro">
                     <h1>Edicion alumno</h1>
-
+                    <?php echo $controladorServicioAlumno->actualizarAlumnoC();
+                    $alumno = $controladorServicioAlumno->obtenerAlumnoC();
+                     ?>
                     <!--                    include_php/_gestion_login.php-->
-                    <form  method="post"  action="<?php echo $_SERVER['PHP_SELF'].'?ver_perfil_alumno=ver_perfil&matricula=' . $alumno->getMatricula() ?>">
-                        <?php echo $controladorServicioAlumno->actualizarAlumnoC(); ?>
+                    <form  method="post"  action="<?php echo $_SERVER['PHP_SELF'] . '?ver_perfil_alumno=ver_perfil&matricula=' . $alumno->getMatricula() ?>">                        
                         <table id="registro" cellpadding="0" cellspacing="0">
                             <tr>
                                 <td> Nombre(s):</td>                          	    
@@ -63,7 +63,7 @@ include_once 'ControladorAlumno.php';
 
                             <tr>
                                 <td> Matricula:</td>    
-                                <td> <input type="text" name="matricula" id="matricula" size="20" maxlength="46"  value="<?php echo $alumno->getMatricula() ?>"/></td>
+                                <td> <input type="text" disabled name="matricula" id="matricula" size="20" maxlength="46"  value="<?php echo $alumno->getMatricula() ?>"/></td>
                             </tr>
 
                             <tr>
@@ -82,7 +82,7 @@ include_once 'ControladorAlumno.php';
                                 <input type="hidden" name="usuarioID" value="<?php echo $alumno->getIdUsuario() ?>"/>
                                 <input type="hidden" name="actualizar_alumno" value="actualizar"/>
                                 <td colspan="2" ><input type="submit" class="boton" id="verde" value="Guardar"/><input type="button" onclick="document.location='index.php'"  name="btn_regresar" class="boton"  id="naranja" value="Cancelar"/></td>
-                                
+
                             </tr>                    
                         </table>
                     </form>

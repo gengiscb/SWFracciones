@@ -1,9 +1,8 @@
 <?php
-
 include_once 'sw/_ServicioActividad.php';
+include_once 'sw/GestorActividad1_0.php';
 include_once 'sw/GestorActividad1_1.php';
-include_once 'sw/GestorActividad102.php';
-include_once 'sw/GestorActividad1_3.php';
+include_once 'sw/GestorActividad1_2.php';
 /*
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
@@ -22,21 +21,21 @@ class _ControladorActividad {
         $idActividad = $_GET['idAct'];
         $actividaObj = null;
         if (strcmp($idActividad, '1') == 0) {
-            $actividaObj = new GestorActividad1_1($_SESSION['usuarioId']);
+            $actividaObj = new GestorActividad1_0($_SESSION['usuarioId']);
         }
         if (strcmp($idActividad, '2') == 0) {
-            $actividaObj = new GestorActividad1_2($_SESSION['usuarioId']);
-        }   
-        
+            $actividaObj = new GestorActividad1_1($_SESSION['usuarioId']);
+        }
+
         if (strcmp($idActividad, '3') == 0) {
-            $actividaObj = new GestorActividad1_3($_SESSION['usuarioId']);
-        }  
+            $actividaObj = new GestorActividad1_2($_SESSION['usuarioId']);
+        }
         return $actividaObj;
     }
 
     function habilitarActividad() {
 //        echo "x";
-        if (isset($_POST["btn_habilitar"]) && $_POST["btn_habilitar"] == "Habilitar") {            
+        if (isset($_POST["btn_habilitar"]) && $_POST["btn_habilitar"] == "Habilitar") {
             $select_dia = $_POST["select_dia"];
             $select_mes = $_POST["select_mes"];
             $anio = $_POST["anio"];
@@ -55,27 +54,27 @@ class _ControladorActividad {
             return $servicioActividad->habilitarActividad($idActividad, $fechaInicio, $fechaFin, $grupo);
         }
     }
-    
+
     function esHabilitableLaActividad() {
-            $idActividad = $_POST["actividad"];
-            $grupo = $_POST["grupo"];
-            $servicioActividad = new _ServicioActividad();
-            return $servicioActividad->actividadEstaHabilitada($idActividad,$grupo);        
+        $idActividad = $_POST["actividad"];
+        $grupo = $_POST["grupo"];
+        $servicioActividad = new _ServicioActividad();
+        return $servicioActividad->actividadEstaHabilitada($idActividad, $grupo);
     }
 
-    public function listarActividades($grupo) {        
-        
+    public function listarActividades($grupo) {
+
         $ServicioActividad = new _ServicioActividad();
         $resultado = $ServicioActividad->listarActividades($grupo);
         return $resultado;
     }
 
     public function deshabilitarActividad() {
-        if (isset($_POST["btn_desHabilitar"]) && $_POST["btn_desHabilitar"] == "deshabilitar") { 
+        if (isset($_POST["btn_desHabilitar"]) && $_POST["btn_desHabilitar"] == "deshabilitar") {
             $grupo = $_POST["grupo"];
             $idAct = $_POST["actividad"];
             $ServicioActividad = new _ServicioActividad();
-           return  $ServicioActividad->deshabilitarActividad($grupo,$idAct);
+            return $ServicioActividad->deshabilitarActividad($grupo, $idAct);
         }
     }
 
@@ -104,7 +103,7 @@ class _ControladorActividad {
     //ricardo
     public function comprobarIntentos($idActividad, $idAlumno) {
         $ServicioActividad = new _ServicioActividad();
-        $intentos = $ServicioActividad->obtenerIntentos($idActividad, $idAlumno);        
+        $intentos = $ServicioActividad->obtenerIntentos($idActividad, $idAlumno);
         if ($intentos < 3) {
             return true;
         } else {
@@ -138,11 +137,12 @@ class _ControladorActividad {
     }
 
 }
+
 if (isset($_POST['ajax'])) {
-        $intanciaControlador = new _ControladorActividad();
+    $intanciaControlador = new _ControladorActividad();
     if (strcmp($_POST['ajax'], "int") == 0) {
-            $idActividad = $_POST['idAct'];
-            $idAlumno = $_POST['idAlum'];
+        $idActividad = $_POST['idAct'];
+        $idAlumno = $_POST['idAlum'];
         if ($intanciaControlador->comprobarIntentos($idActividad, $idAlumno)) {
 //            $intanciaControlador->incrementarIntentos($idActividad, $idAlumno);
             echo "true";
@@ -159,23 +159,10 @@ if (isset($_POST['ajax'])) {
         $idAlumno = $_POST['idAlum'];
         $intanciaControlador->incrementarFallos($idActividad, $idAlumno);
         $intanciaControlador->incrementarIntentos($idActividad, $idAlumno);
-    }
-    elseif (strcmp($_POST['ajax'], "hab") == 0) {
+    } elseif (strcmp($_POST['ajax'], "hab") == 0) {
         echo $intanciaControlador->habilitarActividad();
-    }
-    elseif (strcmp($_POST['ajax'], "des") == 0) {
+    } elseif (strcmp($_POST['ajax'], "des") == 0) {
         echo $intanciaControlador->deshabilitarActividad();
     }
 }
-
-//if (isset($_GET['ajax'])) {
-////    $idActividad = $_POST['idAct'];
-////    $idAlumno = $_POST['idAlum'];
-//    $intanciaControlador = new _ControladorActividad();
-//    if (strcmp($_POS['ajax'], "hab") == 0) {
-//        $intanciaControlador->habilitarActividad();
-//        echo '-';
-//    }
-//}
-
 ?>

@@ -1,7 +1,6 @@
 <?php
 include_once 'ConexionGeneral.php';
 include_once '/sw/domain/Usuario.php';
-
 class UsuarioDAO extends ConexionGeneral {
 
     public function seleccionarUsuarioPorMatricula($usuarioMatricula) {
@@ -91,62 +90,6 @@ class UsuarioDAO extends ConexionGeneral {
         }        
         return $existeUsuario;
     }
-//
-//public function AccesoUsuarios($matricula, $contrasena){
-//	
-//	 $conexion = $this->abrirConexion();
-//	
-//	$sql="SELECT * FROM usuarios WHERE matricula ='".$matricula."' AND contrasenia= '".$contrasena."'";
-//	
-//	
-//	$resultado = $this->ejecutarConsulta($sql,$conexion);
-//	
-///* solo esta falte me parte para validar*/	$row = mysql_fetch_array($resultado);
-//					
-//	
-//					
-//	if(!$row[0]){  
-//				echo '<script language="javascript">
-//				alert("usuario y/o contraseña incorrecta, verifique.")
-//				self.location ="index.php"
-//				</script>';
-//		}
-//		else{
-//			
-//			
-//			
-//		//Usuarios
-//		
-//		$_SESSION['usuarioId']=$row['usuarioId'];
-//		$_SESSION['matricula'] =$row['matricula'];
-//		$_SESSION['contrasenia']=$row['contrasenia'];
-//		
-//		
-//		if($row['tipoUsuario']=="1"){
-//						                 
-//	     header("Location: principal.php");
-//					break;
-//					}
-//					
-//		else if($row['tipoUsuario']=="2"){
-//			
-//			
-//			header("Location: principal_profesor.php ");
-//			
-//			}			
-//					
-//					
-//			else if($row['tipo']=="3"){
-//							
-//				header("Location: principal_alumno.php");
-//				
-//						break;	}
-//		
-//		
-//			}
-//
-//
-//}
 }
 
 ?>

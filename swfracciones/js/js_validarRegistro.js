@@ -1,7 +1,7 @@
 // JavaScript Document
 var VERDAD = "TRUE";
 window.onload = function(){   
-    document.getElementById("registrar").onclick=validarCamposRegistro;
+    document.getElementsByName("btn_registrar")[0].onclick=validarCamposRegistro;
     var opciones= {
         success: mostrarRespuesta
     };
@@ -15,9 +15,8 @@ window.onload = function(){
             window.location="index.php";
         }
         else{
-            alert("Error al intentar registrar\n verifique sus datos");    
+            alert("Registro fallido\n(Matricula en uso) ");    
         }
-//        alert(responseText);
     };
     $('#form_reg_alum').ajaxForm(opciones2) ; 
     function mostrarRespuestaAlumno (responseText){
@@ -26,10 +25,8 @@ window.onload = function(){
             window.location="vistaAlumnos.php?obtener_Alumnos=obtener";
         }
         else{
-            alert("Error al registrar al alumno \n verifique los datos ");    
+            alert("Registro fallido\n(Matricula en uso)");    
         }
-        
-        
     };
 }
 function validarCamposRegistro(){
@@ -67,8 +64,7 @@ function validarCamposRegistro(){
 
 function esMatriculaValida(matricula){
     if (matricula != undefined && matricula.value != "" && esTamanoAceptable(matricula.value) ){
-        return true;
-        
+        return true;        
     }
     else{
         return false;
@@ -118,14 +114,6 @@ function validarContrasena(){
         document.getElementById("cpassword").focus();
         return false;
     }
-    //if(!esTamanoAceptable(passwordN)){				
-    //		document.getElementById("password").focus();
-    //		return false;
-    //	}
-    //	if(!esTamanoAceptable(passwordC)){				
-    //		document.getElementById("cpassword").focus();
-    //		return false;
-    //	}
     if(!sonContrasenasIguales()){			
         document.getElementById("cpassword").focus();
         return false;

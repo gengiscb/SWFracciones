@@ -1,91 +1,86 @@
-	body{
-		color:#119E00;/*color:#418eb6;		*/
-	}
-	.contenido .marco .form_login h1{	
-		color:#060;
-		font-family:"Comic Sans MS", cursive;
-		text-align:center;
-		margin:10px 0px 0px 0px;
-		font-size:32px;		
-		padding-bottom:5px;
-		font-weight:bold;
-		font-size:200%;
-		
-	}
-	
-	div.marco a{
-		color:#060;/*#418eb6;*/
-		font-weight:bold;
-		text-decoration:none;
-	}
-	div.marco label{
-		font-family:"Comic Sans MS", cursive;
-            color: #060;
-            width:150px;
-            font-size:15px;
-			font-weight:bold;
-	}
-	input,textarea,select{
-		
-		border:#060 1px solid;
-		width:180px; 
-		height:30px;	
-		margin:0 0 5px 0;
-		padding:5px;
-                color:#119E00;
-		/*color:#29B5E9;*/
-		font-size:15px;
-		
-		border-radius:10px;
-		-moz-border-radius:10px;
-		-webkit-border-radius:10px;		
-	}	
-	
-	#span_registro{
-		text-align:center;
-		font-size:18px;
-		border-bottom:1px solid #119E00;
-	}
-	p{	
-		text-align:center;
-		margin:0 0 30px 0;
-		padding:0 0 5px 0;
-		font-size:16px;
-		border-bottom:1px solid #cfe0e9;
-	}
-	table{
-		margin:auto;
-		width:150px;
-	}
-	div.marco{
-		width:240px;	
-	}	
-	div.form_login{
-		width:230px;
-		float: right;
-	}
-	input[type="checkbox"]{
-		float:left;
-		width:20px;
-		height:20px;
-	}	
-	span{
-		font-size:12px; 
-		display:block; 
-	}
+body{
+    color:#119E00;/*color:#418eb6;		*/
+}
+.contenido .marco .form_login h1{	
+    color:#060;
+    font-family:"Comic Sans MS", cursive;
+    text-align:center;
+    margin:10px 0px 0px 0px;
+    font-size:32px;		
+    padding-bottom:5px;
+    font-weight:bold;
+    font-size:200%;
 
-	/*.boton{
-		margin:10px 0 0 30px;
-		width:100px;
-		font-size:14px;
-	}*/
-	#highlight {
-		float:left;
-	}
-        div .slogan a, div .slogan a:hover{
-			color:#F90;
-            margin: auto;
-            margin-left: 170px;
-            font-size: 80px;
-			text-shadow:0.1em 0.1em 0.1em #000;
-        }        
+}
+
+div.marco a{
+    color:#060;/*#418eb6;*/
+    font-weight:bold;
+    text-decoration:none;
+}
+div.marco label{
+    font-family:"Comic Sans MS", cursive;
+    color: #060;
+    width:150px;
+    font-size:15px;
+    font-weight:bold;
+}
+input,textarea,select{
+
+    border:#060 1px solid;
+    width:180px; 
+    height:30px;	
+    margin:0 0 5px 0;
+    padding:5px;
+    color:#119E00;
+    /*color:#29B5E9;*/
+    font-size:15px;
+
+    border-radius:10px;
+    -moz-border-radius:10px;
+    -webkit-border-radius:10px;		
+}	
+
+#span_registro{
+    text-align:center;
+    font-size:18px;
+    border-bottom:1px solid #119E00;
+}
+p{	
+    text-align:center;
+    margin:0 0 30px 0;
+    padding:0 0 5px 0;
+    font-size:16px;
+    border-bottom:1px solid #cfe0e9;
+}
+table{
+    margin:auto;
+    width:150px;
+}
+div.marco{
+    width:240px;	
+}	
+div.form_login{
+    width:230px;
+    float: right;
+}
+input[type="checkbox"]{
+    float:left;
+    width:20px;
+    height:20px;
+}	
+span{
+    font-size:12px; 
+    display:block; 
+}
+
+#highlight {
+    float:left;
+}
+div .slogan a, div .slogan a:hover{
+    color:#F90;
+    margin: auto;
+    margin-left: 170px;
+    font-size: 80px;
+    text-shadow:0.1em 0.1em 0.1em #000;
+}        

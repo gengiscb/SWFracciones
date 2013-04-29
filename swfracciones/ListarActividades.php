@@ -3,8 +3,8 @@ include_once 'config.inc.php';
 include_once 'sw/GestionPlantilla.php';
 include_once 'sw/Sesion.php';
 include_once '_ControladorActividades.php';
-
-filtro_login();
+$sesion = new Sesion();
+$sesion->filtro_login();
 $gestorPlantilla = new GestionPlantilla();
 $listarActividad = new _ControladorActividad();
 ?>      
@@ -19,8 +19,6 @@ $listarActividad = new _ControladorActividad();
         <script type="text/javascript" language="javascript" src="js/js_principal.js"></script>
         <script type="text/javascript" src="js/jquery.min.js"></script>  
         <script type="text/javascript" language="javascript" src="js/js_validaciones_eliminar.js"></script>
-
-
     </head>
     <body>
         <div class="banner">
@@ -28,27 +26,28 @@ $listarActividad = new _ControladorActividad();
                 <?php
                 echo $gestorPlantilla->generarEncabezadoHTML();
                 echo $gestorPlantilla->generarMenu();
-
-               
                 ?> 
             </div>       
         </div>
         <div class="contenido" >
-
             <h1 id="h1">Actividad</h1>
             <div class="marco">
 
                 <div class="tabla">
-            <h2>Habilitar Actividades</h2>
-            <div class="marco">
-                <div class="tabla">
-                    <form  method="get" action="<?php echo $_SERVER["PHP_SELF"]; ?>" >
-                        <?php echo $listarActividad->listarActividades($_SESSION['grupo']); ?>
-                    </form>   
+                    <h2>Habilitar Actividades</h2>
+                    <div class="marco">
+                        <div class="tabla">
+                            <form  method="get" action="<?php echo $_SERVER["PHP_SELF"]; ?>" >
+                                <?php
+                                echo $listarActividad->listarActividades($_SESSION['grupo']);
+                                ?>
+                            </form>   
+                        </div>
+
+                    </div>
                 </div>
-               
+                <!--<div id="actividad"></div>-->
             </div>
         </div>
-        <!--<div id="actividad"></div>-->
     </body>
 </html>

@@ -29,12 +29,6 @@ function validarCamposRegsitro(){
                 else{ 
                     return true;
                 }
-            //    if(window.confirm("Esta seguro que desea realizar esta acción")){
-            //        return true;
-            //    }
-            //    else{
-            //        return false;
-            //    }
             }
         }
     }
