@@ -46,7 +46,7 @@ $gestorPlantilla = new GestionPlantilla();
         <div class="contenido" >
             <h1 id="h1">Lista de Alumnos</h1>
             <div class="marco">        
-                <p align="center">Tabla Reporte Alumnos.</p>
+                <h2 id="h2">Tabla Reporte Alumnos.</h2>
                 <div id= tabla >
                     <table id="datatables" class="display"  >
                         <thead>
@@ -67,7 +67,7 @@ $gestorPlantilla = new GestionPlantilla();
                         </tbody>
                     </table>
                 </div>
-                <p align="center">Gráfico del Reporte de Alumnos</p>   
+                <h2 id="h2">Gráfico del Reporte de Alumnos</h2>   
                 <div id="grafico" style="width: 720px; height: 200px; margin: 0 auto"></div>
             </div></div>
     </body>

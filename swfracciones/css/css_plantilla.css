@@ -6,8 +6,9 @@
 		border:0;margin:0;padding:0;
 	}
 	td{
+		font-family:Arial, Helvetica, sans-serif;
 		font-weight:bold;
-		text-align:right;
+		text-align:left;
 	}
 	ul{
 		list-style:none;
@@ -16,7 +17,7 @@
 		color:#060;
 		text-shadow: 0 1px 0 rgba(255,255,255, 1);
 		
-		font-family:Georgia, "Times New Roman", Times, serif;
+		font-family:Arial, Helvetica, sans-serif;
 		text-align:center;
 		margin:10px 0px 0px 0px;
 		font-size:32px;		
@@ -27,6 +28,7 @@
 	}
 	
 	#h1{
+		
 		color:#060;
 		z-index:10;
 		width:auto;
@@ -40,14 +42,17 @@
 	 	-moz-border-radius: 5px; 
 	 	border-radius: 5px; 
 	}
+	
 	a{
 		text-decoration:none;
 	}
-		label{
+	
+	label{
 		width:200px;
 		color:#418eb6;
 		font-size:20px;
 		margin:5px 0 15px;
+		font-family:Arial, Helvetica, sans-serif;
 	}
 	input,textarea,select{
 		border:#235A16 1px solid;
