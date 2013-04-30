@@ -41,7 +41,7 @@ $sesion->filtro_login_Excepcion();
         <div class="contenido">
             <div class="marco_registro">            
                 <div class="form_registro">
-                    <h1>Registro profesor</h1>
+                    <h1 class="alumno">Registro profesor</h1>
                     <?php
 //                    	if($controladorServicioProfesor->agregaProfesorC());
                     ?>

@@ -43,6 +43,10 @@
 	 	border-radius: 5px; 
 	}
 	
+	.alumno , #alumno{
+		font-family:"Comic Sans MS", cursive;
+	}
+	
 	a{
 		text-decoration:none;
 	}

@@ -34,7 +34,7 @@ $controladorActividades = new _ControladorActividad();
                     </div>       
                 </div>
                 <div class="contenido" >
-                    <h1 id="h1" >Actividades Diaponibles</h1>
+                    <h1 id="h1" class = "alumno" >Actividades Disponibles</h1>
                     <div class="marco">
 
                         <div class="tabla">
@@ -46,7 +46,6 @@ $controladorActividades = new _ControladorActividad();
                                 ?>
                             </form>
                         </div>
-                        <div class="tabla"></div>
                     </div>
                 </div>
                 <!--<div id="actividad"></div>-->

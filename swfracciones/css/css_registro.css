@@ -8,6 +8,11 @@ table.registro{
     float:none;
     height: auto;
 }
+
+#form_reg_prof table.registro tr td{
+	font-family:"Comic Sans MS", cursive;	
+}
+
 div.form_registro{
     width:100%;
     height:auto;

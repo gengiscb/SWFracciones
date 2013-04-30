@@ -38,7 +38,7 @@ class _ServicioActividad {
         $resultado = $ActividadDAO->listarActividadesProfesor();
         $resultadoHTML = "";
         for ($i = 0; $i < count($resultado); $i++) {
-            $resultadoHTML.="<div class='clean-gray'>";
+            $resultadoHTML.="<div class='clean-gray' id='profesor'>";
             $resultadoHTML.="<span class='text_act'>";
             $resultadoHTML.=$resultado[$i]['numeroActividad'] . "--.";
             $resultadoHTML.="</span>";
