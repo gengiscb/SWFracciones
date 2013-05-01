@@ -4,11 +4,11 @@
 	   $('#iniciar').click(function(){
                hideLightbox();
            $('#iniciar').attr('disabled', 'disabled');
-           $('#img_agua').attr("src", "img/act1_3b/nadar.png");
+           $('#img_agua').attr("src", "img/act1_3b/nadar.gif");
 	   $("#capaAcuario").animate({top:"+="+distancia+"px"},
            6000,
            function(){
-         $('#img_agua').attr("src", "img/act1_3b/nadar.png");	
+         $('#img_agua').attr("src", "img/act1_3b/nadar.gif");	
             alert("Seleccione una respuesta");    
         
            });
@@ -18,7 +18,7 @@
 
     $("#detener").click(function(){
     $("#capaAcuario").stop(); 
-    $('#img_agua').attr("src", "img/act1_2b/agua.gif");
+    $('#img_agua').attr("src", "img/act1_3b/nadar.gif");
 });
 	   
 	//});

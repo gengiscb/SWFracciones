@@ -209,7 +209,7 @@ class GestorActividad1_2 extends GestorActividad {
        </div>
       
       
-      <img id="img_agua" src="img/act1_3b/nadar.png" id="agua"/>
+      <img id="img_agua" src="img/act1_3b/nadar.gif" id="agua"/>
      
 
              
