@@ -6,9 +6,11 @@
     position: relative;
     width:800px;
     height:456px;
-    background:url('../img/act1_3b/fondo_default.jpg');
+    background:url('../img/act1_3b/fondo_acuario.jpg');
     margin-left: 3px;
     left: 2px;
+    
+   
 }
 
 
@@ -25,67 +27,89 @@
     filter: alpha(opacity=80);
 }
 
+.fadebox #iniciar{
+    position: relative;
+    margin: auto;
+    margin-top: 150px;
+    /*margin-left: 45%;*/
+}
+
 
 body {
-    text-align: center;
-    text-align: center;
-    padding: 20px;
+text-align: center;
+text-align: center;
+padding: 20px;
 
 
 }
 
 
-#segmento{
+ #segmento{
     position: relative;
     float: left;
-    height: 265px;
-    width: 5px;
+   height: 264px;
+    width: 10px;
     left: -100px;
-    top: 95px;
+    top: 75px;
+   
+ }
 
-}
-/*
-
-/*Container for the image frame aka the top image*/
 .pecera{
-    position: absolute;
-    z-index: 2;
-
-    height: 270px;
+        position: absolute;
+	z-index: 2;
+       
+        
+        height: 350px ;
+        width: 600px;
+        margin-top: 100px;
+        margin-left: -25px;
+        
 }
 /*The container the character goes in for easy placement*/
 #Acuario{
-    height: 270px;
-    width: 477px;
+height: 456px;
+width: 640px;
+margin-left:  150px; 
 
-    margin: 0px auto;
 
 }
 
 /*Prevents spillover from middle layer moving up*/
 #contenedorAcuario{
-    top: -170px;
-    position: relative;
-    overflow: hidden;
-    height: 260px;
-    width: 477px;
-    background:  #e7dcca;
+position: relative;
+overflow: hidden;
+height: 370px;
+width: 650px;
+margin-left: -50px;
+ top: -250px;
+
+
+
+
+
 }
 /*The middle layer container, hiding base image initially*/
 #capaAcuario{
+    
+position:absolute;
+z-index: 1;
 
-    position:absolute;
-    z-index: 1;
+
 }
 /*White div in #dudeoverlay that fill space the edge image doesn't*/
 #capaBloquear{
 
-    top: 300px;
-    height: 260px;
-    width: 700px;
-    background: #e7dcca;
-    -moz-opacity: .25;
-    opacity:.35;
+height: 310px;
+width: 555px;
+background: url('../img/act1_3b/opacidad.png');
+-moz-opacity: .35;
+opacity:.35;
+margin-left: 55px;
+margin-top: 15px;
+
+
+
+
 
 }
 
@@ -95,49 +119,24 @@ body {
     width: 476px;
 }
 
-#casas{
-    top: 100px;
-    position: absolute;
 
-    left: 12px;
-    width: 400px;
-    height: 270px;
+#img_pecera{
+    
+    margin-left: 25px;
+    margin-top: -130px;
+    height: 385px;
+    width: 630px;
+    
 }
 
 
-#casa_bob{
-    width: 50px;
-    height: 80px;
-
-
-}
-
-
-#casa_cal{
-
-    width: 50px;
-    height: 80px;
-
-}
-
-casa_pat{
-
-    width: 5px;
-    height: 10px;
-
-
-}
-
-#arena{
-    width: 450px;
-    height: 61px;
-
-
-
-}
-
-
-#arenas{
-    margin-top: -140px;
-
+#img_agua{
+    
+    margin-left: 10px;
+    margin-top: 0px;
+    height: 340px;
+    width: 560px;
+    
+   
+    
 }

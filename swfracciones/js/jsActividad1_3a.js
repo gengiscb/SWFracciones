@@ -2,19 +2,19 @@
 $('#iniciar').click(function(){
     hideLightbox();
     $('#iniciar').attr('disabled', 'disabled');
+    $('#agua').attr("src", "img/act1_3a/agua.gif");
     $("#capaAgua").animate({
         top: "+="+distancia+"px"
-        },{
-        queue:false, 
-        duration:5000
-    }, function(){
+        },6000, 
+        function(){
+            $('#agua').attr("src", "img/act1_3a/agua.gif");
         alert("Seleccione una respuesta");
     });  
 });
 
 $("#detener").click(function(){
     $("#capaAgua").stop();
-    $('#imagen').attr("src", "img/act1_2a/agua.png");
+    $('#agua').attr("src", "img/act1_3a/nadar.png");
 });
 	   
 

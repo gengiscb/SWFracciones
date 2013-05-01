@@ -140,7 +140,7 @@ class GestorActividad1_2 extends GestorActividad {
     }
 
     private function obtenerPosiblesRespuestas($posicionCorrecta) {
-
+//        $randPosition = rand(0, 3);
         $posibles_res = array();
         $posibles_res[3] = $this->respuestas[$posicionCorrecta];
         for ($indiceRespuestas = 0; $indiceRespuestas < 3; $indiceRespuestas++) {
@@ -193,32 +193,35 @@ class GestorActividad1_2 extends GestorActividad {
     <img id="segmento" height="10px" src="img/act1_3b/segmento2.png" />
 
   <div id="contenedorAcuario">
+    
+
      <div class="pecera">
-       <img src="img/act1_3b/Pecera.png"/>
+     
+       <img id="img_pecera" src="img/act1_3b/pez.png"/>
+       
+       
+       
+ 
      </div>
+                               
        <div id="capaAcuario">    
          <div id="capaBloquear">&nbsp;</div>
        </div>
-      <img src="img/act1_3b/nadar.gif" id="agua"/>
+      
+      
+      <img id="img_agua" src="img/act1_3b/nadar.png" id="agua"/>
      
- <div id="arenas"> 
-       <img id="arena" src="img/act1_3b/arena.png"/>
-        
-<div id="casas">
-<img id="casa_pat" src="img/act1_3b/casa_pat.png"/>
-        <img id="casa_cal" src="img/act1_3b/casa_cal.gif"/>
-        <img id="casa_bob" src="img/act1_3b/casa_bob.gif"/>
-</div>        
 
-  </div>   
+             
     </div>
+       
   </div>
 ';
     }
 
     public function getLightBox() {
         return '<div id="fade" class="fadebox"> 
-                    <button class="boton" id="inciar" >Iniciar Actividad 3</button>
+                    <button class="boton" id="iniciar" >Iniciar Actividad 3</button>
                 </div>';
     }
 
